@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	<title>theme</title>
+</head>
+
+<body>
+	<div id="page">
+		<!-- header -->
+		<div class="header header-fix header-logo-left">
+			<span class="message-notification">
+				<i class="far fa-bell"></i>
+				<span class="count">2</span>
+			</span>
+			<span class="title">Locker</span>
+			<span class="create-new">
+				<i class="fa fa-pen-square"></i>
+			</span>
+		</div>
+
+		<!-- footer -->
+		<div id="footer-menu">
+			<a href="index.html" class="active-nav"><i class="fa fa-search"></i><span>Search</span>
+			</a>
+			<a href="likeList.html"><i class="fa fa-heart"></i><span>Like</span>
+			</a>
+			<a href="index.html"><i class="fa fa-list-alt"></i><span>List</span>
+			</a>
+			<a href="chat.html"><i class="fa fa-comments"></i><span>Chat</span>
+			</a>
+			<a href="usersetting.html"><i class="fa fa-user"></i><span>Setting</span>
+			</a>
+			<div class="clear"></div>
+		</div>
+
+		<!-- page main -->
+		<div class="page-content header-clear-medium">
+			<div class="search-view">
+				<input type="text" class="search-input">
+				<span class="click-search"><i class="fa fa-search"></i></span>
+			</div>
+			<div class="map-content">
+
+			</div>
+		</div>
+		<div class="page-bg">
+			<div></div>
+		</div>
+	</div>
+
+
+	<div id="menu-settings" class="menu menu-box-bottom menu-box-detached round-large menu-active"
+		data-menu-height="310" data-menu-effect="menu-over" style="height: 310px; opacity: 1; display: block;">
+		<div class="content bottom-0">
+			<div class="menu-title">
+				<h1>Settings</h1>
+				<p class="color-highlight">Flexible and Easy to Use</p><a href="#" class="close-menu"><i
+						class="fa fa-times"></i></a>
+			</div>
+			<div class="divider bottom-20"></div>
+			<div class="toggle-with-icon">
+				<i class="toggle-icon round-tiny fa fa-moon bg-red2-dark color-white"></i>
+				<a href="#" class="toggle-switch toggle-ios toggle-off toggle-animated" data-toggle-theme=""
+					data-toggle-height="27" data-toggle-width="50" data-toggle-content="toggle-content-1"
+					data-toggle-checkbox="toggle-checkbox-1" data-bg-on="bg-green1-dark" data-bg-off="">
+					<span class="color-theme regularbold font-13" style="line-height: 24px;">Dark Mode</span>
+					<strong style="width: 27px; height: 27px; right: 23px;"></strong>
+					<u style="width: 50px; height: 27px;"></u>
+				</a>
+			</div>
+			<div class="divider top-25 bottom-0"></div>
+			<div class="link-list link-list-2 link-list-long-border">
+				<a href="#" data-menu="menu-highlights">
+					<i class="fa fa-tint bg-green1-dark color-white round-tiny"></i>
+					<span>Page Highlight</span>
+					<strong>16 Color Highlights Included</strong>
+					<em class="bg-highlight">HOT</em>
+				</a>
+				<a href="#" data-menu="menu-backgrounds" class="no-border">
+					<i class="fa fa-brush bg-blue2-dark color-white round-tiny"></i>
+					<span>Page Background</span>
+					<strong>10 Page Gradients Included</strong>
+					<em class="bg-highlight">NEW</em>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNfdF_uHYQT0Jn8czh4R10flxH8x3G95k&callback=initMap"
+		async defer>
+	</script>
+	<script>
+		let map;
+
+		function initMap() {
+			map = new google.maps.Map(document.querySelector('.map-content'), {
+				center: {
+					lat: -34.397,
+					lng: 150.644
+				},
+				zoom: 8
+			});
+		}
+
+		// search-location
+		// event click
+		// document.querySelector(".click-search").addEventListener('click', function () {
+		// 	let inputs = document.querySelector(".search-input").value;
+		// 	console.log(inputs);
+		// 	document.querySelector("#menu-settings").style = "disply:block;";
+		// });
+
+		//Allows clicking even if menu is loaded externally.
+		let menuHider = $('.menu-hider');
+		let menuClose = $('.close-menu');
+		let menu = $('.menu');
+		let headerAndContent = $('.header, .page-content, #footer-menu');
+
+		menuHider.on('click', function () {
+			menu.removeClass('menu-active');
+			menuHider.removeClass('menu-active menu-active-clear');
+			headerAndContent.css('transform', 'translate(0,0)');
+			menuHider.css('transform', 'translate(0,0)');
+			$('#footer-menu').removeClass('footer-menu-hidden');
+			return false;
+		});
+
+		menuClose.on('click', function () {
+			menu.removeClass('menu-active');
+			menuHider.removeClass('menu-active menu-active-clear');
+			headerAndContent.css('transform', 'translate(0,0)');
+			menuHider.css('transform', 'translate(0,0)');
+			$('#footer-menu').removeClass('footer-menu-hidden');
+			return false;
+		});
+	</script>
+
+</body>
+
+</html>
