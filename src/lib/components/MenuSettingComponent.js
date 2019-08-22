@@ -56,7 +56,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -70,7 +70,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -84,7 +84,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -98,7 +98,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -112,7 +112,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -126,7 +126,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -140,7 +140,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -154,7 +154,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -168,7 +168,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -182,7 +182,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -196,7 +196,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -210,22 +210,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
-                    </div>
-                    <div className="menu-keeper-count">
-                      <span className="locker-count">3/10</span>  
-                    </div>
-                  </div>
-                </li>
-
-                <li className="menu-item">
-                  <div className="menu-keeper-item">
-                    <div className="menu-keeper-img">
-                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
-                    </div>
-                    <div className="menu-keeper-content">
-                      <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -239,7 +224,7 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
@@ -253,42 +238,13 @@ class MenuSettingComponent extends Component {
                     </div>
                     <div className="menu-keeper-content">
                       <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                      <span className="keeper-phone">010-0000-0000 <i className="fas fa-phone-alt"></i></span>
                     </div>
                     <div className="menu-keeper-count">
                       <span className="locker-count">3/10</span>  
                     </div>
                   </div>
                 </li>
-                <li className="menu-item">
-                  <div className="menu-keeper-item">
-                    <div className="menu-keeper-img">
-                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
-                    </div>
-                    <div className="menu-keeper-content">
-                      <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
-                    </div>
-                    <div className="menu-keeper-count">
-                      <span className="locker-count">3/10</span>  
-                    </div>
-                  </div>
-                </li>
-                <li className="menu-item">
-                  <div className="menu-keeper-item">
-                    <div className="menu-keeper-img">
-                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
-                    </div>
-                    <div className="menu-keeper-content">
-                      <span className="keeper-name">상호명</span>
-                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
-                    </div>
-                    <div className="menu-keeper-count">
-                      <span className="locker-count">3/10</span>  
-                    </div>
-                  </div>
-                </li>
-                
               </ul>
               </div>
             </div>
