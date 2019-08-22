@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Autocomplete from "react-google-autocomplete";
+import { geolocated } from "react-geolocated";
 
 import {
   Map,
@@ -62,21 +63,15 @@ class MapContainer extends Component {
                 if (place.geometry) {
                   console.log(place.geometry.location.lat());
                   console.log(place.geometry.location.lng());
-                  // center.lat = place.geometry.location.lat();
-                  // center.lng = place.geometry.location.lng();
                   this.setState({
                     center: {
                       lat: place.geometry.location.lat(),
                       lng: place.geometry.location.lng()
                     }
                   });
-                  // console.log(this.center.lat);
-                  // console.log(this.center.lng);
                 }
               }}
               types={["(regions)"]}
-
-              // componentRestrictions={{ country: "ru" }}
             />
 
             <span className="click-search">
