@@ -16,8 +16,8 @@ class MapContainer extends Component {
     activeMarker: {},
     selectedPlace: {},
     center: {
-      lat: -34.397,
-      lng: 150.644
+      lat: 37.5434348,
+      lng: 126.9499267
     }
   };
 
@@ -27,24 +27,15 @@ class MapContainer extends Component {
       activeMarker: marker,
       showingInfoWindow: true
     });
-    console.log("클릭했음", this.shouldComponentUpdate);
+    console.log("클릭했음");
   };
 
   windowHasClosed = () => {
     this.setState({
       showingInfoWindow: false
     });
-    console.log("닫았음", this.shouldComponentUpdate);
+    console.log("닫았음");
   };
-
-  // onMapClicked = props => {
-  //   if (this.state.showingInfoWindow) {
-  //     this.setState({
-  //       showingInfoWindow: false,
-  //       activeMarker: null
-  //     });
-  //   }
-  // };
 
   render() {
     if (!this.props.google) {
@@ -52,20 +43,18 @@ class MapContainer extends Component {
     }
 
     const style = {
-      minWwidth: "1000px",
-      minHeight: "1000px"
+      height: "65%"
     };
 
     const styleMap = {
-      width : "80%",
-      verticalAlign : "bottom"
-    }
+      width: "90%",
+      verticalAlign: "bottom"
+    };
 
     return (
       <>
         <div className="page-content header-clear-medium">
           <div className="search-view">
-            {/* <input type="text" className="search-input" /> */}
             <Autocomplete
               style={styleMap}
               onPlaceSelected={place => {
@@ -73,10 +62,16 @@ class MapContainer extends Component {
                 if (place.geometry) {
                   console.log(place.geometry.location.lat());
                   console.log(place.geometry.location.lng());
+                  // center.lat = place.geometry.location.lat();
+                  // center.lng = place.geometry.location.lng();
                   this.setState({
-                    lat: place.geometry.location.lat(),
-                    lng: place.geometry.location.lng()
+                    center: {
+                      lat: place.geometry.location.lat(),
+                      lng: place.geometry.location.lng()
+                    }
                   });
+                  // console.log(this.center.lat);
+                  // console.log(this.center.lng);
                 }
               }}
               types={["(regions)"]}
@@ -93,16 +88,21 @@ class MapContainer extends Component {
             <Map
               style={style}
               google={this.props.google}
-              initialCenter={this.center}
-              zoom={8}
+              initialCenter={this.state.center}
+              center={this.state.center}
+              zoom={15}
             >
+              <Marker
+                onClick={this.onMarkerClick}
+                name={"Current location2"}
+                position={this.state.center}
+              />
+
               <Marker
                 onClick={this.onMarkerClick}
                 name={"Current location"}
                 position={{ lat: 37.762391, lng: -122.439192 }}
               />
-              <Marker onClick={this.onMarkerClick} name={"Current location2"} />
-
               <InfoWindow
                 marker={this.state.activeMarker}
                 onClose={this.windowHasClosed}
