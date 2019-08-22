@@ -215,9 +215,12 @@ label a {
 
 
 #menu-settings {
-    min-height: 310px;
+    padding: 10px;
+    height: 500px;
     display: block;
 }
+
+
 
 .menu-active.menu {
     opacity: 1 !important;
@@ -258,16 +261,70 @@ label a {
     overflow: hidden;
 }
 
-.menu-title a {
+.menu-title{
+    line-height: 30px;
+    border-bottom: 3px solid #e4e4e4;
+    margin-bottom: 10px;
+}
+
+.menu-list{
+    overflow: auto;
+    height: 424px;
+}
+
+.menu-title-p{
+    float: left;
+    font-size: 18px;
+}
+
+.menu-title .close-menu {
     font-size: 20px;
     color: #BF263C;
-    position: absolute;
-    text-align: center;
-    width: 55px;
-    line-height: 85px;
-    right: -15px;
-    top: 0px;
+    float: right;
 }
+
+.menu-title::after{
+    display: block;
+    clear: both;
+    content: '';
+
+}
+
+.keeper-img{
+    width: 60px;
+}
+
+.menu-item::after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.menu-item{
+    padding: 5px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.menu-item:last-child{
+    border-bottom: none;
+}
+
+.menu-keeper-img{
+    float: left;
+}
+.menu-keeper-content{
+    margin-left: 10px;
+    float: left;
+}
+
+.keeper-name{
+    display: block;
+    font-weight: 800;
+    font-size: 15px;
+}
+.menu-keeper-count{
+    float: right;
+}
+
 
 /*footer*/
 

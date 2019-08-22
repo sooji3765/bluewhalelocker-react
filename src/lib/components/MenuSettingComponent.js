@@ -39,71 +39,260 @@ class MenuSettingComponent extends Component {
           className={menuSettingsClassName}
           data-menu-height="310"
           data-menu-effect="menu-over"
-          data-menu-height="310"
-          data-menu-effect="menu-over"
         >
-          <div className="content bottom-0">
+          <div className="menu-content">
             <div className="menu-title">
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <div>
-                <h1>Settings</h1>
-              </div>
-              <a href="#" className="close-menu" onClick={this.handleMenuClose}>
+                <span className="menu-title-p">Keeper List</span>
+                <a href="#" className="close-menu" onClick={this.handleMenuClose}>
                 <i className="fa fa-times" />
               </a>
+              </div>
+              <div className="menu-list">
+              <ul>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item">
+                  <div className="menu-keeper-item">
+                    <div className="menu-keeper-img">
+                      <img className="keeper-img" src="img/user2.png" alt="user2"/>
+                    </div>
+                    <div className="menu-keeper-content">
+                      <span className="keeper-name">상호명</span>
+                      <span className="keeper-phone">010-0000-0000 <i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <div className="menu-keeper-count">
+                      <span className="locker-count">3/10</span>  
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+              </div>
             </div>
           </div>
-        </div>
       </>
     );
   }
