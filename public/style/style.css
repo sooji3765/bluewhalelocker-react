@@ -844,3 +844,26 @@ label a {
 .style2_menu_u {
     width: 50px; height: 27px;
 }
+
+
+.form-login{
+    margin : 0 auto;
+    padding : 20px;
+}
+
+.form-content{
+    padding : 5px;
+    border-radius: 10px;
+    border: 1px solid #e4e4e4;
+    margin-bottom: 10px;
+}
+
+.form-click-content{
+    text-align: center;
+}
+
+.form-login-btn{
+    width: 30px;
+    margin : 0 auto;
+    display: block;
+}

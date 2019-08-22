@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom';
 class UsersettingComponent extends Component {
 
   render() {
@@ -7,6 +7,10 @@ class UsersettingComponent extends Component {
     const userInfo = {
       user_id: "USER1",
       user_name: "HAYONG",
+    }
+
+    const site = {
+      login : "login"
     }
 
     return (
@@ -64,11 +68,13 @@ class UsersettingComponent extends Component {
                 </a>
               </li>
               <li>
-                <a href="login.html">
+                <Link to="/login">
+                
                   <i className="fa fa-power-off color-red"></i>
                   <span>Login</span>
                   <i className="fa fa-angle-right"></i>
-                </a>
+              
+                </Link>
               </li>
             </ul>
           </div>
