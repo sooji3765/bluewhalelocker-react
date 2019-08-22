@@ -14,7 +14,11 @@ class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
     activeMarker: {},
-    selectedPlace: {}
+    selectedPlace: {},
+    center: {
+      lat: -34.397,
+      lng: 150.644
+    }
   };
 
   onMarkerClick = (props, marker, e) => {
@@ -47,11 +51,6 @@ class MapContainer extends Component {
       return <div>Loading...</div>;
     }
 
-    const center = {
-      lat: -34.397,
-      lng: 150.644
-    };
-
     const style = {
       minWwidth: "1000px",
       minHeight: "1000px"
@@ -71,6 +70,14 @@ class MapContainer extends Component {
               style={styleMap}
               onPlaceSelected={place => {
                 console.log(place);
+                if (place.geometry) {
+                  console.log(place.geometry.location.lat());
+                  console.log(place.geometry.location.lng());
+                  this.setState({
+                    lat: place.geometry.location.lat(),
+                    lng: place.geometry.location.lng()
+                  });
+                }
               }}
               types={["(regions)"]}
 
@@ -86,7 +93,7 @@ class MapContainer extends Component {
             <Map
               style={style}
               google={this.props.google}
-              initialCenter={center}
+              initialCenter={this.center}
               zoom={8}
             >
               <Marker
