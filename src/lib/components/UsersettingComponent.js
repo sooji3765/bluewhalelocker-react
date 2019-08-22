@@ -54,11 +54,11 @@ class UsersettingComponent extends Component {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <Link to ="/keeper_setting">
                   <i className="fas fa-exchange-alt color-yellow"></i>
                   <span>Change Keeper Mode</span>
                   <i className="fa fa-angle-right"></i>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#">

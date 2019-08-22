@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom';
 class LoginComponent extends Component{
     render(){
         return (
             <>
             <div className="page-content header-clear-medium">
-                <div className="page-title">
-                    <p className="page-title-content">LOGIN</p>
-                </div>
-
+               <form>
                 <div className="form-login">
+                    <div className="form-title">
+                        LOGIN
+                    </div>
                     <div className="form-content">
                         <span className="form-span"><i class="fas fa-user"></i></span>
                         <input
@@ -28,13 +28,14 @@ class LoginComponent extends Component{
                             />
                     </div>
                     <div className="form-click-content">
-                        <input type="checkbox"/>save your login data
+                        <label><input className="form-check" type="checkbox"/>save your login data</label>
                         <button 
                             className="form-login-btn"
                         >LOGIN</button>
-                        <a href ="/">Sign Up</a>
+                        <Link to="/signup" className="form-link-signup">Sign Up</Link>
                     </div>
                 </div>
+                </form>
             </div>
             </>
         );

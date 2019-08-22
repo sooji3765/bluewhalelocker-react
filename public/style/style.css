@@ -271,7 +271,8 @@ label a {
 
 /*footer*/
 
-#footer-menu {
+#footer-menu,
+#footer-keeper-menu {
     position: fixed;
     bottom: 0px;
     left: 0px;
@@ -286,7 +287,12 @@ label a {
     z-index: 95;
 }
 
-#footer-menu a {
+#footer-keeper-menu{
+    background-color: #189ad3;
+}
+
+#footer-menu a,
+#footer-keeper-menu a {
     width: 20%;
     color: #fff;
     /*color:#1f1f1f;*/
@@ -295,7 +301,12 @@ label a {
     transition: all 350ms ease;
 }
 
-#footer-menu a span {
+#footer-keeper-menu a{
+    width: 25%;
+}
+
+#footer-menu a span,
+#footer-keeper-menu a span  {
     color: #fff;
     position: absolute;
     left: 0px;
@@ -306,36 +317,43 @@ label a {
     padding-top: 32px;
 }
 
-#footer-menu a i {
+#footer-menu a i ,
+#footer-keeper-menu a i{
     padding-top: 15px;
     font-size: 18px;
 }
 
-#footer-menu a {
+#footer-menu a ,
+#footer-keeper-munu a{
     transition: all 200ms ease !important;
 }
 
-#footer-menu a:hover {
+#footer-menu a:hover,
+#footer-keeper-menu a:hover {
     transform: scale(1.2);
     transition: 1s;
 }
 
-#footer-menu i {
+#footer-menu i,
+#footer-keeper-menu i{
     transition: all 200ms ease !important;
 }
 
-#footer-menu span {
+#footer-menu span,
+#footer-keeper-menu span {
     text-transform: uppercase;
     transition: all 200ms ease !important;
 }
 
 #footer-menu a.active-nav,
-#footer-menu a.active-nav span {
+#footer-menu a.active-nav span ,
+#footer-keeper-menu a.active-nav,
+#footer-keeper-menu a.active-nav span{
     font-weight: 700;
     color: #151e24;
 }
 
-.footer-menu-hidden {
+.footer-menu-hidden{
     transform: translateY(120px) !important;
 }
 
@@ -854,10 +872,12 @@ label a {
 
 /* login style */
 
-.form-login{
+.form-login,
+.form-signup{
     margin : 120px auto;
     padding : 20px;
 }
+
 
 .form-content{
     padding : 5px;
@@ -866,8 +886,21 @@ label a {
     margin-bottom: 10px;
 }
 
+.form-title{
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
 .form-click-content{
     text-align: center;
+}
+
+.form-click-content > label{
+    text-align: left;
+    margin-left: 2px;
+    vertical-align: middle;
+    font-size: 13px;
 }
 
 .form-login-btn{
@@ -875,14 +908,22 @@ label a {
     color : #fff;
     border-radius: 10px;
     background-color : skyblue;
-    width: 30%;
+    width: 100%;
     padding : 10px 5px;
-    margin : 0 auto;
+    margin : 10px auto;
     display: block;
 }
 
+.form-login-btn:hover{
+    cursor: pointer;
+    background-color: #91c4e5;
+}
 
-
+.form-check{
+    margin-right: 5px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
 
 .form-span {
     padding : 5px;
@@ -891,5 +932,15 @@ label a {
 }
 
 .input-text{
+    width: 90%;
     text-indent: 10px;
+}
+
+.form-link-signup{
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.form-link-signup:hover{
+    font-weight: bold;
 }
