@@ -9,6 +9,7 @@ import UsersettingPage from './lib/pages/UsersettingPage'
 import LoginPage from './lib/pages/LoginPage'
 import SignPage from './lib/pages/SignPage'
 import KeeperSettingPage from './lib/pages/KeeperSettingPage'
+import RegisterKeeperPage from './lib/pages/ResisterKeeperPage';
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
       <Route path="/login" component={LoginPage}/>
       <Route path="/signup" component={SignPage}/>
       <Route path="/keeper_setting" component={KeeperSettingPage}/>
+      <Route path="/register_keeper" component={RegisterKeeperPage}/>
     </>
   );
 }

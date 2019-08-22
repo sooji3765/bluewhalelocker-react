@@ -35,8 +35,7 @@ class MenuSettingComponent extends Component {
     return (
       <>
       <div id="menu-settings" className={menuSettingsClassName} data-menu-height="310" data-menu-effect="menu-over"
-          data-menu-height="310" data-menu-effect="menu-over" 
-          >
+          data-menu-height="310" data-menu-effect="menu-over" >
         <div className="content bottom-0">
           <div className="menu-title">
             <h1>Settings</h1>

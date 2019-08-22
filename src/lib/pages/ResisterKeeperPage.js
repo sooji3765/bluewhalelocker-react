@@ -1,18 +1,18 @@
 import React from 'react';
 
 import HeaderKeeperComponent from '../components/HeaderKeeperComponent';
-import KeeperSettingComponent from '../components/KeeperSettingComponent';
+import RegisterKeeperComponent from '../components/RegisterKeeperComponent';
 import FooterKeeperComponent from '../components/FooterKeeperComponent';
 
-const KeeperSettingPage = (props) => {
+const RegisterKeeperPage = (props) => {
  
   return (
     <>
       <HeaderKeeperComponent></HeaderKeeperComponent>
-      <KeeperSettingComponent></KeeperSettingComponent>
+      <RegisterKeeperComponent></RegisterKeeperComponent>
       <FooterKeeperComponent path="/keeper_setting"></FooterKeeperComponent>
     </>
   );
 };
 
-export default KeeperSettingPage;
+export default RegisterKeeperPage;
