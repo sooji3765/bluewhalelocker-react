@@ -58,7 +58,7 @@ class MapContainer extends Component {
     };
 
     const styleMap = {
-      width : "80%",
+      width : "90%",
       verticalAlign : "bottom"
     }
 

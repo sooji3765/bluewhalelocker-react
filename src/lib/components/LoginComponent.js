@@ -6,12 +6,12 @@ class LoginComponent extends Component{
             <>
             <div className="page-content header-clear-medium">
                 <div className="page-title">
-                    LOGIN
+                    <p className="page-title-content">LOGIN</p>
                 </div>
 
                 <div className="form-login">
                     <div className="form-content">
-                        <span className="form-span">ID</span>
+                        <span className="form-span"><i class="fas fa-user"></i></span>
                         <input
                             placeholder ="email" 
                             className="input-text"
@@ -20,7 +20,7 @@ class LoginComponent extends Component{
                     </div>
 
                     <div className="form-content">
-                        <span className="form-span">PASSWORD</span>
+                        <span className="form-span"><i class="fas fa-key"></i></span>
                         <input 
                             placeholder ="password" 
                             className="input-text"

@@ -518,6 +518,7 @@ label a {
 }
 
 .search-view {
+    padding: 8px;
     border-radius: 15px;
     display: block;
     z-index: inherit;
@@ -529,8 +530,9 @@ label a {
     display: inline-block;
     font-size: 20px;
     vertical-align: middle;
-    margin: 10px;
+    
     z-index: 10;
+    width: 10%;
     float: right;
 }
 
@@ -623,6 +625,7 @@ label a {
 }
 
 .page-title p {
+    margin-top : 20px;
     font-size: 20px;
     font-weight: 800;
     float: left;
@@ -633,6 +636,8 @@ label a {
 }
 
 .page-title::after {
+    content: '';
+    display: block;
     clear: both;
 }
 
@@ -847,8 +852,10 @@ label a {
 }
 
 
+/* login style */
+
 .form-login{
-    margin : 0 auto;
+    margin : 120px auto;
     padding : 20px;
 }
 
@@ -864,7 +871,25 @@ label a {
 }
 
 .form-login-btn{
-    width: 30px;
+    font-weight: 800;
+    color : #fff;
+    border-radius: 10px;
+    background-color : skyblue;
+    width: 30%;
+    padding : 10px 5px;
     margin : 0 auto;
     display: block;
+}
+
+
+
+
+.form-span {
+    padding : 5px;
+    font-size: 18px;
+    color: #91c4e5;
+}
+
+.input-text{
+    text-indent: 10px;
 }
