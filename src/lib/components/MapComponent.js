@@ -71,7 +71,7 @@ class MapContainer extends Component {
                   });
                 }
               }}
-              types={["(regions)"]}
+              types={[null]}
             />
 
             <span className="click-search">
@@ -90,6 +90,11 @@ class MapContainer extends Component {
               <Marker
                 onClick={this.onMarkerClick}
                 name={"Current location2"}
+                email={"이메일"}
+                phoneNumber={"010-0000-0000"}
+                address={"창원시 의창구"}
+                photo={"이미지"}
+                lockerCount={"10개"}
                 position={this.state.center}
               />
 
@@ -105,9 +110,16 @@ class MapContainer extends Component {
               >
                 <div>
                   <h1>{this.state.selectedPlace.name}</h1>
-                  <h1>
-                    공백공백공백공백공백공백공백공백공백공백공백공백공백공백
-                  </h1>
+                  <div>
+                    <div>{this.state.selectedPlace.email}</div>
+                    <div>{this.state.selectedPlace.phoneNumber}</div>
+                    <div>{this.state.selectedPlace.address}</div>
+                    <div>{this.state.selectedPlace.photo}</div>
+                    <div>{this.state.selectedPlace.lockerCount}</div>
+                    <div>
+                      공백공백공백공백공백공백공백공백공백공백공백공백공백공백
+                    </div>
+                  </div>
                 </div>
               </InfoWindow>
             </Map>
