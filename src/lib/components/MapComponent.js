@@ -68,6 +68,7 @@ class MapContainer extends Component {
                 console.log(place);
               }}
               types={["(regions)"]}
+
               // componentRestrictions={{ country: "ru" }}
             />
 
