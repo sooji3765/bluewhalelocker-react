@@ -16,6 +16,7 @@ class MapContainer extends Component {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
+    zoom: 15,
     center: {
       lat: 37.5434348,
       lng: 126.9499267
@@ -64,6 +65,7 @@ class MapContainer extends Component {
                   console.log(place.geometry.location.lat());
                   console.log(place.geometry.location.lng());
                   this.setState({
+                    zoom: 20,
                     center: {
                       lat: place.geometry.location.lat(),
                       lng: place.geometry.location.lng()
@@ -85,7 +87,7 @@ class MapContainer extends Component {
               google={this.props.google}
               initialCenter={this.state.center}
               center={this.state.center}
-              zoom={15}
+              zoom={this.state.zoom}
             >
               <Marker
                 onClick={this.onMarkerClick}
