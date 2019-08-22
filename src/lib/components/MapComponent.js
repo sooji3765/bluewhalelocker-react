@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Autocomplete from "react-google-autocomplete";
+
 import {
   Map,
   GoogleApiWrapper,
@@ -59,10 +61,19 @@ class MapContainer extends Component {
       <>
         <div className="page-content header-clear-medium">
           <div className="search-view">
-            <input type="text" className="search-input" />
-            <span className="click-search">
+            {/* <input type="text" className="search-input" /> */}
+            <Autocomplete
+              style={{ width: "90%" }}
+              onPlaceSelected={place => {
+                console.log(place);
+              }}
+              types={["(regions)"]}
+              // componentRestrictions={{ country: "ru" }}
+            />
+
+            {/* <span className="click-search">
               <i className="fa fa-search" />
-            </span>
+            </span> */}
           </div>
 
           <div className="map-content">
@@ -72,10 +83,14 @@ class MapContainer extends Component {
               initialCenter={center}
               zoom={8}
             >
-              <Marker onClick={this.onMarkerClick} name={"Current location"} />
+              <Marker
+                onClick={this.onMarkerClick}
+                name={"Current location"}
+                position={{ lat: 37.762391, lng: -122.439192 }}
+              />
+              <Marker onClick={this.onMarkerClick} name={"Current location2"} />
 
               <InfoWindow
-                // onOpen={this.onMarkerClick}
                 marker={this.state.activeMarker}
                 onClose={this.windowHasClosed}
                 visible={this.state.showingInfoWindow}
@@ -95,6 +110,6 @@ class MapContainer extends Component {
   }
 }
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyBNfdF_uHYQT0Jn8czh4R10flxH8x3G95k",
+  apiKey: "AIzaSyAhHkFo-bYv_U9iLedicra9em2FpndEJS0",
   v: "3"
 })(MapContainer);
