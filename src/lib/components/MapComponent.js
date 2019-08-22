@@ -57,13 +57,18 @@ class MapContainer extends Component {
       minHeight: "1000px"
     };
 
+    const styleMap = {
+      width : "80%",
+      verticalAlign : "bottom"
+    }
+
     return (
       <>
         <div className="page-content header-clear-medium">
           <div className="search-view">
             {/* <input type="text" className="search-input" /> */}
             <Autocomplete
-              style={{ width: "90%" }}
+              style={styleMap}
               onPlaceSelected={place => {
                 console.log(place);
               }}
@@ -71,9 +76,9 @@ class MapContainer extends Component {
               // componentRestrictions={{ country: "ru" }}
             />
 
-            {/* <span className="click-search">
+            <span className="click-search">
               <i className="fa fa-search" />
-            </span> */}
+            </span>
           </div>
 
           <div className="map-content">

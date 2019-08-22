@@ -539,6 +539,8 @@ label a {
 }
 
 .search-view::after {
+    content :'';
+    display: block;
     clear: both;
 }
 
