@@ -215,7 +215,7 @@ label a {
 
 
 #menu-settings {
-    height: 310px;
+    min-height: 310px;
     display: block;
 }
 
@@ -287,7 +287,7 @@ label a {
     z-index: 95;
 }
 
-#footer-keeper-menu{
+#footer-keeper-menu {
     background-color: #189ad3;
 }
 
@@ -301,12 +301,12 @@ label a {
     transition: all 350ms ease;
 }
 
-#footer-keeper-menu a{
+#footer-keeper-menu a {
     width: 25%;
 }
 
 #footer-menu a span,
-#footer-keeper-menu a span  {
+#footer-keeper-menu a span {
     color: #fff;
     position: absolute;
     left: 0px;
@@ -317,14 +317,14 @@ label a {
     padding-top: 32px;
 }
 
-#footer-menu a i ,
-#footer-keeper-menu a i{
+#footer-menu a i,
+#footer-keeper-menu a i {
     padding-top: 15px;
     font-size: 18px;
 }
 
-#footer-menu a ,
-#footer-keeper-munu a{
+#footer-menu a,
+#footer-keeper-munu a {
     transition: all 200ms ease !important;
 }
 
@@ -335,7 +335,7 @@ label a {
 }
 
 #footer-menu i,
-#footer-keeper-menu i{
+#footer-keeper-menu i {
     transition: all 200ms ease !important;
 }
 
@@ -346,14 +346,14 @@ label a {
 }
 
 #footer-menu a.active-nav,
-#footer-menu a.active-nav span ,
+#footer-menu a.active-nav span,
 #footer-keeper-menu a.active-nav,
-#footer-keeper-menu a.active-nav span{
+#footer-keeper-menu a.active-nav span {
     font-weight: 700;
     color: #151e24;
 }
 
-.footer-menu-hidden{
+.footer-menu-hidden {
     transform: translateY(120px) !important;
 }
 
@@ -548,7 +548,7 @@ label a {
     display: inline-block;
     font-size: 20px;
     vertical-align: middle;
-    
+
     z-index: 10;
     width: 10%;
     float: right;
@@ -559,7 +559,7 @@ label a {
 }
 
 .search-view::after {
-    content :'';
+    content: '';
     display: block;
     clear: both;
 }
@@ -643,7 +643,7 @@ label a {
 }
 
 .page-title p {
-    margin-top : 20px;
+    margin-top: 20px;
     font-size: 20px;
     font-weight: 800;
     float: left;
@@ -855,92 +855,98 @@ label a {
 }
 
 .style2_menu_setting {
-    height: 310px; opacity: 1; display: block;
+    height: 310px;
+    opacity: 1;
+    display: block;
 }
+
 .style2_menu_span {
     line-height: 24px;
 }
 
 .style2_menu_strong {
-    width: 27px; height: 27px; right: 23px;
+    width: 27px;
+    height: 27px;
+    right: 23px;
 }
 
 .style2_menu_u {
-    width: 50px; height: 27px;
+    width: 50px;
+    height: 27px;
 }
 
 
 /* login style */
 
 .form-login,
-.form-signup{
-    margin : 120px auto;
-    padding : 20px;
+.form-signup {
+    margin: 120px auto;
+    padding: 20px;
 }
 
 
-.form-content{
-    padding : 5px;
+.form-content {
+    padding: 5px;
     border-radius: 10px;
     border: 1px solid #e4e4e4;
     margin-bottom: 10px;
 }
 
-.form-title{
+.form-title {
     font-weight: 800;
     font-size: 18px;
     margin-bottom: 15px;
 }
 
-.form-click-content{
+.form-click-content {
     text-align: center;
 }
 
-.form-click-content > label{
+.form-click-content>label {
     text-align: left;
     margin-left: 2px;
     vertical-align: middle;
     font-size: 13px;
 }
 
-.form-login-btn{
+.form-login-btn {
     font-weight: 800;
-    color : #fff;
+    color: #fff;
     border-radius: 10px;
-    background-color : skyblue;
+    background-color: skyblue;
     width: 100%;
-    padding : 10px 5px;
-    margin : 10px auto;
+    padding: 10px 5px;
+    margin: 10px auto;
     display: block;
 }
 
-.form-login-btn:hover{
+.form-login-btn:hover {
     cursor: pointer;
     background-color: #91c4e5;
 }
 
-.form-check{
+.form-check {
     margin-right: 5px;
     margin-bottom: 10px;
     font-size: 17px;
 }
 
 .form-span {
-    padding : 5px;
+    padding: 5px;
     font-size: 18px;
     color: #91c4e5;
 }
 
-.input-text{
+.input-text {
     width: 90%;
     text-indent: 10px;
 }
 
-.form-link-signup{
+.form-link-signup {
     margin-top: 5px;
     font-size: 14px;
 }
 
-.form-link-signup:hover{
+.form-link-signup:hover {
     font-weight: bold;
 }

@@ -16,6 +16,7 @@ class MapContainer extends Component {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
+    zoom: 15,
     center: {
       lat: 37.5434348,
       lng: 126.9499267
@@ -64,6 +65,7 @@ class MapContainer extends Component {
                   console.log(place.geometry.location.lat());
                   console.log(place.geometry.location.lng());
                   this.setState({
+                    zoom: 20,
                     center: {
                       lat: place.geometry.location.lat(),
                       lng: place.geometry.location.lng()
@@ -71,7 +73,7 @@ class MapContainer extends Component {
                   });
                 }
               }}
-              types={["(regions)"]}
+              types={[null]}
             />
 
             <span className="click-search">
@@ -85,11 +87,16 @@ class MapContainer extends Component {
               google={this.props.google}
               initialCenter={this.state.center}
               center={this.state.center}
-              zoom={15}
+              zoom={this.state.zoom}
             >
               <Marker
                 onClick={this.onMarkerClick}
                 name={"Current location2"}
+                email={"이메일"}
+                phoneNumber={"010-0000-0000"}
+                address={"창원시 의창구"}
+                photo={"이미지"}
+                lockerCount={"10개"}
                 position={this.state.center}
               />
 
@@ -105,9 +112,16 @@ class MapContainer extends Component {
               >
                 <div>
                   <h1>{this.state.selectedPlace.name}</h1>
-                  <h1>
-                    공백공백공백공백공백공백공백공백공백공백공백공백공백공백
-                  </h1>
+                  <div>
+                    <div>{this.state.selectedPlace.email}</div>
+                    <div>{this.state.selectedPlace.phoneNumber}</div>
+                    <div>{this.state.selectedPlace.address}</div>
+                    <div>{this.state.selectedPlace.photo}</div>
+                    <div>{this.state.selectedPlace.lockerCount}</div>
+                    <div>
+                      공백공백공백공백공백공백공백공백공백공백공백공백공백공백
+                    </div>
+                  </div>
                 </div>
               </InfoWindow>
             </Map>
