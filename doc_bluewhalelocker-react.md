@@ -11,6 +11,7 @@ src
     containers : 컨테이너들
     pages : 라우팅 페이지들
     store : 설정 파일들
+    info : 정보 파일들
 ~~~
 
 ### components

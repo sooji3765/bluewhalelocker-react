@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import MyInfo from '../info/MyInfo';
+
 class UsersettingComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleSignIn = this.handleSignIn.bind(this);
+  }
+
+  handleSignIn = (e) => {
+    e.preventDefault();
+    MyInfo.setSignOut();
+    window.location.href = "/";
+  };
 
   render() {
 
     const userInfo = {
-      user_id: "USER1",
-      user_name: "HAYONG",
-    }
-
+      ...this.props.userInfo
+    };
+    
     const site = {
       login : "login"
     }
@@ -68,7 +80,7 @@ class UsersettingComponent extends Component {
                 </a>
               </li>
               <li>
-                <Link to="/login">
+                <Link to="/login" onClick={this.handleSignIn}>
                 
                   <i className="fa fa-power-off color-red"></i>
                   <span>Login</span>

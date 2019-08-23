@@ -1,7 +1,20 @@
 import React ,{ Component } from 'react';
 import PageMainComponent from './PageMainComponent';
+import MyInfo from '../info/MyInfo';
 
 class SignupComponent extends Component{
+
+    constructor(props) {
+        super(props);
+        this.handleSignIn = this.handleSignUp.bind(this);
+      }
+
+    handleSignUp = (e) => {
+        e.preventDefault();
+        MyInfo.setSignUp();
+        window.location.href = "/";
+    };
+
     render(){
         return (
            <>
@@ -50,6 +63,7 @@ class SignupComponent extends Component{
                      
                         <button 
                             className="form-login-btn"
+                            onClick={this.handleSignUp}
                         >REGISTER</button>
                     </div> 
                    </div>

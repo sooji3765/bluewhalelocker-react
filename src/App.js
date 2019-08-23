@@ -10,21 +10,41 @@ import LoginPage from "./lib/pages/LoginPage";
 import SignPage from "./lib/pages/SignPage";
 import KeeperSettingPage from "./lib/pages/KeeperSettingPage";
 import RegisterKeeperPage from "./lib/pages/ResisterKeeperPage";
+import MyInfo from "./lib/info/MyInfo";
 import KeeperInfoPage from "./lib/pages/KeeperInfoPage";
 
 const App = () => {
+  const profile = MyInfo.getProfile("profile");
+  const state = {
+    props: {
+      isSignIn: false
+    },
+    ...profile
+  };
+
   return (
     <>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/likeList" component={LikeListPage} />
-      <Route path="/reservationList" component={ReservationList} />
-      <Route path="/chat" component={ChatPage} />
-      <Route path="/usersetting" component={UsersettingPage} />
+      {!state.props.isSignIn && (
+        <>
+          <Route exact path="/" component={LoginPage} />
+        </>
+      )}
+      {state.props.isSignIn && (
+        <>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/likeList" component={LikeListPage} />
+          <Route path="/reservationList" component={ReservationList} />
+          <Route path="/chat" component={ChatPage} />
+          <Route path="/usersetting" component={UsersettingPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignPage} />
+          <Route path="/keeper_setting" component={KeeperSettingPage} />
+          <Route path="/register_keeper" component={RegisterKeeperPage} />
+          <Route path="/keeper_info" component={KeeperInfoPage} />
+        </>
+      )}
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignPage} />
-      <Route path="/keeper_setting" component={KeeperSettingPage} />
-      <Route path="/register_keeper" component={RegisterKeeperPage} />
-      <Route path="/keeper_info" component={KeeperInfoPage} />
     </>
   );
 };
