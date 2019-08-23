@@ -41,6 +41,7 @@ class KeeperInfoPage extends Component {
       //   fontSize: "40px",
       marginTop: "10px",
       display: "block",
+      fontSize: "15px",
       background: "red",
       margin: "10px"
     };
@@ -48,7 +49,14 @@ class KeeperInfoPage extends Component {
     const mapStyle = {
       background: "yellow",
       margin: "10px",
-      height: "100px"
+      height: "300px",
+      color: "black",
+      fontSize: "30px"
+    };
+
+    const buttonStyle = {
+      height: "50px",
+      width: "120px"
     };
     return (
       <>
@@ -68,10 +76,13 @@ class KeeperInfoPage extends Component {
               <div style={liStyle}>
                 전화번호 <img src="../img/store2.jpg" style={imgStyle2} />
               </div>
-              <button>
+              <button style={buttonStyle}>
                 <a href="../pages/ChatPage.js">예약</a>
               </button>
-              <div style={mapStyle} />
+              <div style={mapStyle}>
+                <h1>Map</h1>
+              </div>
+              />
             </div>
           </div>
         </div>
