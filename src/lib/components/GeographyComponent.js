@@ -10,6 +10,12 @@ class Demo extends React.Component {
     ) : this.props.coords ? (
       <table>
         <tbody>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <tr>
             <td>latitude</td>
             <td>{this.props.coords.latitude}</td>

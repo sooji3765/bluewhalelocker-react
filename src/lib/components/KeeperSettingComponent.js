@@ -1,25 +1,20 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class KeeperSettingComponent extends Component {
-
   render() {
-
     const userInfo = {
       user_id: "USER1",
-      user_name: "HAYONG",
-    }
-
-
+      user_name: "HAYONG"
+    };
 
     return (
       <>
-      <div className="page-content header-clear-medium">
-        <div className="content-box box-padding">
-          <div className="profile">
-
-            <img className="profile-img" src="img/user2.png" alt="user2"/>
-
+        <div className="page-content header-clear-medium">
+          <div className="content-box box-padding">
+            <div className="profile">
+              <img className="profile-img" src="img/user2.png" alt="user2" />
+              </div>
             <div className="profile-body">
               <h2 className="userid">{userInfo.user_id}</h2>
               <span className="user-name">{userInfo.user_name}</span>
@@ -77,7 +72,6 @@ class KeeperSettingComponent extends Component {
             </ul>
           </div>
         </div>
-      </div>      
       </>
     );
   }
