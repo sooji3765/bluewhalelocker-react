@@ -54,9 +54,13 @@ class KeeperInfoPage extends Component {
       fontSize: "30px"
     };
 
+    const buttonOuterStyle = {
+      display: "inline"
+    };
     const buttonStyle = {
       height: "50px",
-      width: "120px"
+      width: "120px",
+      margin: "10px"
     };
     return (
       <>
@@ -76,13 +80,18 @@ class KeeperInfoPage extends Component {
               <div style={liStyle}>
                 전화번호 <img src="../img/store2.jpg" style={imgStyle2} />
               </div>
-              <button style={buttonStyle}>
-                <a href="../pages/ChatPage.js">예약</a>
-              </button>
+              <div style={liStyle}>남은라커수/총라커수</div>
+              <div style={buttonOuterStyle}>
+                <button style={buttonStyle}>
+                  <a href="../pages/ChatPage.js">채팅</a>
+                </button>
+                <button style={buttonStyle}>
+                  <a href="../pages/ChatPage.js">예약</a>
+                </button>
+              </div>
               <div style={mapStyle}>
                 <h1>Map</h1>
               </div>
-              />
             </div>
           </div>
         </div>
