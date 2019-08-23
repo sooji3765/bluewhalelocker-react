@@ -1087,10 +1087,14 @@ label a {
     margin-left: 5px;
     text-transform: uppercase;
 }
-.locket-input-text{
+.locker-input-text{
+    display: block;
     padding: 2px 8px;
     min-height: 38px;
     width: 100%;
     border-radius: 4px;
     border: 1px solid hsl(0,0%,80%);
+}
+.locker-btn-register{
+    width: 100%;
 }
