@@ -5,6 +5,7 @@ import MapComponent from "../components/MapComponent";
 import FooterComponent from "../components/FooterComponent";
 import MenuSettingComponent from "../components/MenuSettingComponent";
 import GeographyComponent from "../components/GeographyComponent";
+
 const HomePage = props => {
   return (
     <>

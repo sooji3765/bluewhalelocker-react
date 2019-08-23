@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Autocomplete from "react-google-autocomplete";
-import { geolocated } from "react-geolocated";
+import { GeolocatedProps, geolocated } from "react-geolocated";
 
 import {
   Map,
@@ -20,6 +20,8 @@ class MapContainer extends Component {
     center: {
       lat: 37.5434348,
       lng: 126.9499267
+      // lat: this.props.coords && this.props.coords.latitude,
+      // lng: this.props.coords && this.props.coords.longitude
     }
   };
 
@@ -30,6 +32,8 @@ class MapContainer extends Component {
       showingInfoWindow: true
     });
     console.log("클릭했음");
+    console.log("test", this.props.coords && this.props.coords.latitude);
+    console.log("test2", this.props.coords && this.props.coords.longitude);
   };
 
   windowHasClosed = () => {
@@ -105,6 +109,7 @@ class MapContainer extends Component {
                 name={"Current location"}
                 position={{ lat: 37.762391, lng: -122.439192 }}
               />
+
               <InfoWindow
                 marker={this.state.activeMarker}
                 onClose={this.windowHasClosed}
