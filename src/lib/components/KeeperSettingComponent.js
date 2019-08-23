@@ -14,7 +14,7 @@ class KeeperSettingComponent extends Component {
           <div className="content-box box-padding">
             <div className="profile">
               <img className="profile-img" src="img/user2.png" alt="user2" />
-              </div>
+             
             <div className="profile-body">
               <h2 className="userid">{userInfo.user_id}</h2>
               <span className="user-name">{userInfo.user_name}</span>
@@ -71,6 +71,7 @@ class KeeperSettingComponent extends Component {
               </li>
             </ul>
           </div>
+        </div>
         </div>
       </>
     );
