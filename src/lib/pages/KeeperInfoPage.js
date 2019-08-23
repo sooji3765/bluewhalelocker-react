@@ -58,12 +58,18 @@ class KeeperInfoPage extends Component {
       height: "50px",
       width: "120px"
     };
+
+    const h1Style ={
+      display : "inline-block",
+      verticalAlign :"middle",
+      lineHeight : "300px"
+    }
     return (
       <>
         <HeaderComponent />
         <div className="page-content header-clear-medium">
           <div style={outerStyle}>
-            <img src="../img/store1.jpg" style={imgStyle} />
+            <img src="../img/store1.jpg" alt="store_img" style={imgStyle} />
             <div style={outerStyle2}>
               <div style={liStyle}>
                 <i className="far fa-star" />
@@ -74,15 +80,15 @@ class KeeperInfoPage extends Component {
               </div>
               <div style={liStyle}>상호명 </div>
               <div style={liStyle}>
-                전화번호 <img src="../img/store2.jpg" style={imgStyle2} />
+                전화번호 <img src="../img/store2.jpg" alt="store2" style={imgStyle2} />
               </div>
               <button style={buttonStyle}>
                 <a href="../pages/ChatPage.js">예약</a>
               </button>
               <div style={mapStyle}>
-                <h1>Map</h1>
+                <h1 style={h1Style}>Map</h1>
               </div>
-              />
+            
             </div>
           </div>
         </div>
