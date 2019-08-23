@@ -7,7 +7,7 @@ class FooterKeeperComponent extends Component {
   }
 
   path = {
-    "/": "",
+    "/add_locker": "",
     "/likeList": "",
     "/reservationList": "",
     "/chat": "",
@@ -33,7 +33,7 @@ class FooterKeeperComponent extends Component {
     return (
       <>
       <div id="footer-keeper-menu">
-        <a href="/" className={this.path["/"]}><i className="fas fa-plus"></i><span>ADD</span>
+        <a href="/add_locker" className={this.path["/add_locker"]}><i className="fas fa-plus"></i><span>ADD</span>
         </a>
         <a href="/likeList" className={this.path["/likeList"]}><i className="fa fa-heart"></i><span>My Locker</span>
         </a>
