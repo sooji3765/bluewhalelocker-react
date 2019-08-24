@@ -91,7 +91,7 @@ class KeeperInfoComponent extends Component {
                   <a href="../pages/ChatPage.js">채팅(아이콘)</a>
                 </button>
                 <button style={buttonStyle}>
-                  <a href="../pages/ChatPage.js">예약(이쁜 글씨)</a>
+                  <a href="/reservation">예약(이쁜 글씨)</a>
                 </button>
               </div>
               <div style={mapStyle}>
