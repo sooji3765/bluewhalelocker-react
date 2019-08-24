@@ -1174,6 +1174,11 @@ label a {
     border: 1px solid hsl(0,0%,80%);
 }
 
+.keeper-btn-reservation:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .keeper-info-detail{
     margin : 10px auto;
     padding-bottom: 10px;
