@@ -101,6 +101,63 @@ class RegisterKeeperComponent extends Component{
                             <input type="file" onChange={this.onChange} />
                         </div>
                         <div className="form-container">
+                            <div className="radio-group">
+                                <div className="radio-item">
+                                <label>General</label>
+                                <input 
+                                  type="radio"
+                                  value="free"
+                                  />
+                                  </div>
+                                  <div className="radio-item"> 
+                                   <label>Business</label>
+                                <input 
+                                  type="radio"
+                                  value="free"
+                                  />
+                                  </div>
+                              </div>
+                        </div>
+                        <div className="form-container-business">
+                            <div className="form-container">
+                            <TextField
+                                id="standard-full-width"
+                                label="Business Number"
+                                placeholder="Placeholder"
+                                fullWidth
+                                margin="normal"
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            />
+                            </div>
+                            <div className="form-container">
+                            <TextField
+                                id="standard-full-width"
+                                label="Business Name"
+                                placeholder="Placeholder"
+                                fullWidth
+                                margin="normal"
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            />
+                            </div>
+                            <div className="form-container">
+                            <TextField
+                                id="standard-full-width"
+                                label="Business Phone"
+                                placeholder="Placeholder"
+                                fullWidth
+                                margin="normal"
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            />
+                            </div>
+                        </div>        
+
+                        <div className="form-container">
                             <Button variant="outlined" color="default" className="locker-btn-register">REGISTER</Button>
                         </div>
                         
