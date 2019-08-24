@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import { height } from "@material-ui/system";
+import Calendar from "react-calendar";
 
 class LockerReservationComponent extends Component {
+  state = {
+    date: new Date()
+  };
+
+  //   onDateChange = date => {
+  //     this.setState({
+  //       date: moment(date).format("YYYY-MM-DD")
+  //     });
+  //   };
+
   render() {
     const headLineStyle = {
       textAlign: "center",
@@ -33,11 +44,15 @@ class LockerReservationComponent extends Component {
       height: "300px",
       boder: "1px solid black",
       margin: "10px",
-      background: "orange"
+      background: "orange",
+      borderRadius: "100%"
     };
     const calendarStyle = {
       background: "pink",
       height: "400px"
+    };
+    const tStyle = {
+      margin: "10px"
     };
     return (
       <>
@@ -46,15 +61,20 @@ class LockerReservationComponent extends Component {
             <div style={headLineStyle}>LOCKER RESERVATION</div>
             <div style={outerStyle}>
               <div>
-                <div>하영이 카페</div>
+                <div style={tStyle}>young's cafe</div>
                 <div>공덕 어쩌구 저쩌구</div>
-                <div>Keeper : 하영</div>
+                <div>Keeper : hayoung</div>
               </div>
             </div>
             <div style={outerStyle2}>
               <img src="../img/store1.jpg" alt="store_img" style={imgStyle} />
             </div>
-            <div style={calendarStyle} />
+            {/* <div style={calendarStyle} /> */}
+            <Calendar
+              //   className={classes.calendar}
+              onChange={this.onDateChange}
+              value={this.state.date}
+            />
           </div>
         </div>
       </>
