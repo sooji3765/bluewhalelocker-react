@@ -1,11 +1,7 @@
 import React ,{Component} from 'react'
 import Select from 'react-select'
 import Button from '@material-ui/core/Button';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+
 
 class InputLockerComponent extends Component{
 
@@ -16,6 +12,12 @@ class InputLockerComponent extends Component{
       { value:"large" ,label :"Large"},
       { value:"medium" ,label :"Medium"},
       { value:"small" ,label :"Small"}     
+    ]
+
+    const prices =[
+      { value:"3,000" ,label :"3,000"},
+      { value:"2,000" ,label :"2,000"},
+      { value:"1,000" ,label :"1,000"}     
     ]
 
     // const [value, setValue] = React.useState('female');
@@ -35,14 +37,13 @@ class InputLockerComponent extends Component{
                     <div className="form-input-locker">
                         <form>
                             <div className="form-locker-div">
-                            <FormControl component="fieldset">
-                              <FormLabel component="legend">Select Locker Charge</FormLabel>
+                            <label for="locker_size">Locker Number</label>
                               <input
                                     className="locker-input-text"
                                     type="text"
                                     placeholder="lockerNumber"
                                   />
-                                  </FormControl>
+                                  
                             </div>
                             <div className="form-locker-div">
                               <label for="locker_size">Locker Size</label>
@@ -51,34 +52,38 @@ class InputLockerComponent extends Component{
                             <div className="form-locker-div">
                               <label for="locker_num">Locker Number</label>
                               <input
-                                    className="locket-input-text"
+                                    className="locker-input-text"
                                     type="text"
                                     placeholder="lockerNumber"
                                   />
                             </div>
                             <div className="form-locker-div"> 
-                            <FormControl component="fieldset">
-                              <FormLabel component="legend">Select Locker Charge</FormLabel>
-                              <RadioGroup aria-label="position" name="position"  row>
-                                
-                                <FormControlLabel
-                                  // value="start1"
-                                  control={<Radio color="primary" />}
-                                  label="Free"
-                                  labelPlacement="start"
-                                />
-                                <FormControlLabel
-                                  // value="start2"
-                                  control={<Radio color="primary" />}
-                                  label="Charge"
-                                  labelPlacement="start"
-                                />
-                              </RadioGroup>
-                            </FormControl>
+                              <label for="locker_num">Select Locker Charge</label>
+                              <div className="radio-group">
+                                <div className="radio-item">
+                                <label>Free</label>
+                                <input 
+                                  type="radio"
+                                  value="free"
+                                  />
+                                  </div>
+                                  <div className="radio-item"> 
+                                   <label>Charge</label>
+                                <input 
+                                  type="radio"
+                                  value="free"
+                                  />
+                                  </div>
+                              </div>
                             </div>
 
                             <div className="form-locker-div">
-                              <Button variant="outlined" color="primary" className="locker-btn-register">REGISTER LOCKER</Button>
+                              <label for="locker_size">Locker Price</label>
+                              <Select options={prices}></Select>
+                            </div>
+
+                            <div className="form-locker-div">
+                              <Button variant="outlined" color="default" className="locker-btn-register">REGISTER LOCKER</Button>
                             </div>
                            
                         </form>

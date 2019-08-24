@@ -1082,6 +1082,27 @@ label a {
     width: 100%;
 }
 
+.radio-group{
+    margin-left: 5px;    
+}
+
+.radio-item{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.radio-item > label{
+    display: inline;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.radio-item > input[type="radio"]{
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+
 /* KEEPER INFO COMPONENT */
 
 .keeper-info-page{
