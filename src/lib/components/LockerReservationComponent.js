@@ -69,12 +69,13 @@ class LockerReservationComponent extends Component {
             <div style={outerStyle2}>
               <img src="../img/store1.jpg" alt="store_img" style={imgStyle} />
             </div>
-            {/* <div style={calendarStyle} /> */}
-            <Calendar
-              //   className={classes.calendar}
-              onChange={this.onDateChange}
-              value={this.state.date}
-            />
+            <div style={calendarStyle}>
+              <Calendar
+                //   className={classes.calendar}
+                onChange={this.onDateChange}
+                value={this.state.date}
+              />
+            </div>
           </div>
         </div>
       </>
