@@ -603,12 +603,9 @@ label a {
 
 .search-view span {
     color: #666666;
-    display: inline-block;
+    display: block;
     font-size: 20px;
-    vertical-align: middle;
-
     z-index: 10;
-    width: 10%;
     float: right;
 }
 
@@ -845,19 +842,6 @@ label a {
     background: none;
 }
 
-/* .btn-chat:first-child {
-    margin-left: 10px;
-    float: left;
-}
-
-.btn-chat:last-child {
-    float: right;
-    margin-right: 10px;
-}
-
-.input-content::after {
-    clear: both;
-} */
 
 
 /* store */
@@ -881,7 +865,6 @@ label a {
     width: 100%;
     text-align: center;
 }
-
 
 
 /* Fading animation */
@@ -1097,4 +1080,140 @@ label a {
 }
 .locker-btn-register{
     width: 100%;
+}
+
+/* KEEPER INFO COMPONENT */
+
+.keeper-info-page{
+    text-align: center;
+}
+
+.keeper-photo{
+    width: 100%;
+    height: 300px;
+}
+
+.keeper-info-content{
+    margin : 10px auto;
+    padding: 20px;
+}
+
+.keeper-info-score-div{
+    font-size: 15px;
+    color: #ffd700;
+}
+.keeper-info-use{
+    margin-left: 5px;
+    font-weight: 700;
+    color: #151e24;
+}
+
+.keeper-info-profile{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(228, 228, 228);    
+}
+.keeper-info-profile::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.keeper-name{
+    float: left;
+}
+.keeper-names{
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.keeper-profile-img{
+    width: 50px;
+    float: right;
+}
+
+.use-locker-now{
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom : 10px;
+    color: hsl(0,0%,80%);
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid hsl(0,0%,80%);
+}
+
+.keeper-info-detail{
+    margin : 10px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(228, 228, 228); 
+}
+
+.keeper-info-div{
+    padding: 5px 10px;
+}
+.keeper-info-div::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.info-icon{
+    float: left;
+}
+
+.info-detail{
+    margin-left:20px; 
+    float: left;
+}
+
+/* .keeper-review{
+    border-top: 1px solid rgb(228, 228, 228);
+} */
+.review-title{
+    font-weight: 800;
+    line-height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.review-item{
+    padding: 10px 10px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+.review-item:last-child{
+    border-bottom: none;
+}
+
+.btn-group{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.review-writer::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.review-writer-img{
+    border-radius: 50%;
+    float: left;
+    height: 50px; 
+}
+.review-writer-info{
+    margin-left: 20px;
+    float: left;
+}
+.review-in{
+    margin-top: 5px;
+    text-align: left;
+}
+
+.keeper-location{
+    margin : 5px 5px;
+    border-radius: 4px;
+    border : 1px solid hsl(0,0%,80%);
+    height: 200px;
 }
