@@ -4,6 +4,7 @@ import HeaderComponent from "../components/HeaderComponent";
 import MapComponent from "../components/MapComponent";
 import FooterComponent from "../components/FooterComponent";
 import MenuSettingComponent from "../components/MenuSettingComponent";
+import PageMainComponent from '../components/PageMainComponent';
 import GeographyComponent from "../components/GeographyComponent";
 import MyInfo from "../info/MyInfo";
 
@@ -14,6 +15,7 @@ const HomePage = props => {
       <HeaderComponent {...profile.state.header} />
       <MapComponent />
       {/* <GeographyComponent /> */}
+      <PageMainComponent/>
       <FooterComponent path="/" />
       <MenuSettingComponent />
     </>

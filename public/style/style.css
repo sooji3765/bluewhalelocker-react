@@ -1254,3 +1254,24 @@ label a {
     border : 1px solid hsl(0,0%,80%);
     height: 200px;
 }
+
+.register-keeper-page{
+    padding: 10px;
+}
+.register-keeper-title{
+    font-weight: 800;
+    margin: 16px auto;
+    font-size: 20px;
+}
+
+.register-keeper-form{
+    margin: 20px auto;
+}
+
+.register-textfield{
+    width: 100%;
+}
+
+.form-container{
+    margin-bottom: 10px;
+}

@@ -1,58 +1,112 @@
 import React ,{ Component } from 'react';
+import 'date-fns';
 import PageMainComponent from './PageMainComponent';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
 
 class RegisterKeeperComponent extends Component{
-    render(){
+
+    
+    render = () => {
+
+        // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+        // function handleDateChange(date) {
+        //     setSelectedDate(date);
+        // }
+
         return (
            <>
            <div className="page-content header-clear-medium color-white">
-               <form>
-                   <div className="form-signup">
-                       <div className="form-title">
-                            REGISTER KEEPER
-                        </div>
-                        <div className="form-content">
-                        <span className="form-span"><i class="fas fa-user"></i></span>
-                        <input
-                            placeholder ="email" 
-                            className="input-text"
-                            name ="email"
-                            />
-                         </div>
+               <div className="register-keeper-page">
+                <div className="register-keeper-title">
+                    KEEPER REGISTER
+                </div>
 
-                         <div className="form-content">
-                            <span className="form-span"><i class="fab fa-amilia"></i></span>
-                            <input 
-                                placeholder ="name" 
-                                className="input-text"
-                                name ="name"
-                                />
+                <div className="register-keeper-form">
+                    <form>
+                        <div className="form-container">
+                        <TextField
+                            id="standard-full-width"
+                            label="Name"
+                            placeholder="Placeholder"
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        />
                         </div>
-
-                    <div className="form-content">
-                        <span className="form-span"><i class="fas fa-key"></i></span>
-                        <input 
-                            placeholder ="password" 
-                            className="input-text"
-                            name ="password"
+                        <div className="form-container">
+                        <TextField
+                            id="standard-full-width"
+                            label="Tel"
+                            placeholder="Placeholder"
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        />
+                        </div>
+                        <div className="form-container">
+                        <TextField
+                            id="standard-full-width"
+                            label="Phone"
+                            placeholder="Placeholder"
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        />
+                        </div>
+                        <div className="form-container">
+                        <MuiPickersUtilsProvider utils={DateFnsUtils}>   
+                        <KeyboardDatePicker
+                            disableToolbar
+                            variant="inline"
+                            format="MM/dd/yyyy"
+                            margin="normal"
+                            className="register-textfield"
+                            id="date-picker-inline"
+                            label="Date of Birth"
+                            // value={selectedDate}
+                            // onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                                'aria-label': 'change date',
+                            }}
                             />
-                    </div> 
-                    <div className="form-content">
-                        <span className="form-span"><i class="fas fa-key"></i></span>
-                        <input 
-                            placeholder ="password check" 
-                            className="input-text"
-                            name ="password-re"
-                            />
-                    </div>
-                    
-                    <div className="form-click-content">
-                        <button 
-                            className="form-login-btn"
-                        >REGISTER</button>
-                    </div> 
-                   </div>
-               </form>
+                            </MuiPickersUtilsProvider>
+                        </div>
+                        <div className="form-container">
+                        <TextField
+                            id="standard-full-width"
+                            label="Location"
+                            placeholder="Placeholder"
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        />
+                        </div>
+                        <div className="form-container">
+                            <input type="file" onChange={this.onChange} />
+                        </div>
+                        <div className="form-container">
+                            <Button variant="outlined" color="default" className="locker-btn-register">REGISTER</Button>
+                        </div>
+                        
+                    </form>
+                </div>
+               </div>
            </div>
            <PageMainComponent/>
            </>
