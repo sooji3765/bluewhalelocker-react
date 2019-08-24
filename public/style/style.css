@@ -1118,7 +1118,7 @@ label a {
     clear: both;
     display: block;
 }
-.keeper-name{
+.keeper-name-content{
     float: left;
 }
 .keeper-names{
@@ -1134,6 +1134,17 @@ label a {
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom : 10px;
+    color: hsl(0,0%,80%);
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid hsl(0,0%,80%);
+}
+
+.keeper-btn-reservation{
+    width: 100%;
+    background-color: #fff;
     color: hsl(0,0%,80%);
     border-radius: 4px;
     font-size: 14px;

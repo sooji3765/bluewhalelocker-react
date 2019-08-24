@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 class KeeperInfoComponent extends Component {
+
   render() {
+  
     return (
       <>
         <div className="page-content header-clear-medium">
@@ -15,7 +18,7 @@ class KeeperInfoComponent extends Component {
             
             <div className="keeper-info-content">
               <div className="keeper-info-profile">
-                <div className="keeper-name">
+                <div className="keeper-name-content">
                 <div className="keeper-names">HAYONG Cafe</div>
                 <div className="keeper-info-score-div">
                   <i className="fas fa-star" />
@@ -34,10 +37,7 @@ class KeeperInfoComponent extends Component {
               </div>
 
               <div className="btn-group" >
-              <ButtonGroup fullWidth aria-label="full width outlined button group">
-                <Button>Reservation</Button>
-                <Button>Message</Button>
-              </ButtonGroup>
+                <Link to="/reservation"><button className="keeper-btn-reservation">예약하기</button></Link>
               </div>
 
               <div className="keeper-info-detail">
