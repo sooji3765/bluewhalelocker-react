@@ -9,16 +9,35 @@ class MenuSettingComponent extends Component {
     super(props);
     this.handleMenuClose = this.handleMenuClose.bind(this);
   }
+  id = 3;
 
   state = {
     menu: {
       status: "popup"
     },
-    items: {
-      id: 1,
-      text: "text",
-      checked: true
-    }
+    items: [
+      {
+        id: 0,
+        businessName: "상호명",
+        phoneNumber: "010-xxxx-xxxx",
+        currentLocker: "3",
+        maxLocker: "10"
+      },
+      {
+        id: 1,
+        businessName: "상호명2",
+        phoneNumber: "010-xxxx-xxxx",
+        currentLocker: "4",
+        maxLocker: "10"
+      },
+      {
+        id: 2,
+        businessName: "상호명3",
+        phoneNumber: "010-xxxx-xxxx",
+        currentLocker: "5",
+        maxLocker: "10"
+      }
+    ]
   };
 
   menu_status = {
@@ -45,6 +64,7 @@ class MenuSettingComponent extends Component {
 
   render() {
     const menuSettingsClassName = this.menu_status[this.state.menu.status];
+    const { items } = this.state;
     return (
       <>
         <div
@@ -68,7 +88,7 @@ class MenuSettingComponent extends Component {
                   currentLocker="3"
                   maxLocker="10"
                 ></KeeperItem> */}
-                <KeeperItemList items={this.props.items}></KeeperItemList>
+                <KeeperItemList items={items}></KeeperItemList>
               </ul>
             </div>
           </div>

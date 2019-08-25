@@ -5,30 +5,20 @@ class KeeperItemList extends Component {
   render() {
     const { items } = this.props;
 
-    return (
-      <div>
+    const itemList = items.map(
+      ({ id, businessName, phoneNumber, currentLocker, maxLocker }) => (
         <KeeperItem
-          businessName="상호명"
-          phoneNumber="010-xxxx-xxxx"
-          currentLocker="3"
-          maxLocker="10"
-        ></KeeperItem>
-
-        <KeeperItem
-          businessName="상호명"
-          phoneNumber="010-xxxx-xxxx"
-          currentLocker="3"
-          maxLocker="10"
-        ></KeeperItem>
-
-        <KeeperItem
-          businessName="상호명"
-          phoneNumber="010-xxxx-xxxx"
-          currentLocker="3"
-          maxLocker="10"
-        ></KeeperItem>
-      </div>
+          id={id}
+          businessName={businessName}
+          phoneNumber={phoneNumber}
+          currentLocker={currentLocker}
+          maxLocker={maxLocker}
+          key={id}
+        />
+      )
     );
+
+    return <div>{itemList}</div>;
   }
 }
 
