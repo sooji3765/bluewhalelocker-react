@@ -15,6 +15,7 @@ import InputLockerPage from "./lib/pages/InputLockerPage";
 import MyInfo from "./lib/info/MyInfo";
 import KeeperInfoPage from "./lib/pages/KeeperInfoPage";
 import LockerReservationPage from "./lib/pages/LockerReservationPage";
+import profileEditPage from "./lib/pages/ProfileEditPage";
 
 const App = () => {
   const profile = MyInfo.getProfile("profile");
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/register_keeper" component={RegisterKeeperPage} />
           <Route path="/keeper_info" component={KeeperInfoPage} />
           <Route path="/reservation" component={LockerReservationPage} />
+          <Route path="/profile_edit" component={profileEditPage} />
         </>
       )}
       <Route path="/login" component={LoginPage} />
