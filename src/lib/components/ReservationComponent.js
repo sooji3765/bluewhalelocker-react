@@ -1,92 +1,36 @@
 import React, { Component } from "react";
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Button } from "@material-ui/core";
 
 class ReservationComponent extends Component {
 
   render() {
 
-    const reservationList = [
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-      {
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni corporis quibusdam, vero voluptate.
-              Dolor recusandae ea officiis illum, consequatur, totam, sunt alias non esse nulla, aliquid doloribus sit
-              fugit aspernatur!`,
-      },
-    ]
+    
 
     return (
       <>
       <div className="page-content header-clear-medium">
-      {reservationList.map((item, index) => {
-        return (
-          <div key={index} className="content">
-            {item.content}
+        <div>
+          <div className="reservation-list-title">
+            RESERVATION LIST
           </div>
-        )
-      })}
+          <ul className="reservation-content">
+            <li className="reservation_item">
+              <Card>
+                <CardHeader>
+                  header
+                </CardHeader>
+                <CardMedia/>
+                <CardContent>
+                    내용
+                </CardContent>
+                <CardActions>
+                    <Button size="small">예약 내역 확인하기</Button>
+                </CardActions>
+              </Card>
+            </li>
+          </ul>
+        </div>
       </div>
       </>
     );
