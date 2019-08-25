@@ -14,11 +14,22 @@ class MenuSettingComponent extends Component {
     menu: {
       status: "popup"
     },
-    items: {
-      id: 1,
-      text: "text",
-      checked: true
-    }
+    items: [
+      {id: 1,
+        text: "text",
+        checked: true
+      },
+      {
+        id:2,
+        text :"text2",
+        checked :true
+      },
+      {
+        id:3,
+        text :"text3",
+        checked :true
+      }
+    ]
   };
 
   menu_status = {
@@ -44,6 +55,7 @@ class MenuSettingComponent extends Component {
   }
 
   render() {
+
     const menuSettingsClassName = this.menu_status[this.state.menu.status];
     return (
       <>
@@ -68,7 +80,10 @@ class MenuSettingComponent extends Component {
                   currentLocker="3"
                   maxLocker="10"
                 ></KeeperItem> */}
-                <KeeperItemList items={this.props.items}></KeeperItemList>
+                {this.state.items.map(
+                  (item,id) => (<KeeperItem key={id} items={item}/>)
+                )}
+                
               </ul>
             </div>
           </div>
