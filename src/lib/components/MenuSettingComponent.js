@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import KeeperInfoPage from "../pages/KeeperInfoPage";
 import KeeperItem from "./KeeperItem";
+import KeeperItemList from "./KeeperItemList";
 
 class MenuSettingComponent extends Component {
   constructor(props) {
@@ -12,6 +13,11 @@ class MenuSettingComponent extends Component {
   state = {
     menu: {
       status: "popup"
+    },
+    items: {
+      id: 1,
+      text: "text",
+      checked: true
     }
   };
 
@@ -56,12 +62,13 @@ class MenuSettingComponent extends Component {
             </div>
             <div className="menu-list">
               <ul>
-                <KeeperItem
+                {/* <KeeperItem
                   businessName="상호명"
                   phoneNumber="010-xxxx-xxxx"
                   currentLocker="3"
                   maxLocker="10"
-                ></KeeperItem>
+                ></KeeperItem> */}
+                <KeeperItemList items={this.props.items}></KeeperItemList>
               </ul>
             </div>
           </div>
