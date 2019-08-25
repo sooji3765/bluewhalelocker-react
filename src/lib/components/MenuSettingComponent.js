@@ -82,12 +82,6 @@ class MenuSettingComponent extends Component {
             </div>
             <div className="menu-list">
               <ul>
-                {/* <KeeperItem
-                  businessName="상호명"
-                  phoneNumber="010-xxxx-xxxx"
-                  currentLocker="3"
-                  maxLocker="10"
-                ></KeeperItem> */}
                 <KeeperItemList items={items}></KeeperItemList>
               </ul>
             </div>
