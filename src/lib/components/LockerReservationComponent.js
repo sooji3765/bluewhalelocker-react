@@ -49,7 +49,9 @@ class LockerReservationComponent extends Component {
     };
     const calendarStyle = {
       background: "pink",
-      height: "400px"
+      height: "400px",
+      display: "block",
+      margin: "0 auto"
     };
     const tStyle = {
       margin: "10px"
@@ -71,7 +73,7 @@ class LockerReservationComponent extends Component {
             </div>
             <div style={calendarStyle}>
               <Calendar
-                //   className={classes.calendar}
+                // className={classes.calendar}
                 onChange={this.onDateChange}
                 value={this.state.date}
               />
