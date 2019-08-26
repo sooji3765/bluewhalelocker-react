@@ -16,14 +16,72 @@ class ReservationComponent extends Component {
           </div>
           <ul className="reservation-content">
             <li className="reservation_item">
-              <Card>
-                <CardHeader>
-                  header
-                </CardHeader>
-                <CardMedia/>
-                <CardContent>
-                    내용
-                </CardContent>
+              <Card style={{minHeight:'200px'}}>
+                <CardHeader
+                style={{fontSize : '14px'}}
+                title="Store1"
+                subheader="September 14, 2019"
+                />
+
+                <CardMedia
+                  className="media-img"
+                  image="/img/store1.jpg"
+                  title="store1"
+                  />
+                <CardActions>
+                    <Button size="small">예약 내역 확인하기</Button>
+                </CardActions>
+              </Card>
+            </li>
+            <li className="reservation_item">
+              <Card style={{minHeight:'200px'}}>
+                <CardHeader
+                style={{fontSize : '14px'}}
+                title="Store2"
+                subheader="September 14, 2019"
+                />
+
+                <CardMedia
+                  className="media-img"
+                  image="/img/store1.jpg"
+                  title="store1"
+                  />
+                <CardActions>
+                    <Button size="small">예약 내역 확인하기</Button>
+                </CardActions>
+              </Card>
+            </li>
+            <li className="reservation_item">
+              <Card style={{minHeight:'200px'}}>
+                <CardHeader
+                style={{fontSize : '14px'}}
+                title="Store1"
+                subheader="September 14, 2019"
+                />
+
+                <CardMedia
+                  className="media-img"
+                  image="/img/store1.jpg"
+                  title="store1"
+                  />
+                <CardActions>
+                    <Button size="small">예약 내역 확인하기</Button>
+                </CardActions>
+              </Card>
+            </li>
+            <li className="reservation_item">
+              <Card style={{minHeight:'200px'}}>
+                <CardHeader
+                style={{fontSize : '14px'}}
+                title="Store3"
+                subheader="September 14, 2019"
+                />
+
+                <CardMedia
+                  className="media-img"
+                  image="/img/store1.jpg"
+                  title="store1"
+                  />
                 <CardActions>
                     <Button size="small">예약 내역 확인하기</Button>
                 </CardActions>

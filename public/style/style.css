@@ -1312,3 +1312,19 @@ label a {
     border-radius: 4px;
     margin-bottom: 15px;
 }
+.reservation-list-title{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.reservation-content{
+    padding: 20px;
+}
+
+.reservation_item{
+    margin-bottom: 20px;
+}
+.media-img{
+    height: 0;
+    padding-top: 56.25%;
+}
