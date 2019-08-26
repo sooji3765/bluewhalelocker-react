@@ -1074,6 +1074,25 @@ label a {
     font-weight: 800;
 }
 
+.item-state{
+    color: #fff;
+    background-color: cadetblue;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.paper{
+    position: absolute;
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #666666;
+    box-shadow: 0.5;
+    top : 30%;
+    left: 25%;
+    padding: 20px;
+
+  }
 /* form-locker-register */
 .form-input-locker {
     margin: 15px auto;
@@ -1381,4 +1400,33 @@ label a {
     padding : 8px;
     color: #fff;
     background-color: cornflowerblue;
+}
+
+.page-title-content{
+    padding : 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.page-form-container{
+    padding: 20px;
+}
+
+.form-content-div{
+    margin-bottom: 15px;
+}
+
+.form-content-label{
+    padding: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.54);
+}
+.icon-margin{
+    margin-left: 5px;
+}
+.btn-margin{
+    margin-bottom: 10px;
 }
