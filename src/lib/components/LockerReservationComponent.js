@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { height } from "@material-ui/system";
 import Calendar from "react-calendar";
+// import Calendar from "react-calendar/dist/entry.nostyle";
 
 class LockerReservationComponent extends Component {
   state = {
-    date: new Date()
+    date: new Date(),
+    today: new Date()
   };
 
-  //   onDateChange = date => {
-  //     this.setState({
-  //       date: moment(date).format("YYYY-MM-DD")
-  //     });
-  //   };
+  onChange = date => {
+    this.setState({ date });
+    console.log(date);
+  };
 
   render() {
     const headLineStyle = {
@@ -74,9 +74,16 @@ class LockerReservationComponent extends Component {
             <div style={calendarStyle}>
               <Calendar
                 // className={classes.calendar}
-                onChange={this.onDateChange}
+                minDate={this.state.today}
+                onChange={this.onChange}
                 value={this.state.date}
               />
+              <div>
+                {this.state.date.getFullYear()}년{" "}
+                {this.state.date.getMonth() + 1}월 {this.state.date.getDate()}일
+              </div>
+              <div>남은 라커수 : 3</div>
+              <button className="menu-keeper-btn">예약하기</button>
             </div>
           </div>
         </div>
