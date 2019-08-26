@@ -261,18 +261,18 @@ label a {
     overflow: hidden;
 }
 
-.menu-title{
+.menu-title {
     line-height: 30px;
     border-bottom: 3px solid #e4e4e4;
     margin-bottom: 10px;
 }
 
-.menu-list{
+.menu-list {
     overflow: auto;
     height: 424px;
 }
 
-.menu-title-p{
+.menu-title-p {
     float: left;
     font-size: 18px;
 }
@@ -284,61 +284,63 @@ label a {
     padding: 10px;
 }
 
-.menu-title::after{
+.menu-title::after {
     display: block;
     clear: both;
     content: '';
 
 }
 
-.keeper-img{
+.keeper-img {
     width: 60px;
 }
 
-.menu-item::after{
+.menu-item::after {
     clear: both;
     content: '';
     display: block;
 }
 
-.menu-item{
+.menu-item {
     padding: 5px;
     border-bottom: 1px solid #e4e4e4;
 }
-.menu-item:last-child{
+
+.menu-item:last-child {
     border-bottom: none;
 }
 
-.menu-keeper-img{
+.menu-keeper-img {
     float: left;
 }
-.menu-keeper-content{
+
+.menu-keeper-content {
     margin-left: 10px;
     float: left;
 }
 
-.keeper-name{
+.keeper-name {
     display: block;
     font-weight: 800;
     font-size: 15px;
 }
 
-.menu-keeper-count{
+.menu-keeper-count {
     float: right;
 }
 
-.menu-keeper-btn{
+.menu-keeper-btn {
     vertical-align: bottom;
     display: inline-block;
     margin-right: 10px;
     background-color: #fff;
     line-height: 20px;
     border-radius: 4px;
-    border : 2px solid #91c4e5;
+    border: 2px solid #91c4e5;
     padding: 4px 5px;
 }
 
-.menu-keeper-btn:hover{
+.menu-keeper-btn:hover {
     cursor: pointer;
     opacity: 0.7;
 }
@@ -1010,46 +1012,46 @@ label a {
 
 /* add-list */
 .locker-page,
-.input-locker-page{
+.input-locker-page {
     padding: 10px;
 }
 
 .add-locker-title,
-.input-locker-title{
+.input-locker-title {
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 800;
 }
 
-.add-locker-content{
+.add-locker-content {
     margin-bottom: 5px;
     border-bottom: 1px solid #9d9d9d;
 }
 
-.add-btn-locker{
+.add-btn-locker {
     text-align: center;
     text-transform: uppercase;
     border-radius: 10px;
     font-weight: 800;
     font-size: 16px;
-    margin : 15px auto;
+    margin: 15px auto;
     display: block;
     width: 100%;
-    padding : 10px 5px;
+    padding: 10px 5px;
     background-color: #189ad3;
     color: #fff;
 }
 
-.add-btn-locker:hover{
+.add-btn-locker:hover {
     font-weight: 900;
     cursor: pointer;
 }
 
-.list-locker{
-    margin-top : 15px;
+.list-locker {
+    margin-top: 15px;
 }
 
-.list-item-locker{
+.list-item-locker {
     margin-bottom: 15px;
     padding: 10px 5px;
     border-radius: 10px;
@@ -1057,63 +1059,66 @@ label a {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.20);
 }
 
-.item-locker-num{
+.item-locker-num {
     font-weight: 700;
     font-size: 16px;
 }
 
-.item-locker-score{
+.item-locker-score {
     color: #ffd700;
 }
 
-.item-score{
+.item-score {
     margin-left: 10px;
-    color : #151e24;
+    color: #151e24;
     font-weight: 800;
 }
 
 /* form-locker-register */
-.form-input-locker{
-    margin : 15px auto;
+.form-input-locker {
+    margin: 15px auto;
 }
-.form-locker-div{
+
+.form-locker-div {
     margin-bottom: 15px;
 }
 
-.form-locker-div > label{
+.form-locker-div>label {
     font-weight: 700;
     margin-bottom: 5px;
     margin-left: 5px;
     text-transform: uppercase;
 }
-.locker-input-text{
+
+.locker-input-text {
     display: block;
     padding: 2px 8px;
     min-height: 38px;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid hsl(0,0%,80%);
+    border: 1px solid hsl(0, 0%, 80%);
 }
-.locker-btn-register{
+
+.locker-btn-register {
     width: 100%;
 }
 
-.radio-group{
-    margin-left: 5px;    
+.radio-group {
+    margin-left: 5px;
 }
 
-.radio-item{
+.radio-item {
     display: inline-block;
     margin-right: 10px;
 }
 
-.radio-item > label{
+.radio-item>label {
     display: inline;
     margin-right: 5px;
     vertical-align: top;
 }
 
-.radio-item > input[type="radio"]{
+.radio-item>input[type="radio"] {
     vertical-align: middle;
     background-color: #fff;
 }
@@ -1121,108 +1126,114 @@ label a {
 
 /* KEEPER INFO COMPONENT */
 
-.keeper-info-page{
+.keeper-info-page {
     text-align: center;
 }
 
-.keeper-photo{
+.keeper-photo {
     width: 100%;
     height: 300px;
 }
 
-.keeper-info-content{
-    margin : 10px auto;
+.keeper-info-content {
+    margin: 10px auto;
     padding: 20px;
 }
 
-.keeper-info-score-div{
+.keeper-info-score-div {
     font-size: 15px;
     color: #ffd700;
 }
-.keeper-info-use{
+
+.keeper-info-use {
     margin-left: 5px;
     font-weight: 700;
     color: #151e24;
 }
 
-.keeper-info-profile{
+.keeper-info-profile {
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgb(228, 228, 228);    
+    border-bottom: 1px solid rgb(228, 228, 228);
 }
-.keeper-info-profile::after{
+
+.keeper-info-profile::after {
     content: '';
     clear: both;
     display: block;
 }
-.keeper-name-content{
+
+.keeper-name-content {
     float: left;
 }
-.keeper-names{
+
+.keeper-names {
     text-transform: uppercase;
     font-size: 18px;
 }
-.keeper-profile-img{
+
+.keeper-profile-img {
     width: 50px;
     float: right;
 }
 
-.use-locker-now{
+.use-locker-now {
     margin-right: 5px;
     margin-left: 5px;
-    margin-bottom : 10px;
-    color: hsl(0,0%,80%);
+    margin-bottom: 10px;
+    color: hsl(0, 0%, 80%);
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
     padding: 10px;
-    border: 1px solid hsl(0,0%,80%);
+    border: 1px solid hsl(0, 0%, 80%);
 }
 
-.keeper-btn-reservation{
+.keeper-btn-reservation {
     width: 100%;
     background-color: #fff;
-    color: hsl(0,0%,80%);
+    color: hsl(0, 0%, 80%);
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
     padding: 10px;
-    border: 1px solid hsl(0,0%,80%);
+    border: 1px solid hsl(0, 0%, 80%);
 }
 
-.keeper-btn-reservation:hover{
+.keeper-btn-reservation:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.keeper-info-detail{
-    margin : 10px auto;
+.keeper-info-detail {
+    margin: 10px auto;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgb(228, 228, 228); 
+    border-bottom: 1px solid rgb(228, 228, 228);
 }
 
-.keeper-info-div{
+.keeper-info-div {
     padding: 5px 10px;
 }
-.keeper-info-div::after{
+
+.keeper-info-div::after {
     display: block;
     content: '';
     clear: both;
 }
 
-.info-icon{
+.info-icon {
     float: left;
 }
 
-.info-detail{
-    margin-left:20px; 
+.info-detail {
+    margin-left: 20px;
     float: left;
 }
 
 /* .keeper-review{
     border-top: 1px solid rgb(228, 228, 228);
 } */
-.review-title{
+.review-title {
     font-weight: 800;
     line-height: 30px;
     padding: 10px;
@@ -1231,84 +1242,88 @@ label a {
     border-bottom: 1px solid rgb(228, 228, 228);
 }
 
-.review-item{
+.review-item {
     padding: 10px 10px;
     border-bottom: 1px solid rgb(228, 228, 228);
 }
-.review-item:last-child{
+
+.review-item:last-child {
     border-bottom: none;
 }
 
-.btn-group{
+.btn-group {
     margin-right: 5px;
     margin-left: 5px;
 }
 
-.review-writer::after{
+.review-writer::after {
     display: block;
     clear: both;
     content: '';
 }
 
-.review-writer-img{
+.review-writer-img {
     border-radius: 50%;
     float: left;
-    height: 50px; 
+    height: 50px;
 }
-.review-writer-info{
+
+.review-writer-info {
     margin-left: 20px;
     float: left;
 }
 
-.review-writer-score{
+.review-writer-score {
     float: right;
 }
 
-.review-writer-name{
+.review-writer-name {
     text-align: left;
     font-size: 14px;
     font-weight: 600;
 }
 
-.review-writer-star{
+.review-writer-star {
     color: #ffd700;
 }
-.review-in{
+
+.review-in {
     margin-top: 5px;
     text-align: left;
 }
 
-.keeper-location{
-    margin : 5px 5px;
+.keeper-location {
+    margin: 5px 5px;
     border-radius: 4px;
-    border : 1px solid hsl(0,0%,80%);
-    height: 200px;
+    border: 1px solid hsl(0, 0%, 80%);
+    height: 400px;
 }
 
-.register-keeper-page{
+.register-keeper-page {
     padding: 10px;
 }
-.register-keeper-title{
+
+.register-keeper-title {
     font-weight: 800;
     margin: 16px auto;
     font-size: 20px;
 }
 
-.register-keeper-form{
+.register-keeper-form {
     margin: 20px auto;
 }
 
-.register-textfield{
+.register-textfield {
     width: 100%;
 }
 
-.form-container{
+.form-container {
     margin-bottom: 10px;
 }
 
-.form-container-business{
+.form-container-business {
     padding: 15px;
-    border: 1px solid hsl(0,0%,80%);
+    border: 1px solid hsl(0, 0%, 80%);
     border-radius: 4px;
     margin-bottom: 15px;
 }

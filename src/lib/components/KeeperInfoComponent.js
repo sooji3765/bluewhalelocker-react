@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReviewList from "./ReviewList";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 class KeeperInfoComponent extends Component {
   state = {
@@ -33,6 +34,7 @@ class KeeperInfoComponent extends Component {
 
   render() {
     const { reviewItems, id } = this.state;
+
     return (
       <>
         <div className="page-content header-clear-medium">
@@ -94,7 +96,20 @@ class KeeperInfoComponent extends Component {
                 </div>
               </div>
 
-              <div className="keeper-location">Map</div>
+              <div className="keeper-location">
+                <Map
+                  style={{ height: "100%" }}
+                  google={this.props.google}
+                  initialCenter={{ lat: 37.5434348, lng: 126.9499267 }}
+                  zoom={15}
+                >
+                  <Marker
+                    name={"Current location"}
+                    position={{ lat: 37.5434348, lng: 126.9499267 }}
+                  />
+                </Map>
+              </div>
+
               <div className="keeper-review">
                 <div className="review-title">REVIEW {id}</div>
                 <ul className="review-cotent">
@@ -109,4 +124,7 @@ class KeeperInfoComponent extends Component {
   }
 }
 
-export default KeeperInfoComponent;
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyAhHkFo-bYv_U9iLedicra9em2FpndEJS0",
+  v: "3"
+})(KeeperInfoComponent);
