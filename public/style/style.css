@@ -322,10 +322,26 @@ label a {
     font-weight: 800;
     font-size: 15px;
 }
+
 .menu-keeper-count{
     float: right;
 }
 
+.menu-keeper-btn{
+    vertical-align: bottom;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #fff;
+    line-height: 20px;
+    border-radius: 4px;
+    border : 2px solid #91c4e5;
+    padding: 4px 5px;
+}
+
+.menu-keeper-btn:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
 
 /*footer*/
 

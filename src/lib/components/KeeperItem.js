@@ -25,12 +25,9 @@ export default class KeeperItem extends Component {
                   {phoneNumber} <i className="fas fa-phone-alt" />
                 </span>
               </div>
-              <div className="btn-group">
-                <Link to="/keeper_info">
-                  <button className="keeper-btn-reservation">상세보기</button>
-                </Link>
-              </div>
+            
               <div className="menu-keeper-count">
+                <button className="menu-keeper-btn">상세페이지</button>
                 <span className="locker-count">
                   {currentLocker}/{maxLocker}
                 </span>
