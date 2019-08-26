@@ -4,7 +4,7 @@ import ReviewList from "./ReviewList";
 
 class KeeperInfoComponent extends Component {
   state = {
-    id: 4,
+    id: 3,
 
     reviewItems: [
       {
@@ -22,7 +22,7 @@ class KeeperInfoComponent extends Component {
         img: ""
       },
       {
-        id: 0,
+        id: 2,
         name: "박모씨",
         text: "적당함",
         date: "2019-08-35",
