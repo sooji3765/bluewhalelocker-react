@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export default class KeeperItem extends Component {
   render() {
     const {
@@ -8,8 +8,7 @@ export default class KeeperItem extends Component {
       currentLocker,
       maxLocker,
       keeperImg,
-      id,
-      onToggle
+      id
     } = this.props;
 
     return (
@@ -25,6 +24,11 @@ export default class KeeperItem extends Component {
                 <span className="keeper-phone">
                   {phoneNumber} <i className="fas fa-phone-alt" />
                 </span>
+              </div>
+              <div className="btn-group">
+                <Link to="/keeper_info">
+                  <button className="keeper-btn-reservation">상세보기</button>
+                </Link>
               </div>
               <div className="menu-keeper-count">
                 <span className="locker-count">
