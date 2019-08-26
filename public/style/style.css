@@ -1259,6 +1259,20 @@ label a {
     margin-left: 20px;
     float: left;
 }
+
+.review-writer-score{
+    float: right;
+}
+
+.review-writer-name{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.review-writer-star{
+    color: #ffd700;
+}
 .review-in{
     margin-top: 5px;
     text-align: left;
