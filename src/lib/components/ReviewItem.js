@@ -1,0 +1,26 @@
+import React, { Component } from "react";
+
+export default class ReviewItem extends Component {
+  render() {
+    const { img, name, text, date, id } = this.props;
+
+    return (
+      <>
+        <li className="review-item">
+          <div className="review-writer">
+            <img
+              className="review-writer-img"
+              src="../img/user2.png"
+              alt="review-user1"
+            />
+            <div className="review-writer-info">
+              <p className="review-writer-name">{name}</p>
+              <p className="review-write-date">{date}</p>
+            </div>
+          </div>
+          <div className="review-in">{text}</div>
+        </li>
+      </>
+    );
+  }
+}
