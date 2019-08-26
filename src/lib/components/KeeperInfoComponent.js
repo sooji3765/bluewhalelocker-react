@@ -4,6 +4,8 @@ import ReviewList from "./ReviewList";
 
 class KeeperInfoComponent extends Component {
   state = {
+    id: 4,
+
     reviewItems: [
       {
         id: 0,
@@ -30,7 +32,7 @@ class KeeperInfoComponent extends Component {
   };
 
   render() {
-    const { reviewItems } = this.state;
+    const { reviewItems, id } = this.state;
     return (
       <>
         <div className="page-content header-clear-medium">
@@ -94,7 +96,7 @@ class KeeperInfoComponent extends Component {
 
               <div className="keeper-location">Map</div>
               <div className="keeper-review">
-                <div className="review-title">REVIEW 240</div>
+                <div className="review-title">REVIEW {id}</div>
                 <ul className="review-cotent">
                   <ReviewList reviewItems={reviewItems}></ReviewList>
                 </ul>

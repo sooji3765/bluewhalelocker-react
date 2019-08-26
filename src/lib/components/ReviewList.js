@@ -9,7 +9,7 @@ class ReviewList extends Component {
       <ReviewItem
         id={id}
         img={img}
-        Name={name}
+        name={name}
         text={text}
         date={date}
         key={id}
