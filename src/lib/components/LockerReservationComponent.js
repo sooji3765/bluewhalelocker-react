@@ -50,11 +50,13 @@ class LockerReservationComponent extends Component {
     const calendarStyle = {
       background: "pink",
       height: "400px",
-      display: "block",
-      margin: "0 auto"
+      display: "block"
     };
     const tStyle = {
       margin: "10px"
+    };
+    const reserveStyle = {
+      textAlign: "center"
     };
     return (
       <>
@@ -78,11 +80,14 @@ class LockerReservationComponent extends Component {
                 onChange={this.onChange}
                 value={this.state.date}
               />
+            </div>
+            <div style={reserveStyle}>
               <div>
                 {this.state.date.getFullYear()}년{" "}
                 {this.state.date.getMonth() + 1}월 {this.state.date.getDate()}일
               </div>
               <div>남은 라커수 : 3</div>
+
               <button className="menu-keeper-btn">예약하기</button>
             </div>
           </div>
