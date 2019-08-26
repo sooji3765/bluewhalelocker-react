@@ -17,6 +17,15 @@ export default class ReviewItem extends Component {
               <p className="review-writer-name">{name}</p>
               <p className="review-write-date">{date}</p>
             </div>
+            <div className="review-writer-score">
+              <div className="review-writer-star">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="far fa-star" />
+              </div>
+            </div>
           </div>
           <div className="review-in">{text}</div>
         </li>
