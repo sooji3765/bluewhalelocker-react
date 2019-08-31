@@ -3,10 +3,12 @@ import KeeperItemList from "./KeeperItemList";
 import axios from "axios";
 
 class MenuSettingComponent extends Component {
+
   constructor(props) {
     super(props);
     this.handleMenuClose = this.handleMenuClose.bind(this);
   }
+
   id = 3;
 
   state = {
