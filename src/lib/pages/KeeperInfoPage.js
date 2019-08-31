@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HeaderComponent from "../components/HeaderComponent";
-import FooterComponent from "../components/FooterComponent";
-import KeeperInfoComponent from "../components/KeeperInfoComponent";
+import HeaderComponent from "../components/default/HeaderComponent";
+import FooterComponent from "../components/default/FooterComponent";
+import KeeperInfoComponent from "../components/keeper/KeeperInfoComponent";
 
 class KeeperInfoPage extends Component {
   render() {

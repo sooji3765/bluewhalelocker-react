@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderComponent from '../components/HeaderComponent';
-import ChatComponent from '../components/ChatComponent';
-import FooterComponent from '../components/FooterComponent';
+import HeaderComponent from '../components/default/HeaderComponent';
+import ChatComponent from '../components/chat/ChatComponent';
+import FooterComponent from '../components/default/FooterComponent';
 
 const ChatPage = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
-import HeaderComponent from "../components/HeaderComponent";
-import LockerReservationComponent from "../components/LockerReservationComponent";
-import FooterComponent from "../components/FooterComponent";
+import HeaderComponent from "../components/default/HeaderComponent";
+import LockerReservationComponent from "../components/locker/LockerReservationComponent";
+import FooterComponent from "../components/default/FooterComponent";
 
 const LockerReservationPage = () => {
   return (

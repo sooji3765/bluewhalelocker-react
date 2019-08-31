@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyInfo from '../info/MyInfo';
+import MyInfo from '../../info/MyInfo';
 
 class HeaderComponent extends Component {
 

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import KeeperInfoPage from "../pages/KeeperInfoPage";
-import KeeperItem from "./KeeperItem";
+
 import KeeperItemList from "./KeeperItemList";
 
 class MenuSettingComponent extends Component {

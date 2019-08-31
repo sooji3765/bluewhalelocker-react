@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderKeeperComponent from '../components/HeaderKeeperComponent';
-import InputLockerComponent from '../components/InputLockerComponent';
-import FooterKeeperComponent from '../components/FooterKeeperComponent';
+import HeaderKeeperComponent from '../components/default/HeaderKeeperComponent';
+import InputLockerComponent from '../components/locker/InputLockerComponent';
+import FooterKeeperComponent from '../components/default/FooterKeeperComponent';
 
 const InputLockerPage = (props) => {
  

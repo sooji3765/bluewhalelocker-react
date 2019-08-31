@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderComponent from '../components/HeaderComponent';
-import ReservationComponent from '../components/ReservationComponent';
-import FooterComponent from '../components/FooterComponent';
+import HeaderComponent from '../components/default/HeaderComponent';
+import ReservationComponent from '../components/keeper/ReservationComponent';
+import FooterComponent from '../components/default/FooterComponent';
 
 const ReservationListPage = () => {
   return (

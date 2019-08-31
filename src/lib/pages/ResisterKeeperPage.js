@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderKeeperComponent from '../components/HeaderKeeperComponent';
-import RegisterKeeperComponent from '../components/RegisterKeeperComponent';
-import FooterKeeperComponent from '../components/FooterKeeperComponent';
+import HeaderKeeperComponent from '../components/default/HeaderKeeperComponent';
+import RegisterKeeperComponent from '../components/keeper/RegisterKeeperComponent';
+import FooterKeeperComponent from '../components/default/FooterKeeperComponent';
 
 const RegisterKeeperPage = (props) => {
  

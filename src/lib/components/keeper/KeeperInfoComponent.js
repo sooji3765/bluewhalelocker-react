@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ReviewList from "./ReviewList";
+import ReviewList from "../review/ReviewList";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 class KeeperInfoComponent extends Component {

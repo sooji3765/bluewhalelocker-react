@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MyInfo from "../info/MyInfo";
+import MyInfo from "../../info/MyInfo";
 
 class UsersettingComponent extends Component {
   constructor(props) {
