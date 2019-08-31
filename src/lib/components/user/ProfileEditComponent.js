@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
 
 class ProfileEditComponent extends Component {
   state = {};
