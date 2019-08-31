@@ -24,7 +24,7 @@ export default class KeeperItem extends Component {
                   {phoneNumber} <i className="fas fa-phone-alt" />
                 </span>
               </div>
-            
+
               <div className="menu-keeper-count">
                 <button className="menu-keeper-btn">상세페이지</button>
                 <span className="locker-count">

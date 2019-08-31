@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:src/lib/components/MenuSettingComponent.js
+=======
 
+>>>>>>> f6c829023a5a0e21d2c62cb309f575282c6f9812:src/lib/components/keeper/MenuSettingComponent.js
 import KeeperItemList from "./KeeperItemList";
+import axios from "axios";
 
 class MenuSettingComponent extends Component {
   constructor(props) {
@@ -35,7 +39,8 @@ class MenuSettingComponent extends Component {
         currentLocker: "5",
         maxLocker: "10"
       }
-    ]
+    ],
+    data: []
   };
 
   menu_status = {
@@ -44,6 +49,13 @@ class MenuSettingComponent extends Component {
     close:
       "menu menu-box-bottom menu-box-detached round-large style2_menu_setting"
   };
+
+  componentDidMount() {
+    axios.get("http://localhost:8080/users").then(res => {
+      console.log(res);
+      this.setState({ data: res.data });
+    });
+  }
 
   handleMenuClose = e => {
     e.preventDefault();
@@ -62,7 +74,9 @@ class MenuSettingComponent extends Component {
 
   render() {
     const menuSettingsClassName = this.menu_status[this.state.menu.status];
-    const { items } = this.state;
+    // const { items } = this.state;
+    const { data } = this.state;
+
     return (
       <>
         <div
@@ -80,7 +94,8 @@ class MenuSettingComponent extends Component {
             </div>
             <div className="menu-list">
               <ul>
-                <KeeperItemList items={items}></KeeperItemList>
+                {/* <KeeperItemList items={items}></KeeperItemList> */}
+                <KeeperItemList items={data}></KeeperItemList>
               </ul>
             </div>
           </div>
