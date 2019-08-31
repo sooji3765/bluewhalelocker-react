@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class ReviewItem extends Component {
   render() {
-    const { img, name, text, date, id } = this.props;
+    const { img, userEmail, content, date, id } = this.props;
 
     return (
       <>
@@ -14,20 +14,20 @@ export default class ReviewItem extends Component {
               alt="review-user1"
             />
             <div className="review-writer-info">
-              <p className="review-writer-name">{name}</p>
+              <p className="review-writer-name">{userEmail}</p>
               <p className="review-write-date">{date}</p>
             </div>
             <div className="review-writer-score">
               <div className="review-writer-star">
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="far fa-star" />
+                <i className="fas fa-star" />
+                <i className="fas fa-star" />
+                <i className="fas fa-star" />
+                <i className="fas fa-star" />
+                <i className="far fa-star" />
               </div>
             </div>
           </div>
-          <div className="review-in">{text}</div>
+          <div className="review-in">{content}</div>
         </li>
       </>
     );

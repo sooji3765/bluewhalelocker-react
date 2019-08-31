@@ -15,29 +15,7 @@ class MenuSettingComponent extends Component {
     menu: {
       status: "popup"
     },
-    items: [
-      {
-        id: 0,
-        businessName: "상호명",
-        phoneNumber: "010-xxxx-xxxx",
-        currentLocker: "3",
-        maxLocker: "10"
-      },
-      {
-        id: 1,
-        businessName: "상호명2",
-        phoneNumber: "010-xxxx-xxxx",
-        currentLocker: "4",
-        maxLocker: "10"
-      },
-      {
-        id: 2,
-        businessName: "상호명3",
-        phoneNumber: "010-xxxx-xxxx",
-        currentLocker: "5",
-        maxLocker: "10"
-      }
-    ],
+    items: [],
     data: []
   };
 
@@ -49,9 +27,9 @@ class MenuSettingComponent extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/users").then(res => {
+    axios.get("http://localhost:8080/keepers").then(res => {
       console.log(res);
-      this.setState({ data: res.data });
+      this.setState({ items: res.data });
     });
   }
 
@@ -72,8 +50,7 @@ class MenuSettingComponent extends Component {
 
   render() {
     const menuSettingsClassName = this.menu_status[this.state.menu.status];
-    // const { items } = this.state;
-    const { data } = this.state;
+    const { items } = this.state;
 
     return (
       <>
@@ -92,8 +69,7 @@ class MenuSettingComponent extends Component {
             </div>
             <div className="menu-list">
               <ul>
-                {/* <KeeperItemList items={items}></KeeperItemList> */}
-                <KeeperItemList items={data}></KeeperItemList>
+                <KeeperItemList items={items}></KeeperItemList>
               </ul>
             </div>
           </div>

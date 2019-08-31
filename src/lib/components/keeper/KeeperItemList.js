@@ -6,10 +6,10 @@ class KeeperItemList extends Component {
     const { items } = this.props;
 
     const itemList = items.map(
-      ({ id, business_name, phone, currentLocker, maxLocker }) => (
+      ({ id, name, phone, currentLocker, maxLocker }) => (
         <KeeperItem
           id={id}
-          businessName={business_name}
+          businessName={name}
           phoneNumber={phone}
           currentLocker={"사용가능라커수"}
           maxLocker={"전체라커수"}
