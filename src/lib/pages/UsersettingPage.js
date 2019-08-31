@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderComponent from '../components/HeaderComponent';
-import UsersettingComponent from '../components/UsersettingComponent';
-import FooterComponent from '../components/FooterComponent';
+import HeaderComponent from '../components/default/HeaderComponent';
+import UsersettingComponent from '../components/user/UsersettingComponent';
+import FooterComponent from '../components/default/FooterComponent';
 import MyInfo from '../info/MyInfo';
 
 const UsersettingPage = (props) => {

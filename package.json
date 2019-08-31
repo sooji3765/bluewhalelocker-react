@@ -7,7 +7,11 @@
     "@material-ui/core": "^4.3.3",
     "@material-ui/pickers": "^3.2.3",
     "@wojtekmaj/react-daterange-picker": "^2.4.0",
+<<<<<<< HEAD
     "axios": "^0.19.0",
+=======
+    "bootstrap": "^4.3.1",
+>>>>>>> f6c829023a5a0e21d2c62cb309f575282c6f9812
     "classnames": "^2.2.6",
     "date-fns": "^2.0.1",
     "google-maps-react": "^2.0.2",
@@ -16,6 +20,7 @@
     "open-color": "^1.7.0",
     "query-string": "^6.8.2",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-calendar": "^2.19.1",
     "react-dom": "^16.9.0",
     "react-geolocated": "^2.5.0",

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderKeeperComponent from '../components/HeaderKeeperComponent';
-import KeeperSettingComponent from '../components/KeeperSettingComponent';
-import FooterKeeperComponent from '../components/FooterKeeperComponent';
+import HeaderKeeperComponent from '../components/default/HeaderKeeperComponent';
+import KeeperSettingComponent from '../components/keeper/KeeperSettingComponent';
+import FooterKeeperComponent from '../components/default/FooterKeeperComponent';
 
 const KeeperSettingPage = (props) => {
  

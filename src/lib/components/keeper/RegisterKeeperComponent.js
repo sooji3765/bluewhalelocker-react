@@ -1,6 +1,6 @@
 import React ,{ Component } from 'react';
 import 'date-fns';
-import PageMainComponent from './PageMainComponent';
+import PageMainComponent from '../default/PageMainComponent';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import DateFnsUtils from '@date-io/date-fns';

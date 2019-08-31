@@ -1,6 +1,6 @@
 import React ,{ Component } from 'react';
-import PageMainComponent from './PageMainComponent';
-import MyInfo from '../info/MyInfo';
+import PageMainComponent from '../default/PageMainComponent';
+import MyInfo from '../../info/MyInfo';
 
 class SignupComponent extends Component{
 

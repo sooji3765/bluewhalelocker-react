@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:src/lib/components/MenuSettingComponent.js
+=======
+
+>>>>>>> f6c829023a5a0e21d2c62cb309f575282c6f9812:src/lib/components/keeper/MenuSettingComponent.js
 import KeeperItemList from "./KeeperItemList";
 import axios from "axios";
 
