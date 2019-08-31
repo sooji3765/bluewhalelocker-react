@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 export default class KeeperItem extends Component {
   render() {
     const {
@@ -25,7 +25,7 @@ export default class KeeperItem extends Component {
                   {phoneNumber} <i className="fas fa-phone-alt" />
                 </span>
               </div>
-            
+
               <div className="menu-keeper-count">
                 <button className="menu-keeper-btn">상세페이지</button>
                 <span className="locker-count">

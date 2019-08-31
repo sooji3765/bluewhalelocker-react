@@ -2,35 +2,19 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReviewList from "./ReviewList";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import axios from "axios";
 
 class KeeperInfoComponent extends Component {
   state = {
-    id: 3,
-
-    reviewItems: [
-      {
-        id: 0,
-        name: "황모씨",
-        text: "개별루임",
-        date: "2019-08-36",
-        img: ""
-      },
-      {
-        id: 1,
-        name: "이모씨",
-        text: "개좋음",
-        date: "2019-08-37",
-        img: ""
-      },
-      {
-        id: 2,
-        name: "박모씨",
-        text: "적당함",
-        date: "2019-08-35",
-        img: ""
-      }
-    ]
+    reviewItems: []
   };
+
+  componentDidMount() {
+    axios.get("http://localhost:8080/reviews").then(res => {
+      console.log(res);
+      this.setState({ reviewItems: res.data });
+    });
+  }
 
   render() {
     const { reviewItems, id } = this.state;
