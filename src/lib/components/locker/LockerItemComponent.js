@@ -4,12 +4,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
-import { makeStyles } from '@material-ui/core/styles';
+
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
-function getModalStyle() {
+
+  function getModalStyle() {
     const top = 50 + rand();
     const left = 50 + rand();
   
@@ -45,8 +46,6 @@ class LockerItemComponent extends Component {
 
     render() {
 
-        
-        
         return (
             <>
                 <div className="page-content header-clear-medium">
