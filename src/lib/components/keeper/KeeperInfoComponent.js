@@ -6,10 +6,15 @@ import axios from "axios";
 
 class KeeperInfoComponent extends Component {
   state = {
+    keeperinfoItem :[],
     reviewItems: []
   };
 
   componentDidMount() {
+    axios.get("http://localhost:8080/keepers/4").then(res =>{
+      console.log(res);
+      this.setState({keeperinfoItem : res.data});
+    })
     axios.get("http://localhost:8080/reviews").then(res => {
       console.log(res);
       this.setState({ reviewItems: res.data });
@@ -26,7 +31,7 @@ class KeeperInfoComponent extends Component {
             <div className="keeper-photo-content">
               <img
                 className="keeper-photo"
-                src="../img/store1.jpg"
+                src={this.state.keeperinfoItem.photo}
                 alt="store_img"
               />
             </div>
@@ -34,7 +39,7 @@ class KeeperInfoComponent extends Component {
             <div className="keeper-info-content">
               <div className="keeper-info-profile">
                 <div className="keeper-name-content">
-                  <div className="keeper-names">HAYONG Cafe</div>
+                  <div className="keeper-names">{this.state.keeperinfoItem.name}</div>
                   <div className="keeper-info-score-div">
                     <i className="fas fa-star" />
                     <i className="fas fa-star" />

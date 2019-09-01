@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/add_locker" component={AddLockerPage} />
           <Route path="/input_locker" component={InputLockerPage} />
           <Route path="/register_keeper" component={RegisterKeeperPage} />
-          <Route path="/keeper_info" component={KeeperInfoPage} />
+          <Route path="/keeper_info/:id?" component={KeeperInfoPage} />
           <Route path="/reservation" component={LockerReservationPage} />
           <Route path="/profile_edit" component={profileEditPage} />
         </>
