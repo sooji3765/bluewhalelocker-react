@@ -1,4 +1,19 @@
 import React, { Component } from "react";
+import clsx from 'clsx';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import { red } from '@material-ui/core/colors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 class LikeComponent extends Component {
 
@@ -39,39 +54,55 @@ class LikeComponent extends Component {
 
     return (
       <>
-      <div className="page-content header-clear-medium color-white">
-        <div className="content-title">
-          <p>SAVE LIST</p>
-        </div>
-        {saveList.map((item, index) => {
-          return (
-            <div key={index} className="caption">
-              <a className="caption-one" href={item.href}>
-                <div className="caption-img">
-                  <img className="caption-img-keeper" src={item.img} alt=""/>
-                  <span className="caption-like"><i className="fa fa-heart"></i></span>
-                </div>
-                <div className="caption-body">
-                  <h3 className="caption-title">{item.favorite.length > 0 && <span className="favorite">{item.favorite}</span>}{item.title_name}</h3>
-                  <p className="caption-content">{item.favorite}</p>
-                  <p className="caption-rating">
-                    {item.star.map((item, index) => {
-                      if (item === 1) {
-                        return (
-                          <i key={index} className="fas fa-star"></i>
-                        )
-                      }
-                      return (
-                        <i key={index} className="far fa-star"></i>
-                      )
-                    })}
-                    <strong className="color-gray">{item.gray}</strong>
-                  </p>
-                </div>
-              </a>
-            </div>
-          )
-        })}
+        <div className="page-content header-clear-medium color-white">
+          <div className="content-title">
+            <p>SAVE LIST</p>
+          </div>
+
+          <Card >
+            <CardHeader
+              avatar={
+                <Avatar aria-label="recipe">
+                  R
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Shrimp and Chorizo Paella"
+              subheader="September 14, 2016"
+            />
+            <CardMedia
+             
+              image="../img/store1.jpg"
+              title="Paella dish"
+            />
+            <CardContent>
+              <Typography variant="body2" color="textSecondary" component="p">
+                This impressive paella is a perfect party dish and a fun meal to cook together with your
+                guests. Add 1 cup of frozen peas along with the mussels, if you like.
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+              <IconButton
+                
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+            
+          </Card>
+
+       
         </div>
       </>
     );

@@ -11,7 +11,8 @@ class KeeperInfoComponent extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/keepers/4").then(res =>{
+
+    axios.get("http://localhost:8080/keepers/2").then(res =>{
       console.log(res);
       this.setState({keeperinfoItem : res.data});
     })

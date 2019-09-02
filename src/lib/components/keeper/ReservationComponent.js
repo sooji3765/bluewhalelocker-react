@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Button } from "@material-ui/core";
-
+import { Card, CardHeader,IconButton,CardMedia, CardContent,Typography, CardActions, Button } from "@material-ui/core";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 class ReservationComponent extends Component {
 
   render() {
 
-    
-
+  
     return (
       <>
       <div className="page-content header-clear-medium">
@@ -17,73 +16,24 @@ class ReservationComponent extends Component {
           <ul className="reservation-content">
             <li className="reservation_item">
               <Card style={{minHeight:'200px'}}>
-                <CardHeader
-                style={{fontSize : '14px'}}
-                title="Store1"
-                subheader="September 14, 2019"
-                />
-
                 <CardMedia
                   className="media-img"
                   image="/img/store1.jpg"
                   title="store1"
                   />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                  Store Name
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Reservation Time
+                </Typography>
+                  </CardContent>
                 <CardActions>
-                    <Button size="small">예약 내역 확인하기</Button>
-                </CardActions>
-              </Card>
-            </li>
-            <li className="reservation_item">
-              <Card style={{minHeight:'200px'}}>
-                <CardHeader
-                style={{fontSize : '14px'}}
-                title="Store2"
-                subheader="September 14, 2019"
-                />
-
-                <CardMedia
-                  className="media-img"
-                  image="/img/store1.jpg"
-                  title="store1"
-                  />
-                <CardActions>
-                    <Button size="small">예약 내역 확인하기</Button>
-                </CardActions>
-              </Card>
-            </li>
-            <li className="reservation_item">
-              <Card style={{minHeight:'200px'}}>
-                <CardHeader
-                style={{fontSize : '14px'}}
-                title="Store1"
-                subheader="September 14, 2019"
-                />
-
-                <CardMedia
-                  className="media-img"
-                  image="/img/store1.jpg"
-                  title="store1"
-                  />
-                <CardActions>
-                    <Button size="small">예약 내역 확인하기</Button>
-                </CardActions>
-              </Card>
-            </li>
-            <li className="reservation_item">
-              <Card style={{minHeight:'200px'}}>
-                <CardHeader
-                style={{fontSize : '14px'}}
-                title="Store3"
-                subheader="September 14, 2019"
-                />
-
-                <CardMedia
-                  className="media-img"
-                  image="/img/store1.jpg"
-                  title="store1"
-                  />
-                <CardActions>
-                    <Button size="small">예약 내역 확인하기</Button>
+                <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                    <Button size="small" color="primary">GO Check</Button>
                 </CardActions>
               </Card>
             </li>
