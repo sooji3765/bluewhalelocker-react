@@ -54,3 +54,25 @@ yarn add query-string
 yarn add react-router-dom
 yarn add cross-env --dev
 ~~~
+
+### 리액트 커스텀 환경변수 설정하기
+* .env
+* 리액트에선 반디시 REACT_APP_  로 시작되야 함
+~~~
+http://lemonja.blogspot.com/2018/08/reactjs-cra.html
+~~~
+
+### eoa, ca
+~~~
+https://steemit.com/kr/@yahweh87/eoa
+~~~
+
+### 디버깅 모드 실행
+index.js 에서 ./Root 를 ./RootDebut로 교체후, 시작하면,
+왼쪽에는 지갑정보 및 기타 정보가 보여지고, 오른편에 붙은 화면을 볼수 있습니다.
+~~~
+import Root from './Root';
+부분을
+import Root from './RootDebug';
+로 교체
+~~~

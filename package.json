@@ -28,13 +28,15 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "react-select": "^3.0.4",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "truffle-hdwallet-provider-klaytn": "^1.0.13-a"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:baobab": "truffle compile && truffle deploy --reset --network baobab"
   },
   "eslintConfig": {
     "extends": "react-app"

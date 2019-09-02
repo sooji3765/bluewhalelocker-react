@@ -36,4 +36,16 @@ contract Locker {
         message = _message;
         emit LogSetMessage(_id, _name, message);
     }
+
+    /////////////////////////////////////////
+    // for test set,get
+    string private hello = "";
+
+    function setHello(string memory value) public {
+        hello = value;
+    }
+
+    function getHello() public view returns (string memory) {
+        return hello;
+    }
 }
