@@ -5,15 +5,21 @@ import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
+import ReservationDetailComponent from './ReservationDetailComponent';
 
 class ReservationComponent extends Component {
 
   state = {
-    reservationItem: []
+    reservationItem: [],
+    selected : null
   };
 
-  handleClick= (id) =>{
-     window.location.href="/reservation/result/"+id; 
+  handleClick= (e,item) =>{
+    //  window.location.href="/reservation/result/"+item.id;
+    e.preventDefault();
+    this.setState({
+      selected : item
+    }) 
   }
 
   componentDidMount() {
@@ -28,6 +34,7 @@ class ReservationComponent extends Component {
 
     return (
       <>
+      {!this.state.selected &&
       <div className="page-content header-clear-medium">
         <div>
           
@@ -44,7 +51,7 @@ class ReservationComponent extends Component {
                  action={
                    <IconButton aria-label="settings">
                      <MoreVertIcon 
-                      onClick={()=>this.handleClick({id})}
+                      onClick={(e)=>this.handleClick(e,item)}
                      />
                    </IconButton>
                  }
@@ -93,6 +100,10 @@ class ReservationComponent extends Component {
           </ul>
         </div>
       </div>
+      }
+      {this.state.selected &&
+        <ReservationDetailComponent {...this.state.selected}></ReservationDetailComponent>
+      }
       </>
     );
   }

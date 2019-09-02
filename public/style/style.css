@@ -1428,3 +1428,30 @@ label a {
 .sign-btn-submit{
     margin: 30px auto;
 }
+
+/* reservation detail */
+.paper-content{
+    margin: 10px 10px;
+    padding: 20px;
+}
+
+
+.paper-title{
+    text-align: center;
+    margin : 0 auto;
+}
+.qrcode_img{
+    
+    margin: 10px auto;
+    width: 30%;
+}
+
+.reservation_grid{
+    border-top: 1px solid hsl(0, 0%, 80%);
+}
+
+.grid-content::after{
+    content: '';
+    clear: both;
+    display: block;
+}
