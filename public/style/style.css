@@ -713,7 +713,10 @@ label a {
 
 /* chat css */
 .page-title {
-    margin: 0px 15px 50px 15px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 800;
+    margin: 10px 10px;
 }
 
 .page-title p {

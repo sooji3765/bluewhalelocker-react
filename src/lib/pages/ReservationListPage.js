@@ -7,7 +7,7 @@ import FooterComponent from '../components/default/FooterComponent';
 const ReservationListPage = () => {
   return (
     <>
-      <HeaderComponent></HeaderComponent>
+      <HeaderComponent title={'RESERVATION LIST'}></HeaderComponent>
       <ReservationComponent></ReservationComponent>
       <FooterComponent path="/reservationList"></FooterComponent>
     </>

@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import {Button, ButtonGroup} from '@material-ui/core';
 import Select from 'react-select'
 
+
 class LockerReservationComponent extends Component {
   state = {
     date: new Date(),
@@ -31,7 +32,7 @@ class LockerReservationComponent extends Component {
             <div className="locker-info-div">
               <div className="locker-info-text"> 
                 <p className="text-title">young's cafe</p>
-                <p classNmae="text-ctx"> 공덕 어쩌구 저쩌구</p>
+                <p className="text-ctx"> 공덕 어쩌구 저쩌구</p>
                 <p>Keeper : hayoung</p>
               </div>
               <div className="locker-info-img">

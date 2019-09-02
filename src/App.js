@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import HomePage from "./lib/pages/HomePage";
-import LikeListPage from "./lib/pages/LikeListPage";
 import ReservationList from "./lib/pages/ReservationListPage";
 import ChatPage from "./lib/pages/ChatPage";
 import UsersettingPage from "./lib/pages/UsersettingPage";
@@ -36,7 +35,6 @@ const App = () => {
       {state.props.isSignIn && (
         <>
           <Route exact path="/" component={HomePage} />
-          <Route path="/likeList" component={LikeListPage} />
           <Route path="/reservationList" component={ReservationList} />
           <Route path="/chat" component={ChatPage} />
           <Route path="/usersetting" component={UsersettingPage} />
@@ -46,7 +44,7 @@ const App = () => {
           <Route path="/add_locker" component={AddLockerPage} />
           <Route path="/input_locker" component={InputLockerPage} />
           <Route path="/register_keeper" component={RegisterKeeperPage} />
-          <Route path="/keeper_info/:id?" component={KeeperInfoPage} />
+          <Route exact path="/keeper_info/:id?" component={KeeperInfoPage} />
           <Route path="/reservation" component={LockerReservationPage} />
           <Route path="/profile_edit" component={profileEditPage} />
         </>
