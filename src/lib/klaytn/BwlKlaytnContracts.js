@@ -11,9 +11,11 @@ class BwlKlaytnContracts extends Component {
   render() {
     return (
       <>
-        {/* <LockerBwlKlaytn/> */}
+        <div className="page-content header-clear-medium color-white">
+        <LockerBwlKlaytn/>
         <SimpleStorageBwlKlaytn/>
-        {/* <BwlERC20Klaytn/> */}
+        <BwlERC20Klaytn/>
+        </div>
       </>
     );
   }

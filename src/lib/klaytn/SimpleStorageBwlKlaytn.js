@@ -29,13 +29,17 @@ class SimpleStorageBwlKlaytn extends Component {
   };
 
   getSummary = async () => {
-    const { contract } = this.state;
+    const { cav, contract } = this.state;
     if (!this.state.cav) {
       return;
     }
 
     const get = await contract.methods.get().call();
-    this.setState({ get: get })
+    const getBlockNumber = await cav.klay.getBlockNumber();
+    this.setState({
+      get: get,
+      getBlockNumber: getBlockNumber
+    })
   }
 
   set = async (value) => {
@@ -62,7 +66,8 @@ class SimpleStorageBwlKlaytn extends Component {
 
     return (
       <div className=''>
-        <div>The stored value is: {this.state.get}</div>
+        <div>The get value is: {this.state.get}</div>
+        <div>The getBlockNumber value is: {this.state.getBlockNumber}</div>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MyInfo from '../../info/MyInfo';
+import BwlUtil from '../../utils/BwlUtil';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,10 +15,22 @@ import Container from '@material-ui/core/Container';
 
 class LoginComponent extends Component{
 
+    constructor(props) {
+        super(props);
+        this.handleSignIn = this.handleSignIn.bind(this);
+    }
+
     handleSignIn = (e) => {
         e.preventDefault();
-        MyInfo.setSignIn();
-        window.location.href = "/";
+
+        const form = BwlUtil.findParentForm(e.target);
+
+        if (form) {
+            const item = BwlUtil.getFormData(e, form);
+            this.props.handleSignIn({props: this.props, e, item});
+        } else {
+            console.log('not found form tag');
+        }
     };
 
     render(){

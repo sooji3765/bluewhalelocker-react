@@ -1,60 +1,19 @@
 import React from "react";
-import { Route } from "react-router-dom";
 
-import HomePage from "./lib/pages/HomePage";
-import ReservationList from "./lib/pages/ReservationListPage";
-import ChatPage from "./lib/pages/ChatPage";
-import UsersettingPage from "./lib/pages/UsersettingPage";
-import LoginPage from "./lib/pages/LoginPage";
-import SignPage from "./lib/pages/SignPage";
-import KeeperSettingPage from "./lib/pages/KeeperSettingPage";
-import RegisterKeeperPage from "./lib/pages/ResisterKeeperPage";
-import AddLockerPage from "./lib/pages/AddLockerPage";
-import InputLockerPage from "./lib/pages/InputLockerPage";
-import MyInfo from "./lib/info/MyInfo";
-import KeeperInfoPage from "./lib/pages/KeeperInfoPage";
-import LockerReservationPage from "./lib/pages/LockerReservationPage";
-import profileEditPage from "./lib/pages/ProfileEditPage";
-import ReviewRegistPage from "./lib/pages/ReviewRegistPage";
+import ModuleContainer from "./lib/containers/ModuleContainer";
 
-const App = () => {
-  const profile = MyInfo.getProfile("profile");
-  const state = {
-    props: {
-      isSignIn: false
-    },
-    ...profile
-  };
+class App extends React.Component {
 
-  return (
-    <>
-      {!state.props.isSignIn && (
-        <>
-          <Route exact path="/" component={LoginPage} />
-        </>
-      )}
-      {state.props.isSignIn && (
-        <>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/reservationList" component={ReservationList} />
-          <Route path="/chat" component={ChatPage} />
-          <Route path="/usersetting" component={UsersettingPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={SignPage} />
-          <Route path="/keeper_setting" component={KeeperSettingPage} />
-          <Route path="/add_locker" component={AddLockerPage} />
-          <Route path="/input_locker" component={InputLockerPage} />
-          <Route path="/register_keeper" component={RegisterKeeperPage} />
-          <Route exact path="/keeper_info/:id?" component={KeeperInfoPage} />
-          <Route path="/reservation" component={LockerReservationPage} />
-          <Route path="/profile_edit" component={profileEditPage} />
-          <Route exact path="/review/regist/:id?" component={ReviewRegistPage}/>
-        </>
-      )}
-      <Route path="/login" component={LoginPage} />
-      <Route path="/signup" component={SignPage} />
-    </>
-  );
+  componentDidMount() {
+  }
+
+  render = () => {
+    return (
+      <>
+        <ModuleContainer />
+      </>
+    );
+  }
 };
 
 export default App;

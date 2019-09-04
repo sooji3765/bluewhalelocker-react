@@ -7,7 +7,6 @@ import axios from "axios";
 import Moment from 'react-moment';
 import EditIcon from '@material-ui/icons/Edit';
 import ReservationDetailComponent from './ReservationDetailComponent';
-import { Link } from 'react-router-dom'
 class ReservationComponent extends Component {
  
   state = {
@@ -42,7 +41,7 @@ class ReservationComponent extends Component {
       <>
     {!this.state.selected &&
       <div className="page-content header-clear-medium">
-         
+         RESERVATION
           <ul className="reservation-content">
           {this.state.reservationItem.map((item,id) => 
             
@@ -110,7 +109,7 @@ class ReservationComponent extends Component {
                       <EditIcon style={{marginLeft:'10px'}} >send</EditIcon>
                     </Button>
 
-                    <Link to= {`/review/regist/${item.id}`}>asdf</Link>
+                    <a to= {`/review/regist/${item.id}`}>asdf</a>
                    
                   </CardActions>)
                   :(<></>)

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class KeeperSettingComponent extends Component {
   render() {
@@ -26,11 +25,11 @@ class KeeperSettingComponent extends Component {
           <div className="content">
             <ul className="link-list1">
               <li>
-                <Link to="/keeper_edit">
+                <a to="/keeper_edit">
                   <i className="fas fa-user-cog color-blue"></i>
                   <span>Keeper Edit</span>
                   <i className="fa fa-angle-right"></i>
-                </Link>
+                </a>
               </li>
               <li>
                 <a href="/keeper/review">
@@ -47,27 +46,27 @@ class KeeperSettingComponent extends Component {
                 </a>
               </li>
               <li>
-                <Link to ="/usersetting">
+                <a to ="/usersetting">
                   <i className="fas fa-exchange-alt color-yellow"></i>
                   <span>Change User Mode</span>
                   <i className="fa fa-angle-right"></i>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/register_keeper">
+                <a to="/register_keeper">
                   <i className="fa fa-cog color-gray"></i>
                   <span>Register Keeper</span>
                   <i className="fa fa-angle-right"></i>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/login">
+                <a to="/login">
                 
                   <i className="fa fa-power-off color-red"></i>
                   <span>Login</span>
                   <i className="fa fa-angle-right"></i>
               
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

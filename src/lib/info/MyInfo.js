@@ -1,3 +1,5 @@
+import LocalTestInfo from './LocalTestInfo';
+
 class MyInfo {
 
   constructor(props) {
@@ -17,11 +19,39 @@ class MyInfo {
         user_id: "",
         user_name: "",
       },
+      routerInfo: {
+        selectComponent: 'LoginComponent',
+      },
+      lockerInfo: {
+        lockerList: [],
+      },
+    },
+  };
+
+  case1_Info = {
+    props: {
+      isSignIn: false
+    },
+    state: {
+      header: {
+        count: "",
+        title: "",
+      }, 
+      userInfo: {
+        user_id: "",
+        user_name: "",
+      },
+      routerInfo: {
+        selectComponent: 'AddLockerComponent',
+      },
+      lockerInfo: {
+        lockerList: LocalTestInfo.lockerList,
+      },
     }
   };
 
   getProfile = () => {
-    const jsonProfile = window.localStorage.getItem("profile");
+    const jsonProfile = window.sessionStorage.getItem("profile");
     const profile = this.emptyInfo;
 
     try {
@@ -49,19 +79,25 @@ class MyInfo {
           user_id: "USER1",
           user_name: "김철순",
         },
+        routerInfo: {
+          selectComponent: 'HomeComponent',
+        },
+        lockerInfo: {
+          lockerList: LocalTestInfo.lockerList,
+        },
       }
     };
 
     const jsonProfile = JSON.stringify(profile);
-    window.localStorage.setItem("profile", jsonProfile);
+    window.sessionStorage.setItem("profile", jsonProfile);
   }
 
   setSignUp = () => {
-    window.localStorage.clear();
+    window.sessionStorage.clear();
   }
   
   setSignOut = () => {
-    window.localStorage.clear();
+    window.sessionStorage.clear();
   }
 
 }

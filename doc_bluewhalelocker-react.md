@@ -16,6 +16,59 @@ src
 
 ### components
 
+# 2019-09-05 반영
+### Router path 방식에서 Redux & Redux 방식으로 교체
+* 단순 Component 전환은 handleUpdateState 사용
+* Commponent 전환 : selectComponent 소스검색
+~~~
+* 기존코드
+<Route path="/usersetting" component={UsersettingPage} />
+
+* 신규코드
+  handleRouterUsersetting = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'UsersettingComponent'});
+  }
+
+render 부분
+  <a href="/usersetting" onClick={(e) => this.handleRouterUsersetting(e)}>Setting</a>
+~~~
+
+### 로그인같은 어떤 값전달이 필요할때에는 아래와 같은 식으로 코딩
+~~~
+    handleSignIn = (e) => {
+        e.preventDefault();
+
+        const form = BwlUtil.findParentForm(e.target);
+
+        if (form) {
+            const item = BwlUtil.getFormData(e, form);
+            this.props.handleSignIn({props: this.props, e, item});
+        } else {
+            console.log('not found form tag');
+        }
+    };
+~~~
+
+### 명령어 처리 루틴
+로그인, 등록, 수정 같은 명령어 처리는 ./lib/store/밑으
+~~~
+DefaultUpdater.js : /ib/component/default 에서 이루어지는 이벤트 모음
+LockerUpdater.js : /ib/component/locker 에서 이루어지는 이벤트 모음
+UserUpdater.js : /ib/component/user 에서 이루어지는 이벤트 모음
+{폴더명}Updater.js : /ib/component/{폴더명} 에서 이루어지는 이벤트 모음
+~~~
+
+### Redux & Redux 교체하면서 Link 콤포넌트 에러나는것 해결위해 a 태그로 교체
+~~~
+* 기존코드
+  <Link ></Link>
+
+
+* 신규코드
+  <a onClick={(e) => this.handleRouterUsersetting(e)}>Setting</a>
+~~~
+
 ### Reference
 
 ##### react
