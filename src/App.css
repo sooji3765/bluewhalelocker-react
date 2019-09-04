@@ -1,1 +1,24 @@
- 
+
+.root {
+  margin: 0;
+  padding: 0;
+}
+
+.sub_a {
+  margin: 0;
+  padding: 0;
+  width: 460px;
+  float: right;
+  position: relative;
+  left: 0%;
+}
+
+.sub_b {
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  width: 460px;
+  float: left;
+  position: relative;
+  left: 0%;
+}

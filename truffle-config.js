@@ -18,10 +18,12 @@
  *
  */
 
+const PrivateKeyConnector = require('connect-privkey-to-provider')
 // const HDWalletProvider = require('truffle-hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
+const path = require("path");
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
@@ -35,6 +37,7 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
+  contracts_build_directory: path.join(__dirname, "src/contracts"),
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -85,14 +88,23 @@ module.exports = {
           port: 7545,
           network_id: "*" // Match any network id
     },
-    ropsten: {
-          provider: function() {
-              return new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/apikey')
-          },
-          network_id: '3',
-          gas: 4500000,
-          gasPrice: 10000000000,
-    }
+    // ropsten: {
+    //       provider: function() {
+    //           return new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/apikey')
+    //       },
+    //       network_id: '3',
+    //       gas: 4500000,
+    //       gasPrice: 10000000000,
+    // },
+    baobab: {
+      provider: new PrivateKeyConnector(
+        '0xde664647915d6778ed885d171c82e30385936817dffc02ced09c47dc0af38533',
+        'https://api.baobab.klaytn.net:8651'
+      ),
+      network_id: '1001',
+      gas: '20000000',
+      gasPrice: null,
+    },
   },
 
   // Set default mocha options here, use special reporters etc.

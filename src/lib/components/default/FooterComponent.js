@@ -35,8 +35,6 @@ class FooterComponent extends Component {
       <div id="footer-menu">
         <a href="/" className={this.path["/"]}><i className="fa fa-search"></i><span>Search</span>
         </a>
-        <a href="/likeList" className={this.path["/likeList"]}><i className="fa fa-heart"></i><span>Like</span>
-        </a>
         <a href="/reservationList" className={this.path["/reservationList"]}><i className="fa fa-list-alt"></i><span>List</span>
         </a>
         <a href="/chat" className={this.path["/chat"]}><i className="fa fa-comments"></i><span>Chat</span>

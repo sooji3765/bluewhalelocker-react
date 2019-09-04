@@ -369,7 +369,7 @@ label a {
 
 #footer-menu a,
 #footer-keeper-menu a {
-    width: 20%;
+    width: 25%;
     color: #fff;
     /*color:#1f1f1f;*/
     float: left;
@@ -442,6 +442,7 @@ label a {
     left: 0px;
     right: 0px;
     z-index: 50;
+    background-color: #fff;
 }
 
 .header-clear-medium {
@@ -712,7 +713,10 @@ label a {
 
 /* chat css */
 .page-title {
-    margin: 0px 15px 50px 15px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 800;
+    margin: 10px 10px;
 }
 
 .page-title p {
@@ -937,78 +941,6 @@ label a {
 
 /* login style */
 
-.form-login,
-.form-signup {
-    margin: 120px auto;
-    padding: 20px;
-}
-
-
-.form-content {
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px solid #e4e4e4;
-    margin-bottom: 10px;
-}
-
-.form-title {
-    font-weight: 800;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.form-click-content {
-    text-align: center;
-}
-
-.form-click-content>label {
-    text-align: left;
-    margin-left: 2px;
-    vertical-align: middle;
-    font-size: 13px;
-}
-
-.form-login-btn {
-    font-weight: 800;
-    color: #fff;
-    border-radius: 10px;
-    background-color: skyblue;
-    width: 100%;
-    padding: 10px 5px;
-    margin: 10px auto;
-    display: block;
-}
-
-.form-login-btn:hover {
-    cursor: pointer;
-    background-color: #91c4e5;
-}
-
-.form-check {
-    margin-right: 5px;
-    margin-bottom: 10px;
-    font-size: 17px;
-}
-
-.form-span {
-    padding: 5px;
-    font-size: 18px;
-    color: #91c4e5;
-}
-
-.input-text {
-    width: 90%;
-    text-indent: 10px;
-}
-
-.form-link-signup {
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-.form-link-signup:hover {
-    font-weight: bold;
-}
 
 /* add-list */
 .locker-page,
@@ -1093,6 +1025,7 @@ label a {
     padding: 20px;
 
   }
+  
 /* form-locker-register */
 .form-input-locker {
     margin: 15px auto;
@@ -1432,4 +1365,93 @@ label a {
 }
 .btn-margin{
     margin-bottom: 10px;
+}
+
+/* reservation page */
+
+.locker-info-div{
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.locker-info-text{
+    font-size: 1em;
+    width: 50%;
+    float: left;
+}
+.locker-info-img{
+    width: 50%;
+    float: left;
+}
+
+.locker-info-img-in{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.locker-info-div::after{
+    content: '';
+    clear: both;
+    display:block;
+}
+.calender-div{
+    margin: 0 auto;
+}
+
+.reservation-input-content{
+    padding: 10px 20px;
+}
+.btn-group-con{
+    margin-top: 10px;
+}
+
+/* sign/up form -material */
+.sign-page {
+    margin-top: 80px;
+    display : 'flex';
+    flex-direction: 'column';
+    align-items: 'center';
+}
+
+.sign-avatar{
+    background-color: #91c4e5;
+    margin : 0 auto;
+}
+
+.sign-title{
+    text-align: center;
+}
+
+.sign-form{
+    margin-top: 20px;
+}
+
+.sign-btn-submit{
+    margin: 30px auto;
+}
+
+/* reservation detail */
+.paper-content{
+    margin: 10px 10px;
+    padding: 20px;
+}
+
+
+.paper-title{
+    text-align: center;
+    margin : 0 auto;
+}
+.qrcode_img{
+    
+    margin: 10px auto;
+    width: 30%;
+}
+
+.reservation_grid{
+    border-top: 1px solid hsl(0, 0%, 80%);
+}
+
+.grid-content::after{
+    content: '';
+    clear: both;
+    display: block;
 }

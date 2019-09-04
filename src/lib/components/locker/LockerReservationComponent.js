@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Calendar from "react-calendar";
-// import Calendar from "react-calendar/dist/entry.nostyle";
+import {Button, ButtonGroup} from '@material-ui/core';
+import Select from 'react-select'
+
 
 class LockerReservationComponent extends Component {
   state = {
@@ -14,82 +16,62 @@ class LockerReservationComponent extends Component {
   };
 
   render() {
-    const headLineStyle = {
-      textAlign: "center",
-      background: "blue",
-      color: "white",
-      fontSize: "30px",
-      height: "40px",
-      margin: "20px",
-      paddingTop: "7px",
-      fontStyle: "bord"
-    };
-    const outerStyle = {
-      display: "inline-block",
-      width: "50%",
-      verticalAlign: "middle",
-      textAlign: "center",
-      background: "yellow"
-    };
-    const outerStyle2 = {
-      display: "inline-block",
-      width: "50%",
-      verticalAlign: "middle",
-      textAlign: "center",
-      background: "orange"
-    };
-    const imgStyle = {
-      display: "inline-block",
-      width: "300px",
-      height: "300px",
-      boder: "1px solid black",
-      margin: "10px",
-      background: "orange",
-      borderRadius: "100%"
-    };
-    const calendarStyle = {
-      background: "pink",
-      height: "400px",
-      display: "block"
-    };
-    const tStyle = {
-      margin: "10px"
-    };
-    const reserveStyle = {
-      textAlign: "center"
-    };
+
+    const options = [
+      { value: 'Large', label: 'Large' },
+      { value: 'Medium', label: 'Medium' },
+      { value: 'Small', label: 'Small' }
+    ]
+   
     return (
       <>
         <div className="page-content header-clear-medium">
           <div>
-            <div style={headLineStyle}>LOCKER RESERVATION</div>
-            <div style={outerStyle}>
-              <div>
-                <div style={tStyle}>young's cafe</div>
-                <div>공덕 어쩌구 저쩌구</div>
-                <div>Keeper : hayoung</div>
+            <div className="page-title">LOCKER RESERVATION</div>
+            
+            <div className="locker-info-div">
+              <div className="locker-info-text"> 
+                <p className="text-title">young's cafe</p>
+                <p className="text-ctx"> 공덕 어쩌구 저쩌구</p>
+                <p>Keeper : hayoung</p>
+              </div>
+              <div className="locker-info-img">
+                <img src="../img/store1.jpg" alt="store_img" className="locker-info-img-in" />
               </div>
             </div>
-            <div style={outerStyle2}>
-              <img src="../img/store1.jpg" alt="store_img" style={imgStyle} />
-            </div>
-            <div style={calendarStyle}>
+
+            
+            <div className="reservation-input-content">
+              <div>
+                {this.state.date.getFullYear()}년{" "}
+                {this.state.date.getMonth() + 1}월 {this.state.date.getDate()}일
+                <div>남은 라커수 : 3</div>
+              </div>
+             
+              
+
               <Calendar
-                // className={classes.calendar}
+                className="calender-div"
                 minDate={this.state.today}
                 onChange={this.onChange}
                 value={this.state.date}
               />
-            </div>
-            <div style={reserveStyle}>
-              <div>
-                {this.state.date.getFullYear()}년{" "}
-                {this.state.date.getMonth() + 1}월 {this.state.date.getDate()}일
-              </div>
-              <div>남은 라커수 : 3</div>
+           
 
-              <button className="menu-keeper-btn">예약하기</button>
-            </div>
+           <Select 
+           className="btn-group-con"
+           options={options} />
+            
+              
+            <ButtonGroup 
+              className="btn-group-con"
+              fullWidth 
+              aria-label="full width outlined button group">
+              <Button>RESERVATION</Button>
+              <Button>PAY</Button>
+            </ButtonGroup>
+           
+           </div> 
           </div>
         </div>
       </>

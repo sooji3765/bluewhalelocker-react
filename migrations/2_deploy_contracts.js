@@ -1,4 +1,4 @@
-var locker = artifacts.require("./locker.sol");
+var locker = artifacts.require("Locker.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(locker);

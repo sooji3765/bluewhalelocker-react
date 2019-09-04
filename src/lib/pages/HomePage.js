@@ -10,6 +10,7 @@ import MyInfo from "../info/MyInfo";
 
 const HomePage = props => {
   const profile = MyInfo.getProfile("profile");
+  
   return (
     <>
       <HeaderComponent {...profile.state.header} />

@@ -11,17 +11,11 @@ class KeeperInfoComponent extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("http://localhost:8080/keepers/", {
-        params: {
-          id: 1
-        }
-      })
-      .then(res => {
-        console.log(res);
-        this.setState({ keeperinfoItem: res.data });
-      });
 
+    axios.get("http://localhost:8080/keepers/2").then(res =>{
+      console.log(res);
+      this.setState({keeperinfoItem : res.data});
+    })
     axios.get("http://localhost:8080/reviews").then(res => {
       console.log(res);
       this.setState({ reviewItems: res.data });
