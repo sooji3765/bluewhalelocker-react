@@ -28,9 +28,9 @@ class ReservationComponent extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:8080/reviews/list").then(res =>{
-      console.log(res.data[0]);
-      this.setState({reservationItem : res.data[0]});
+    axios.get("http://localhost:8080/order/list").then(res =>{
+      console.log(res.data.results);
+      this.setState({reservationItem : res.data.results[0]});
 
       console.log(this.state.reservationItem);
     });

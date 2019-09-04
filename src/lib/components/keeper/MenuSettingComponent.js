@@ -27,9 +27,9 @@ class MenuSettingComponent extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/keepers").then(res => {
+    axios.get("http://localhost:8080/keeper/list").then(res => {
       console.log(res);
-      this.setState({ items: res.data });
+      this.setState({ items: res.data.results });
     });
   }
 
