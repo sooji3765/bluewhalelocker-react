@@ -15,6 +15,7 @@ import MyInfo from "./lib/info/MyInfo";
 import KeeperInfoPage from "./lib/pages/KeeperInfoPage";
 import LockerReservationPage from "./lib/pages/LockerReservationPage";
 import profileEditPage from "./lib/pages/ProfileEditPage";
+import ReviewRegistPage from "./lib/pages/ReviewRegistPage";
 
 const App = () => {
   const profile = MyInfo.getProfile("profile");
@@ -47,6 +48,7 @@ const App = () => {
           <Route exact path="/keeper_info/:id?" component={KeeperInfoPage} />
           <Route path="/reservation" component={LockerReservationPage} />
           <Route path="/profile_edit" component={profileEditPage} />
+          <Route exact path="/review/regist/:id?" component={ReviewRegistPage}/>
         </>
       )}
       <Route path="/login" component={LoginPage} />

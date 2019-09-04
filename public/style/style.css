@@ -1443,11 +1443,11 @@ label a {
 .qrcode_img{
     
     margin: 10px auto;
-    width: 30%;
+    width: 40%;
 }
 
 .reservation_grid{
-    border-top: 1px solid hsl(0, 0%, 80%);
+    border-top: 1px solid rgba(0, 0, 0, 0.87);
 }
 
 .grid-content::after{

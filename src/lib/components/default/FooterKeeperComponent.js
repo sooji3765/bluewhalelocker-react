@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class FooterKeeperComponent extends Component {
 
-  constructor(props) {
-    super(props);
-  }
 
   path = {
     "/add_locker": "",

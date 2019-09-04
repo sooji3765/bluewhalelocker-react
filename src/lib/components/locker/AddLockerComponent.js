@@ -1,5 +1,4 @@
 import React ,{Component} from 'react'
-import { number } from 'prop-types';
 import LockerItemComponent from './LockerItemComponent';
 
 class AddLockerComponent extends Component{

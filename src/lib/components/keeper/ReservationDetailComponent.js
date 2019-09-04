@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Paper,IconButton,Typography,Button} from "@material-ui/core";
+import { Paper,Typography,Button} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 
 class ReservationDetailComponent extends Component {
@@ -10,6 +10,10 @@ class ReservationDetailComponent extends Component {
         this.setState({
             ...props
         });
+    }
+
+    handleBack = () =>{
+        window.location.href='/reservationList';
     }
 
     render() {
@@ -24,8 +28,13 @@ class ReservationDetailComponent extends Component {
                 </Grid>
                 <Grid>
                  <Typography>
-                    <Grid>
-
+                    <Grid xs={6}>
+                        <Typography>
+                            sdf
+                        </Typography>
+                    </Grid>
+                    <Grid xs={6}>
+                            asdf
                     </Grid>
                 </Typography>
                 </Grid>
@@ -33,7 +42,10 @@ class ReservationDetailComponent extends Component {
                     <img className="qrcode_img" src="../img/qrcode.png" alt="qrocde"/>
                 </Grid>
                 <Grid className="grid-content">
-                    <Button style={{float:'right'}}>back</Button>
+                    <Button 
+                    style={{float:'right'}}
+                    onClick={()=>this.handleBack()}
+                    >back</Button>
                 </Grid>
             </Paper>
            </div>

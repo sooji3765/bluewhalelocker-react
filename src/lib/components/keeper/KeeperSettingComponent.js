@@ -33,14 +33,14 @@ class KeeperSettingComponent extends Component {
                 </Link>
               </li>
               <li>
-                <a href="#">
+                <a href="/keeper/review">
                   <i className="fas fa-keyboard"></i>
                   <span>My Review</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/keeper/wallet">
                   <i className="fas fa-wallet color-green"></i>
                   <span>My Wallet</span>
                   <i className="fa fa-angle-right"></i>

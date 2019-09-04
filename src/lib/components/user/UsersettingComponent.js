@@ -19,9 +19,9 @@ class UsersettingComponent extends Component {
       ...this.props.userInfo
     };
 
-    const site = {
-      login: "login"
-    };
+    // const site = {
+    //   login: "login"
+    // };
 
     return (
       <>
@@ -49,14 +49,14 @@ class UsersettingComponent extends Component {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/review">
                     <i className="fas fa-keyboard" />
                     <span>My Review</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/wallet">
                     <i className="fas fa-wallet color-green" />
                     <span>My Wallet</span>
                     <i className="fa fa-angle-right" />
@@ -68,13 +68,6 @@ class UsersettingComponent extends Component {
                     <span>Change Keeper Mode</span>
                     <i className="fa fa-angle-right" />
                   </Link>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-cog color-gray" />
-                    <span>Setting Application</span>
-                    <i className="fa fa-angle-right" />
-                  </a>
                 </li>
                 <li>
                   <Link to="/login" onClick={this.handleSignIn}>

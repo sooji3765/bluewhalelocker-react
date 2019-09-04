@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import MyInfo from '../../info/MyInfo';
 
 class HeaderComponent extends Component {
 
-	constructor(props) {
-		super(props);
-	}
+
 
 	userInfo = {
 		...this.props.userInfo

@@ -1,25 +1,30 @@
 import React, { Component } from "react";
-import { Card, CardHeader,IconButton,CardMedia, CardContent,Typography} from "@material-ui/core";
+import { Card, CardHeader,IconButton,CardMedia,Button,CardActions, CardContent,Typography} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
+import EditIcon from '@material-ui/icons/Edit';
 import ReservationDetailComponent from './ReservationDetailComponent';
-
+import { Link } from 'react-router-dom'
 class ReservationComponent extends Component {
-
+ 
   state = {
     reservationItem: [],
-    selected : null
+    selected :null
   };
 
-  handleClick= (e,item) =>{
-    //  window.location.href="/reservation/result/"+item.id;
+  handleClick = (e,item) =>{
     e.preventDefault();
     this.setState({
       selected : item
     }) 
+  }
+
+  handleWrite = (e,item) =>{
+    console.log(item.id);
+    window.location.href='/review/regist/'+item.id;
   }
 
   componentDidMount() {
@@ -33,15 +38,15 @@ class ReservationComponent extends Component {
   render() {
 
     return (
+      
       <>
-      {!this.state.selected &&
+    {!this.state.selected &&
       <div className="page-content header-clear-medium">
-        <div>
-          
+         
           <ul className="reservation-content">
           {this.state.reservationItem.map((item,id) => 
-             <li className="reservation_item" key={id}>
-             <Card >
+            
+             <Card key={id} style={{marginBottom : '10px'}}>
                <CardHeader
                  avatar={
                    <Avatar aria-label="recipe">
@@ -51,7 +56,7 @@ class ReservationComponent extends Component {
                  action={
                    <IconButton aria-label="settings">
                      <MoreVertIcon 
-                      onClick={(e)=>this.handleClick(e,item)}
+                        onClick={(e)=>this.handleClick(e,item)}
                      />
                    </IconButton>
                  }
@@ -61,12 +66,12 @@ class ReservationComponent extends Component {
                <CardContent>
  
                <CardMedia
-                   style={{height :'200px', "margin-bottom":'10px'}}
+                   style={{height :'200px', marginBottom:'10px'}}
                    image={item.image1}
                    title="Paella dish"
                  />  
                  <Typography variant="body2" color="textSecondary" component="p">
-                   <Grid container>
+                    <Grid container>
                      <Grid item xs={4}>
                      <i className="far fa-calendar-alt"></i> Use Date      
                      </Grid>
@@ -91,19 +96,34 @@ class ReservationComponent extends Component {
                      <Grid item xs={8}>
                      {item.state} 
                      </Grid>
-                   </Grid>
+                   </Grid> 
                  </Typography>
+                 {item.state==='used'?(
+                  <CardActions>
+                     <Button 
+                     size="small"
+                      onClick={(e)=>this.handleWrite(e, item)}
+                     variant="contained" 
+                     color="primary" >
+                      Send
+                      {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
+                      <EditIcon style={{marginLeft:'10px'}} >send</EditIcon>
+                    </Button>
+
+                    <Link to= {`/review/regist/${item.id}`}>asdf</Link>
+                   
+                  </CardActions>)
+                  :(<></>)
+                }
                </CardContent>
              </Card>
-             </li>  
+        
           )}
           </ul>
-        </div>
-      </div>
-      }
-      {this.state.selected &&
-        <ReservationDetailComponent {...this.state.selected}></ReservationDetailComponent>
-      }
+        </div>}
+        {this.state.selected &&
+          <ReservationDetailComponent {...this.state.selected} ></ReservationDetailComponent>
+        }         
       </>
     );
   }
