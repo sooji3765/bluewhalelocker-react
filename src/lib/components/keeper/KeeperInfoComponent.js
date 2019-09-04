@@ -6,7 +6,7 @@ import axios from "axios";
 
 class KeeperInfoComponent extends Component {
   state = {
-    keeperinfoItem :[],
+    keeperinfoItem: [],
     reviewItems: []
   };
 
@@ -40,7 +40,9 @@ class KeeperInfoComponent extends Component {
             <div className="keeper-info-content">
               <div className="keeper-info-profile">
                 <div className="keeper-name-content">
-                  <div className="keeper-names">{this.state.keeperinfoItem.name}</div>
+                  <div className="keeper-names">
+                    {this.state.keeperinfoItem.name}
+                  </div>
                   <div className="keeper-info-score-div">
                     <i className="fas fa-star" />
                     <i className="fas fa-star" />
