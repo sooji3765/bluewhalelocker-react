@@ -5,10 +5,13 @@ import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
-import {Link} from 'react-router-dom';
 import ReservationDetailComponent from './ReservationDetailComponent';
 class ReservationComponent extends Component {
  
+  constructor(props) {
+    super(props);
+    this.handleWrite = this.handleWrite.bind(this)
+  }
   state = {
     reservationItem: [],
     selected :null
@@ -22,14 +25,14 @@ class ReservationComponent extends Component {
   }
 
   handleWrite = (e,item) =>{
-    console.log(item.id);
-    window.location.href='/review/regist/'+item.id;
+    e.preventDefault();
+    this.props.handleReviewWrite({props: this.props, e, item, selectComponent: 'ReviewRegistComponent'});
   }
 
   componentDidMount() {
     axios.get("http://localhost:8080/order/list").then(res =>{
       console.log(res.data.results);
-      this.setState({reservationItem : res.data.results[0]});
+      this.setState({reservationItem : res.data.results});
 
       console.log(this.state.reservationItem);
     });
@@ -99,13 +102,14 @@ class ReservationComponent extends Component {
                  </Typography>
                  
                </CardContent>
-               {item.state==='used'?(
+               {item.state==='inuse'?(
                   <CardActions>
-                    <Link
+                    <a
+                      onClick={(e) => this.handleWrite(e, item)}
                       className="btn-write-review" 
                       to= {`/review/regist/${item.id}`}>
                       <i className="fas fa-pencil-alt"></i>review
-                      </Link>
+                      </a>
                   </CardActions>)
                   :(<></>)
                 }

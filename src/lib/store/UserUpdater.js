@@ -1,29 +1,33 @@
 import { createAction } from 'redux-actions';
+import BwlUtil from '../utils/BwlUtil';
 
 const USER_SIGN_IN = 'user/SIGN_IN';
 
 const handleSignIn = (state, action) => {
-  const profile = {
-    state: {
-      header: {
-        count: "2",
-        title: "locker - 제목",
-      },
-      userInfo: {
-        user_id: "USER1",
-        user_name: "김철순",
-      },
-      routerInfo: {
-        selectComponent: "HomeComponent",
-        selectChanger: "user",
-      },
-    }
+
+  const item = {
+    ...action.payload.item
   };
 
   return {
-    ...state,
-    ...profile.state
-  };  
+    header: {
+      count: "1",
+      title: "haha",
+    },
+    userInfo: {
+      user_id: item.id,
+      user_name: item.name,
+      auth: item.auth,
+    },
+    routerInfo: {
+      selectComponent: "HomeComponent",
+      selectChanger: "user",
+    },
+    lockerInfo: {
+      lockerList: [],
+      lockerItem: null,
+    },
+  }
 };
 
 const action_handleSignIn = createAction(USER_SIGN_IN, id => id);

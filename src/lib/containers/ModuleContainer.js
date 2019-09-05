@@ -7,6 +7,7 @@ import * as moduleStores from '../store/modules/ModuleStore';
 import UserFunc from './UserFunc';
 import DefaultFunc from './DefaultFunc';
 import LockerFunc from './LockerFunc';
+import ReviewFunc from './ReviewFunc';
 
 // common : user
 import HeaderComponent from '../components/default/HeaderComponent';
@@ -38,6 +39,9 @@ import LockerReservationComponent from '../components/locker/LockerReservationCo
 // keeper
 import KeeperSettingComponent from '../components/keeper/KeeperSettingComponent';
 
+// review
+import ReviewRegistComponent from '../components/review/ReviewRegistComponent';
+
 class ModuleContainer extends Component {
 
   componentDidMount() {
@@ -46,12 +50,13 @@ class ModuleContainer extends Component {
       ...UserFunc,
       ...DefaultFunc,
       ...LockerFunc,
+      ...ReviewFunc,
     })
   }
 
   render () {
     if (!this.state) {
-      return (
+        return (
         <>
         </>
       )
@@ -91,6 +96,8 @@ class ModuleContainer extends Component {
         {selectComponent === 'LockerReservationComponent' && <LockerReservationComponent {...this.state} {...this.props} />}
         {/* keeper */}
         {selectComponent === 'KeeperSettingComponent' && <KeeperSettingComponent {...this.state} {...this.props} />}
+        {/* reviews */}
+        {selectComponent === 'ReviewRegistComponent' && <ReviewRegistComponent {...this.state} {...this.props} />}
       </>
     )
   }
