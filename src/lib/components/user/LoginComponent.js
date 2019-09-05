@@ -20,14 +20,37 @@ class LoginComponent extends Component{
         this.handleSignIn = this.handleSignIn.bind(this);
     }
 
-    handleSignIn = (e) => {
+    doSignIn = async (item) =>{
+        const resUserLogin = await BwlUtil.doBwlPostData('/user/login', item);
+        if (resUserLogin.success === true) {
+            const id = '1';
+            const resUser = await BwlUtil.doBwlGetData('/user/' + id, {});
+            if (resUser.success === true) {
+                // id email, name, password, reg_date, wallet, profile
+                if (resUser.results.length === 1) {
+                    return {
+                        success: true,
+                        auth: resUserLogin.results,
+                        ...resUser.results[0],
+                    }
+                }
+            }
+        }
+
+        return {};
+    }
+
+    handleSignIn = async (e) => {
         e.preventDefault();
 
         const form = BwlUtil.findParentForm(e.target);
 
         if (form) {
             const item = BwlUtil.getFormData(e, form);
-            this.props.handleSignIn({props: this.props, e, item});
+            const res = await this.doSignIn(item);
+            if (res.success === true) {
+                this.props.handleSignIn({props: this.props, e, item: res});
+            }
         } else {
             console.log('not found form tag');
         }

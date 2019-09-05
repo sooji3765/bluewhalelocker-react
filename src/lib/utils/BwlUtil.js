@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 const findParentForm = (node) => {
   let form = null;
@@ -65,10 +66,82 @@ const toDateTimeString = (dt, format) => {
   return text;
 }
 
+const doBwlPost = async (path, data) => {
+  const url = process.env.REACT_APP_BACKEND_SERVER_URL + path;
+  return new Promise((relsolve, reject) => {
+    try {
+      // data = JSON.stringify(data)
+      axios.post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+          'Access-Control-Allow-Origin': '*',
+        }
+      }).then(response => {
+        console.log(response.status);
+        relsolve(response)
+      }).catch(error => {
+        reject(error)
+      })
+    } catch(error) {
+      reject(error)
+    }
+  });
+}
+
+const doBwlGet = async (path, data) => {
+  const url = process.env.REACT_APP_BACKEND_SERVER_URL + path;
+  return new Promise((relsolve, reject) => {
+    try {
+      // data = JSON.stringify(data)
+      axios.get(url, {
+        headers: {
+          "Content-Type": "application/json",
+          'Access-Control-Allow-Origin': '*',
+        }
+      }).then(response => {
+        console.log(response.status);
+        relsolve(response)
+      }).catch(error => {
+        reject(error)
+      })
+    } catch(error) {
+      reject(error)
+    }
+  });
+}
+
+const doBwlPostData = async (path, item) => {
+  const res = await doBwlPost(path, item);
+  if (res.status === 200) {
+    return res.data;
+  }
+
+  return {
+    success: false,
+    results: 'error',
+  }
+}
+
+const doBwlGetData = async (path, item) => {
+  const res = await doBwlGet(path, item);
+  if (res.status === 200) {
+    return res.data;
+  }
+
+  return {
+    success: false,
+    results: 'error',
+  }
+}
+
 export default {
   findParentForm,
   getFormData,
   toLpad,
   toZeroLpad,
   toDateTimeString,
+  doBwlPost,
+  doBwlGet,
+  doBwlPostData,
+  doBwlGetData,
 };

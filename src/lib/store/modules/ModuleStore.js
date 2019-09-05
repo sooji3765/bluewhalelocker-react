@@ -2,6 +2,7 @@ import { handleActions } from 'redux-actions';
 import DefaultUpdater from '../DefaultUpdater';
 import UserUpdater from '../UserUpdater';
 import LockerUpdater from '../LockerUpdater';
+import ReviewUpdater from '../ReviewUpdater';
 
 const initialState = {
   header: {
@@ -40,11 +41,16 @@ export const {
   action_handlePayLocker,
 } = LockerUpdater.funcActions;
 
+export const {
+  action_handleReviewWrite,
+} = ReviewUpdater.funcActions;
+
 export default handleActions(
   {
     ...DefaultUpdater.caseActions,
     ...UserUpdater.caseActions,
     ...LockerUpdater.caseActions,
+    ...ReviewUpdater.caseActions,
   },
   initialState
 );
