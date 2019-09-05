@@ -33,7 +33,7 @@ class UsersettingComponent extends Component {
               <div className="profile-body">
                 <h2 className="userid">{userInfo.user_id}</h2>
                 <span className="user-name">{userInfo.user_name}</span>
-                <button className="btn">My Profile</button>
+               
               </div>
             </div>
           </div>

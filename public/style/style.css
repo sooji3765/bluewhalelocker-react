@@ -1455,3 +1455,25 @@ label a {
     clear: both;
     display: block;
 }
+
+.btn-write-review{
+    text-align: right;
+    margin-left:16px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.btn-write-review > i {
+    margin-right: 5px;
+}
+
+.btn-write-review:hover{
+    color: #189ad3;
+}
+
+.btn-margin{
+    margin-top: 10px;
+}
+.star-size{
+    font-size: 2em;
+}

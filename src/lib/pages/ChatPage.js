@@ -7,7 +7,7 @@ import FooterComponent from '../components/default/FooterComponent';
 const ChatPage = () => {
   return (
     <>
-      <HeaderComponent></HeaderComponent>
+      <HeaderComponent title={'CHAT'}></HeaderComponent>
       <ChatComponent></ChatComponent>
       <FooterComponent path="/chat"></FooterComponent>
     </>

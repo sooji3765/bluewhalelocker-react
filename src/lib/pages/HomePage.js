@@ -13,7 +13,7 @@ const HomePage = props => {
   
   return (
     <>
-      <HeaderComponent {...profile.state.header} />
+      <HeaderComponent title={'LOCKER'} />
       <MapComponent />
       {/* <GeographyComponent /> */}
       <PageMainComponent/>

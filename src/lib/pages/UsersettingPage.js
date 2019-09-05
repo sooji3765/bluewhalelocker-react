@@ -10,7 +10,7 @@ const UsersettingPage = (props) => {
   const profile = MyInfo.getProfile();
   return (
     <>
-      <HeaderComponent></HeaderComponent>
+      <HeaderComponent title={'Setting'}></HeaderComponent>
       <UsersettingComponent {...profile.state}></UsersettingComponent>
       <FooterComponent path="/usersetting"></FooterComponent>
     </>

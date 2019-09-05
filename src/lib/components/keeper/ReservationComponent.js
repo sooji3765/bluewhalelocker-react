@@ -98,24 +98,21 @@ class ReservationComponent extends Component {
                      </Grid>
                    </Grid> 
                  </Typography>
-                 {item.state==='used'?(
+                 
+               </CardContent>
+               {item.state==='used'?(
                   <CardActions>
-                     <Button 
-                     size="small"
-                      onClick={(e)=>this.handleWrite(e, item)}
-                     variant="contained" 
-                     color="primary" >
-                      Send
-                      {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
-                      <EditIcon style={{marginLeft:'10px'}} >send</EditIcon>
-                    </Button>
+                     
 
-                    <Link to= {`/review/regist/${item.id}`}>asdf</Link>
+                    <Link
+                      className="btn-write-review" 
+                      to= {`/review/regist/${item.id}`}>
+                      <i className="fas fa-pencil-alt"></i>review
+                      </Link>
                    
                   </CardActions>)
                   :(<></>)
                 }
-               </CardContent>
              </Card>
         
           )}

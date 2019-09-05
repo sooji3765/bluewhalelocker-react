@@ -69,10 +69,7 @@ class ChatComponent extends Component {
       <>
       {!this.state.selected &&
       <div className="page-content header-clear-medium color-white">
-        <div className="page-title">
-          <p className="chat-title">CHAT</p>
-          <span><i className="fa fa-cog"></i></span>
-        </div>
+        
         <ul className="chat-list">
         {chatList.map((item, index) => {
           return (
