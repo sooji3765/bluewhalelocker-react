@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
-import {Link} from 'react-router-dom';
+
 import ReservationDetailComponent from './ReservationDetailComponent';
 class ReservationComponent extends Component {
  
@@ -34,8 +34,11 @@ class ReservationComponent extends Component {
       console.log(this.state.reservationItem);
     });
   }
+
+ 
   render() {
 
+   
     return (
       
       <>
@@ -101,11 +104,12 @@ class ReservationComponent extends Component {
                </CardContent>
                {item.state==='used'?(
                   <CardActions>
-                    <Link
+                    <a
                       className="btn-write-review" 
-                      to= {`/review/regist/${item.id}`}>
+                      onClick={(e)=>this.handleWrite(e,item)}
+                      href= {`/review/regist/${item.id}`}>
                       <i className="fas fa-pencil-alt"></i>review
-                      </Link>
+                      </a>
                   </CardActions>)
                   :(<></>)
                 }

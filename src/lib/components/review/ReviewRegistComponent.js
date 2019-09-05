@@ -27,6 +27,7 @@ class ReviewRegistComponent extends Component{
     }
 
     handleSubmit = e =>{
+        
         axios.post('http://localhost:8080/review/regist',{
            
             content : this.state.title+this.state.content,
