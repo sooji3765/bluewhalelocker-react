@@ -1,68 +1,38 @@
 import React ,{Component} from 'react'
-import LockerItemComponent from './LockerItemComponent';
 
 class AddLockerComponent extends Component{
 
     state = {
-        selected: null
-      };
-    
+    };
+
+    constructor(props) {
+        super(props);
+        this.handleInputLocker = this.handleInputLocker.bind(this);
+        this.handleLockerItem = this.handleLockerItem.bind(this);
+    }
+
+    componentDidMount = () => {
+        this.setState({
+            ...this.props
+        })
+    }
+
+    handleInputLocker = (e) => {
+        e.preventDefault();
+        this.props.handleUpdateState({props: this.props, e, selectComponent: 'InputLockerComponent'});
+    };
+
     handleLockerItem = (e, item) => {
         e.preventDefault();
-        this.setState({
-            selected: item
-        });
+        this.props.handleLockerItem({props: this.props, e, item, selectComponent: 'LockerItemComponent'});
     };
 
     render() {
 
-        const lockerList = [
-            {
-                locker_number : '0001',
-                size : 'Large',
-                state : 'using',
-                score : '3.2'
-            },
-            {
-                locker_number : '0002',
-                size : 'Small',
-                state : 'empty',
-                score : '3.2'
-            },
-            {
-                locker_number : '0003',
-                size : 'Large',
-                state : 'using',
-                score : '3.2'
-            },
-            {
-                locker_number : '0004',
-                size : 'Large',
-                state : 'disable',
-                score : '3.2'
-            },
-            {
-                locker_number : '0005',
-                size : 'Small',
-                state : 'using',
-                score : '3.2'
-            },{
-                locker_number : '0006',
-                size : 'Medium',
-                state : 'using',
-                score : '4.0'
-            },
-            {
-                locker_number : '0007',
-                size : 'Large',
-                state : 'using',
-                score : '1.2'
-            }
-        ]
+        const { lockerList } = this.props.lockerInfo;
 
         return(
             <>
-            {!this.state.selected &&
             <div className="page-content header-clear-medium color-white">
                 <div className="locker-page">
                     <div className = "add-locker-title">
@@ -70,7 +40,7 @@ class AddLockerComponent extends Component{
                     </div>
 
                     <div className="add-locker-content">
-                        <a href="/input_locker" className="add-btn-locker">Add Locker</a>
+                        <button className="add-btn-locker" onClick={(e)=>this.handleInputLocker(e)}>Add Locker</button>
                     </div>
 
                     <div className="list-locker">
@@ -78,7 +48,7 @@ class AddLockerComponent extends Component{
                             {
                                 lockerList.map((item,locker_number)=>
                                 <li key={locker_number} className="list-item-locker">
-                                <a href="/locker_item" onClick={(e)=>this.handleLockerItem(e,item)}>
+                                <div onClick={(e)=>this.handleLockerItem(e,item)}>
                                 <div className="item-locker-content">
                                     <h3 className="item-locker-num">락커 넘버 : {item.locker_number}</h3>
                                     <p>락커 사이즈 : {item.size}</p>
@@ -91,7 +61,7 @@ class AddLockerComponent extends Component{
                                     <span className="item-score">{item.score}/5.0</span>
                                     </p>
                                 </div>
-                                </a>
+                                </div>
                                 </li>    
                             )}
                             
@@ -99,9 +69,6 @@ class AddLockerComponent extends Component{
                     </div>
                 </div>
             </div>
-            }{this.state.selected &&
-                <LockerItemComponent></LockerItemComponent>
-            }    
             </>
         )
     }

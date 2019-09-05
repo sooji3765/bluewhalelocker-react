@@ -12,7 +12,24 @@ class LockerItemComponent extends Component {
 
     state ={
         checked : true,
-        open :false
+        open :false,
+        item: null,
+    }
+
+    constructor(props) {
+        super(props);
+        this.handleDeleteLocker = this.handleDeleteLocker.bind(this);
+        this.handleUpdateLocker = this.handleUpdateLocker.bind(this);
+    }
+
+    componentWillMount() {
+        this.setState({
+            ...this.props,
+        })
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+
     }
 
     handleChange = e => {
@@ -31,7 +48,21 @@ class LockerItemComponent extends Component {
         })
     }
 
+    handleDeleteLocker = (e) => {
+    }
+
+    handleUpdateLocker = (e) => {
+    }
+
     render() {
+
+        if (!this.state) {
+            return <></>
+        }
+
+        const lockerItem = {
+            ...this.state.lockerInfo
+        }
 
         return (
             <>
@@ -43,6 +74,8 @@ class LockerItemComponent extends Component {
                     <div className="page-form-container">
                         <div className="form-content-div">
                             <TextField
+                                name="locker_number"
+                                value={lockerItem.locker_number}
                                 fullWidth
                                 label="Locker Number"
                                 id="margin-none"
@@ -55,6 +88,8 @@ class LockerItemComponent extends Component {
                         </div>
                         <div className="form-content-div">
                             <TextField
+                                name="size"
+                                value={lockerItem.size}
                                 fullWidth
                                 label="Size"
                                 id="margin-none"
@@ -66,6 +101,8 @@ class LockerItemComponent extends Component {
                         </div>
                         <div className="form-content-div">
                             <TextField
+                                name="prices"
+                                value={lockerItem.prices}
                                 fullWidth
                                 label="Price"
                                 id="margin-none"
@@ -91,6 +128,7 @@ class LockerItemComponent extends Component {
                             <FormControlLabel
                                 control={
                                 <Switch
+                                    name="state"
                                     checked={this.state.checked}
                                     onChange={(e)=>this.handleChange}
                                     value="checked"
@@ -115,6 +153,7 @@ class LockerItemComponent extends Component {
                                 fullWidth 
                                 variant="outlined" 
                                 color="default"
+                                onClik={this.handleUpdateLocker}
                             >EDIT</Button>
                         </div>
                     </div>
@@ -128,7 +167,7 @@ class LockerItemComponent extends Component {
                             <p id="simple-modal-description">
                                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                             </p>
-                            <Button variant="outlined" color="secondary">삭제하기</Button>    
+                            <Button variant="outlined" color="secondary" onClick={this.handleDeleteLocker}>삭제하기</Button>    
                         </div>
                     </Modal>
                 </div>

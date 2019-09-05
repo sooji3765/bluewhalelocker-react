@@ -1,17 +1,37 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import MyInfo from "../../info/MyInfo";
 
 class UsersettingComponent extends Component {
+
   constructor(props) {
     super(props);
-    this.handleSignIn = this.handleSignIn.bind(this);
+    this.handleRouterKeeperSetting = this.handleRouterKeeperSetting.bind(this);
+    this.handleRouterSignIn = this.handleRouterSignIn.bind(this);
   }
 
-  handleSignIn = e => {
+  handleRouterKeeperSetting = (e) => {
     e.preventDefault();
-    MyInfo.setSignOut();
-    window.location.href = "/";
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperSettingComponent', selectChanger: 'keeper'});
+  }
+
+  handleRouterSignIn = e => {
+    e.preventDefault();
+
+    const profile = {
+      state: {
+        header: {
+          count: "",
+          title: "",
+        },
+        userInfo: {
+          user_id: "",
+          user_name: "",
+        },
+        routerInfo: {
+          selectComponent: "LoginComponent",
+        },
+      }
+    };
+    this.props.handleUpdateState({props: this.props, e, profile});
   };
 
   render() {
@@ -63,18 +83,18 @@ class UsersettingComponent extends Component {
                   </a>
                 </li>
                 <li>
-                  <Link to="/keeper_setting">
+                  <a to="/keeper_setting" onClick={(e) => this.handleRouterKeeperSetting(e)}>
                     <i className="fas fa-exchange-alt color-yellow" />
                     <span>Change Keeper Mode</span>
                     <i className="fa fa-angle-right" />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="/login" onClick={this.handleSignIn}>
+                  <a to="/login" onClick={this.handleSignIn}>
                     <i className="fa fa-power-off color-red" />
                     <span>Login</span>
                     <i className="fa fa-angle-right" />
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -5,9 +5,8 @@ import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
-import EditIcon from '@material-ui/icons/Edit';
+import {Link} from 'react-router-dom';
 import ReservationDetailComponent from './ReservationDetailComponent';
-import { Link } from 'react-router-dom'
 class ReservationComponent extends Component {
  
   state = {
@@ -42,7 +41,7 @@ class ReservationComponent extends Component {
       <>
     {!this.state.selected &&
       <div className="page-content header-clear-medium">
-         
+         RESERVATION
           <ul className="reservation-content">
           {this.state.reservationItem.map((item,id) => 
             
@@ -102,14 +101,11 @@ class ReservationComponent extends Component {
                </CardContent>
                {item.state==='used'?(
                   <CardActions>
-                     
-
                     <Link
                       className="btn-write-review" 
                       to= {`/review/regist/${item.id}`}>
                       <i className="fas fa-pencil-alt"></i>review
                       </Link>
-                   
                   </CardActions>)
                   :(<></>)
                 }

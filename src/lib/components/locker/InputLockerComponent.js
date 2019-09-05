@@ -1,30 +1,42 @@
 import React ,{Component} from 'react'
 import Select from 'react-select'
 import Button from '@material-ui/core/Button';
-
+import BwlUtil from '../../utils/BwlUtil';
 
 class InputLockerComponent extends Component{
 
+  constructor(props) {
+      super(props);
+      this.handleRegisterLocker = this.handleRegisterLocker.bind(this)
+  }
 
-    render() {
+  handleRegisterLocker = (e) => {
+    e.preventDefault();
+    
+    const form = BwlUtil.findParentForm(e.target);
+
+    if (form) {
+        const item = BwlUtil.getFormData(e, form);
+        this.props.handleRegisterLocker({props: this.props, e, item});
+    } else {
+        console.log('not found form tag');
+    }
+
+  }
+
+  render() {
         
-    const options =[
+    const options = [
       { value:"large" ,label :"Large"},
       { value:"medium" ,label :"Medium"},
       { value:"small" ,label :"Small"}     
     ]
 
-    const prices =[
+    const prices = [
       { value:"3,000" ,label :"3,000"},
       { value:"2,000" ,label :"2,000"},
       { value:"1,000" ,label :"1,000"}     
     ]
-
-    // const [value, setValue] = React.useState('female');
-
-    // function handleChange(event) {
-    //   setValue(event.target.value);
-    // }
 
         return(
             <>
@@ -39,6 +51,7 @@ class InputLockerComponent extends Component{
                             <div className="form-locker-div">
                             <label for="locker_size">Locker Number</label>
                               <input
+                                    name="locker_number"
                                     className="locker-input-text"
                                     type="text"
                                     placeholder="lockerNumber"
@@ -47,11 +60,12 @@ class InputLockerComponent extends Component{
                             </div>
                             <div className="form-locker-div">
                               <label for="locker_size">Locker Size</label>
-                              <Select options={options}></Select>
+                              <Select name="size" options={options}></Select>
                             </div>
                             <div className="form-locker-div">
                               <label for="locker_num">Locker Number</label>
                               <input
+                                    name="state"
                                     className="locker-input-text"
                                     type="text"
                                     placeholder="lockerNumber"
@@ -63,6 +77,7 @@ class InputLockerComponent extends Component{
                                 <div className="radio-item">
                                 <label>Free</label>
                                 <input 
+                                  name='radio_charge'
                                   type="radio"
                                   value="free"
                                   />
@@ -70,6 +85,7 @@ class InputLockerComponent extends Component{
                                   <div className="radio-item"> 
                                    <label>Charge</label>
                                 <input 
+                                  name='radio_charge'
                                   type="radio"
                                   value="free"
                                   />
@@ -79,11 +95,11 @@ class InputLockerComponent extends Component{
 
                             <div className="form-locker-div">
                               <label for="locker_size">Locker Price</label>
-                              <Select options={prices}></Select>
+                              <Select name='prices' options={prices}></Select>
                             </div>
 
                             <div className="form-locker-div">
-                              <Button variant="outlined" color="default" className="locker-btn-register">REGISTER LOCKER</Button>
+                              <Button variant="outlined" color="default" className="locker-btn-register" onClick={(e) => this.handleRegisterLocker(e)} >REGISTER LOCKER</Button>
                             </div>
                            
                         </form>

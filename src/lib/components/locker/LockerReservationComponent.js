@@ -10,11 +10,25 @@ class LockerReservationComponent extends Component {
     today: new Date()
   };
 
+  constructor(props) {
+    super(props);
+    this.handleReservationLocker = this.handleReservationLocker.bind(this);
+    this.handlePayLocker = this.handlePayLocker.bind(this);
+  }
+  
   onChange = date => {
     this.setState({ date });
     console.log(date);
   };
 
+  handleReservationLocker = (e) => {
+    e.preventDefault();
+  }
+
+  handlePayLocker = (e) => {
+    e.preventDefault();
+  }
+    
   render() {
 
     const options = [
@@ -67,8 +81,8 @@ class LockerReservationComponent extends Component {
               className="btn-group-con"
               fullWidth 
               aria-label="full width outlined button group">
-              <Button>RESERVATION</Button>
-              <Button>PAY</Button>
+              <Button onClick={this.handleReservationLocker} >RESERVATION</Button>
+              <Button onClick={this.handlePayLocker} >PAY</Button>
             </ButtonGroup>
            
            </div> 

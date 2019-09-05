@@ -16,7 +16,7 @@
 .sub_b {
   margin: 0;
   padding: 0;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   width: 460px;
   float: left;
   position: relative;
