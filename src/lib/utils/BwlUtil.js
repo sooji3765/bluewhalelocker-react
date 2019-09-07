@@ -70,7 +70,6 @@ const doBwlPost = async (path, data) => {
   const url = process.env.REACT_APP_BACKEND_SERVER_URL + path;
   return new Promise((relsolve, reject) => {
     try {
-      // data = JSON.stringify(data)
       axios.post(url, data, {
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +91,6 @@ const doBwlGet = async (path, data) => {
   const url = process.env.REACT_APP_BACKEND_SERVER_URL + path;
   return new Promise((relsolve, reject) => {
     try {
-      // data = JSON.stringify(data)
       axios.get(url, {
         headers: {
           "Content-Type": "application/json",
@@ -111,11 +109,15 @@ const doBwlGet = async (path, data) => {
 }
 
 const doBwlPostData = async (path, item) => {
-  const res = await doBwlPost(path, item);
-  if (res.status === 200) {
-    return res.data;
-  }
+  try {
+    const res = await doBwlPost(path, item);
+    if (res.status === 200) {
+      return res.data;
+    }
+  
+  } catch (e) {
 
+  }
   return {
     success: false,
     results: 'error',
@@ -123,15 +125,20 @@ const doBwlPostData = async (path, item) => {
 }
 
 const doBwlGetData = async (path, item) => {
-  const res = await doBwlGet(path, item);
-  if (res.status === 200) {
-    return res.data;
-  }
+  try {
+    const res = await doBwlGet(path, item);
+    if (res.status === 200) {
+      return res.data;
+    }
+  
+  } catch (e) {
 
+  }
   return {
     success: false,
     results: 'error',
   }
+
 }
 
 export default {

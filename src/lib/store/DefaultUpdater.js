@@ -1,17 +1,21 @@
 import { createAction } from 'redux-actions';
+import MyInfo from '../info/MyInfo';
  
 const DEFAULT_UPDATE_STATE = 'default/UPDATE_STATE';
 
 const handleUpdateState = (state, action) => {
 
   if (action.payload.profile) {
-    return {
+    const newState = {
       ...state,
       ...action.payload.profile.state
-    };
+    }
+
+    MyInfo.setSignIn(newState);
+    return newState;
   }
 
-  return {
+  const newState = {
     ...state,
     routerInfo: {
       ...state.routerInfo,
@@ -19,6 +23,9 @@ const handleUpdateState = (state, action) => {
       selectChanger: ((action.payload.selectChanger) ? action.payload.selectChanger : state.routerInfo.selectChanger)
     },
   };
+
+  MyInfo.setSignIn(newState);
+  return newState;
 };
 
 export const action_handleUpdateState = createAction(DEFAULT_UPDATE_STATE, id => id);

@@ -16,7 +16,23 @@ src
 
 ### components
 
-# 2019-09-05 반영
+## 2019-09-07 반영
+### 개발우선순위 배정
+* 개발우선순위 : 1 => 빠른시간내에 해야 되는것,
+* 개발우선순위 : 2 => 적당히 업무에 맞추어 개발해야되는것,
+* 개발우선순위 : 3 => 늦게 해도 괜찮지만, 해야 되는것, 하지만, 시현 시나리오에 포함 안될수도 있는것
+* 개발우선순위 : 4 => 깔끔하게 하기위해선 해야되지만, 없어도 서비스엔 문제없는것,
+
+### 로그인 상태 유지
+* 로그인 상태 또는 기타 문제로, 화면 에러 계속 발생시, Application 의 Storage 정보 제거
+  - Chrome F12 > Application > Storage
+    * local Storage, session Storage 의 Key 값제거
+  - Local Storage
+    * rememberMe : 로그인화면에서 id 기억 정보
+  - Session Storage
+    * bwlProfile : 마지막 이동한 화면의 정보까지 적재되있음
+
+## 2019-09-05 반영
 ### Router path 방식에서 Redux & Redux 방식으로 교체
 * 단순 Component 전환은 handleUpdateState 사용
 * Commponent 전환 : selectComponent 소스검색

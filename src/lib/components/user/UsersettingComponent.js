@@ -4,8 +4,26 @@ class UsersettingComponent extends Component {
 
   constructor(props) {
     super(props);
+    this.handleRouterProfileEdit = this.handleRouterProfileEdit.bind(this);
+    this.handleRouterReview = this.handleRouterReview.bind(this);
+    this.handleRouterWallet = this.handleRouterWallet.bind(this);
     this.handleRouterKeeperSetting = this.handleRouterKeeperSetting.bind(this);
     this.handleRouterSignIn = this.handleRouterSignIn.bind(this);
+  }
+
+  handleRouterProfileEdit = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ProfileEditComponent'});
+  }
+
+  handleRouterReview = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ReviewRegistComponent'});
+  }
+
+  handleRouterWallet = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'WalletComponent'});
   }
 
   handleRouterKeeperSetting = (e) => {
@@ -15,33 +33,13 @@ class UsersettingComponent extends Component {
 
   handleRouterSignIn = e => {
     e.preventDefault();
-
-    const profile = {
-      state: {
-        header: {
-          count: "",
-          title: "",
-        },
-        userInfo: {
-          user_id: "",
-          user_name: "",
-        },
-        routerInfo: {
-          selectComponent: "LoginComponent",
-        },
-      }
-    };
-    this.props.handleUpdateState({props: this.props, e, profile});
+    this.props.handleSignOut({props: this.props, e});
   };
 
   render() {
     const userInfo = {
       ...this.props.userInfo
     };
-
-    // const site = {
-    //   login: "login"
-    // };
 
     return (
       <>
@@ -62,35 +60,35 @@ class UsersettingComponent extends Component {
             <div className="content">
               <ul className="link-list1">
                 <li>
-                  <a href="/profile_edit">
+                  <a href="/profile_edit" onClick={(e) => this.handleRouterProfileEdit(e)}>
                     <i className="fas fa-user-cog color-blue" />
                     <span>Profile Edit</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
                 <li>
-                  <a href="/review">
+                  <a href="/review" onClick={(e) => this.handleRouterReview(e)}>
                     <i className="fas fa-keyboard" />
                     <span>My Review</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
                 <li>
-                  <a href="/wallet">
+                  <a href="/wallet" onClick={(e) => this.handleRouterWallet(e)}>
                     <i className="fas fa-wallet color-green" />
                     <span>My Wallet</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
                 <li>
-                  <a to="/keeper_setting" onClick={(e) => this.handleRouterKeeperSetting(e)}>
+                  <a href="/keeper_setting" onClick={(e) => this.handleRouterKeeperSetting(e)}>
                     <i className="fas fa-exchange-alt color-yellow" />
                     <span>Change Keeper Mode</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
                 <li>
-                  <a to="/login" onClick={this.handleSignIn}>
+                  <a href="/login" onClick={this.handleRouterSignIn}>
                     <i className="fa fa-power-off color-red" />
                     <span>Login</span>
                     <i className="fa fa-angle-right" />

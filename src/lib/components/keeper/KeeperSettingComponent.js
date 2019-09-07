@@ -1,7 +1,48 @@
 import React, { Component } from "react";
 
 class KeeperSettingComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleRouterKeeperEdit = this.handleRouterKeeperEdit.bind(this);
+    this.handleRouterReview = this.handleRouterReview.bind(this);
+    this.handleRouterWallet = this.handleRouterWallet.bind(this);
+    this.handleRouterUserSetting = this.handleRouterUserSetting.bind(this);
+    this.handleRouterSignIn = this.handleRouterSignIn.bind(this);
+  }
+
+  handleRouterKeeperEdit = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'RegisterKeeperComponent'});
+  }
+
+  handleRouterReview = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ReviewRegistComponent'});
+  }
+
+  handleRouterWallet = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'WalletComponent'});
+  }
+
+  handleRouterUserSetting = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'UsersettingComponent', selectChanger: 'user'});
+  }
+
+  handleRouterRegisterKeeper = (e) => {
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'RegisterKeeperComponent'});
+  }
+
+  handleRouterSignIn = e => {
+    e.preventDefault();
+    this.props.handleSignOut({props: this.props, e});
+  };
+
   render() {
+
     const userInfo = {
       user_id: "USER1",
       user_name: "HAYONG"
@@ -25,42 +66,42 @@ class KeeperSettingComponent extends Component {
           <div className="content">
             <ul className="link-list1">
               <li>
-                <a to="/keeper_edit">
+                <a href="/keeper_edit" onClick={(e) => this.handleRouterKeeperEdit(e)}>
                   <i className="fas fa-user-cog color-blue"></i>
                   <span>Keeper Edit</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a href="/keeper/review">
+                <a href="/keeper/review" onClick={(e) => this.handleRouterReview(e)}>
                   <i className="fas fa-keyboard"></i>
                   <span>My Review</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a href="/keeper/wallet">
+                <a href="/keeper/wallet" onClick={(e) => this.handleRouterWallet(e)}>
                   <i className="fas fa-wallet color-green"></i>
                   <span>My Wallet</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a to ="/usersetting">
+                <a href ="/usersetting" onClick={(e) => this.handleRouterUserSetting(e)}>
                   <i className="fas fa-exchange-alt color-yellow"></i>
                   <span>Change User Mode</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a to="/register_keeper">
+                <a href="/register_keeper" onClick={(e) => this.handleRouterRegisterKeeper(e)}>
                   <i className="fa fa-cog color-gray"></i>
                   <span>Register Keeper</span>
                   <i className="fa fa-angle-right"></i>
                 </a>
               </li>
               <li>
-                <a to="/login">
+                <a href="/login" onClick={this.handleRouterSignIn} >
                 
                   <i className="fa fa-power-off color-red"></i>
                   <span>Login</span>
