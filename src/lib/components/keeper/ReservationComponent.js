@@ -5,10 +5,6 @@ import Avatar from '@material-ui/core/Avatar';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
-<<<<<<< HEAD
-
-=======
->>>>>>> 9c1bcf886a8fbb07f7cb967e0251d5250f2d0e82
 import ReservationDetailComponent from './ReservationDetailComponent';
 class ReservationComponent extends Component {
  
