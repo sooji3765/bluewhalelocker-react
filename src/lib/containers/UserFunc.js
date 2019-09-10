@@ -7,13 +7,21 @@ const handleSignIn = (data) => {
 
 //////////////////////////////////////////////////////////////////////////////
 // for SignupComponent
+const handleSignUp = (data) => {
+  data.props.ModuleActions.action_handleSignUp(data);
+}
 
 //////////////////////////////////////////////////////////////////////////////
 // for ProfileEditComponent
 
 //////////////////////////////////////////////////////////////////////////////
 // for UsersettingComponent
+const handleSignOut = (data) => {
+  data.props.ModuleActions.action_handleSignOut(data);
+}
 
 export default {
   handleSignIn,
+  handleSignUp,
+  handleSignOut,
 }

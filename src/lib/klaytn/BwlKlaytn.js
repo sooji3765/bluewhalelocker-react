@@ -1,4 +1,5 @@
 import Caver from 'caver-js';
+import MyInfo from '../info/MyInfo';
 
 const BwlKlaytnInstance = async (networkUrl, contractJson) => {
 

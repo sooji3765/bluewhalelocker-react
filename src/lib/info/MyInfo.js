@@ -1,4 +1,5 @@
-import LocalTestInfo from './LocalTestInfo';
+
+// evanlimdev : 개발우선순위 3, 사용자가 localStorage, sessionStorage 를 Chrome F12 개발자 도구를 통해 어떤내용인지 알수 없도록, 암호화 및 난독화 필요 
 
 class MyInfo {
 
@@ -6,98 +7,81 @@ class MyInfo {
     console.log("constructor MyInfo");
   }
 
-  emptyInfo = {
-    props: {
-      isSignIn: false
+  initialState = {
+    header: {
+      count: "0",
+      title: "Blue Wale Locker Service",
     },
-    state: {
-      header: {
-        count: "",
-        title: "",
-      }, 
-      userInfo: {
-        user_id: "",
-        user_name: "",
-      },
-      routerInfo: {
-        selectComponent: 'LoginComponent',
-      },
-      lockerInfo: {
-        lockerList: [],
-      },
+    userInfo: {
+      user_id: "",
+      user_name: "",
+    },
+    routerInfo: {
+      selectComponent: "LoginComponent",
+      selectChanger: "user",
+    },
+    lockerInfo: {
+      lockerList: [],
+      lockerItem: null,
     },
   };
 
-  case1_Info = {
-    props: {
-      isSignIn: false
-    },
-    state: {
-      header: {
-        count: "",
-        title: "",
-      }, 
-      userInfo: {
-        user_id: "",
-        user_name: "",
-      },
-      routerInfo: {
-        selectComponent: 'AddLockerComponent',
-      },
-      lockerInfo: {
-        lockerList: LocalTestInfo.lockerList,
-      },
-    }
-  };
-
-  getProfile = () => {
-    const jsonProfile = window.sessionStorage.getItem("profile");
-    const profile = this.emptyInfo;
-
-    try {
-      const s = JSON.parse(jsonProfile);
-      if (s.props)
-        profile.props = s.props;
-
-      if (s.state)
-        profile.state = s.state;
-
-      profile.props.isSignIn = true;
-    } catch (e) { }
-
-    return profile;
-  }
-
-  setSignIn = () => {
-    const profile = {
-      state: {
-        header: {
-          count: "2",
-          title: "locker - 제목",
-        },
-        userInfo: {
-          user_id: "USER1",
-          user_name: "김철순",
-        },
-        routerInfo: {
-          selectComponent: 'HomeComponent',
-        },
-        lockerInfo: {
-          lockerList: LocalTestInfo.lockerList,
-        },
-      }
-    };
-
+  setSignIn = (profile) => {
     const jsonProfile = JSON.stringify(profile);
-    window.sessionStorage.setItem("profile", jsonProfile);
+    sessionStorage.setItem("bwlProfile", jsonProfile);
   }
 
   setSignUp = () => {
-    window.sessionStorage.clear();
+    sessionStorage.clear();
   }
   
   setSignOut = () => {
-    window.sessionStorage.clear();
+    sessionStorage.clear();
+  }
+
+  getSignStatus = () => {
+    const profile = this.getProfile();
+    if (profile && profile.isSignIn === true) {
+      return profile;
+    }
+
+    return false;
+  }
+
+  getProfile = () => {
+    try {
+      const jsonProfile = sessionStorage.getItem("bwlProfile");
+      const profile = JSON.parse(jsonProfile);
+      return profile;
+    } catch (e) {
+      console.log(e);
+    }
+
+    return null;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  // set/get remember me
+
+  setRememberMe = (item) => {
+    localStorage.setItem("rememberMe", JSON.stringify(item));
+  }
+
+  getRememberMe = (item) => {
+    try {
+      const jsonItem = localStorage.getItem("rememberMe");
+      if (jsonItem) {
+        const item = JSON.parse(jsonItem);
+        return item;
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+    return {
+      email: "",
+      checked: false,
+    };
   }
 
 }

@@ -1,29 +1,35 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import React from 'react';
+import { createStore } from 'redux';
+import rootReducer from './lib/store/modules';
+import { Provider } from 'react-redux';
+import App from './App';
+
 import './App.css';
 import BwlKlaytnContracts from "./lib/klaytn/BwlKlaytnContracts"
-import MyInfo from "./lib/info/MyInfo";
-import AddLockerComponent from "./lib/components/locker/AddLockerComponent"
+// import AddLockerComponent from "./lib/components/locker/AddLockerComponent"
 
-const profile = MyInfo.getProfile("profile");
+const devTools =
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(rootReducer, devTools);
 
-const Root = () => (
-  <>
-  <div className='root'>
-  <BrowserRouter>
-    <div className='sub_a'>
-    <App />
+const Root = () => {
+  return (
+    <>
+    <div className='root'>
+      <div className='sub_a'>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </div>
+      <div className='sub_b'>
+        <BwlKlaytnContracts/>
+      </div>
+      <div className='sub_b'>
+        {/* <AddLockerComponent></AddLockerComponent> */}
+      </div>
     </div>
-    <div className='sub_b'>
-    <BwlKlaytnContracts/>
-    </div>
-    <div className='sub_b'>
-    <AddLockerComponent {...profile.state.lockerInfo}></AddLockerComponent>
-    </div>
-  </BrowserRouter>
-  </div>
-  </>
-);
+    </>
+  )
+};
 
 export default Root;

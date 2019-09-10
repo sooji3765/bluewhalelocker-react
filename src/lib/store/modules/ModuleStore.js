@@ -3,25 +3,7 @@ import DefaultUpdater from '../DefaultUpdater';
 import UserUpdater from '../UserUpdater';
 import LockerUpdater from '../LockerUpdater';
 import ReviewUpdater from '../ReviewUpdater';
-
-const initialState = {
-  header: {
-    count: "",
-    title: "",
-  },
-  userInfo: {
-    user_id: "",
-    user_name: "",
-  },
-  routerInfo: {
-    selectComponent: "LoginComponent",
-    selectChanger: "user",
-  },
-  lockerInfo: {
-    lockerList: [],
-    lockerItem: null,
-  },
-};
+import MyInfo from '../../info/MyInfo';
 
 export const {
   action_handleUpdateState,
@@ -29,6 +11,8 @@ export const {
 
 export const {
   action_handleSignIn,
+  action_handleSignUp,
+  action_handleSignOut,
 } = UserUpdater.funcActions;
 
 export const {
@@ -52,5 +36,5 @@ export default handleActions(
     ...LockerUpdater.caseActions,
     ...ReviewUpdater.caseActions,
   },
-  initialState
+  MyInfo.initialState
 );
