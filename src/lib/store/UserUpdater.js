@@ -24,9 +24,10 @@ const handleSignIn = (state, action) => {
       title: "haha",
     },
     userInfo: {
-      user_id: item.id,
-      user_name: item.name,
+      user_id: item.userId,
+      user_name: item.userName,
       auth: item.auth,
+      ...item,
     },
     routerInfo: {
       selectComponent: "HomeComponent",

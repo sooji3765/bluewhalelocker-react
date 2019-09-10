@@ -1,4 +1,5 @@
-import React ,{Component} from 'react'
+import React ,{Component} from 'react';
+import BwlKlaytnContracts from '../../klaytn/BwlKlaytnContracts';
 
 class WalletComponent extends Component{
 
@@ -65,20 +66,20 @@ class WalletComponent extends Component{
           <div className = "add-locker-title">
               Wallet Info
           </div>
-
           <div className="add-locker-content">
             <h3 className="item-locker-num">Address : {wallet.address}</h3>
             <p>Ballance : {wallet.ballance}</p>
             <p>Symbol : {wallet.symbol}</p>
             <p>Contract Address : {wallet.contractAddress}</p>
           </div>
-
+          <div className="add-locker-content">
+            <BwlKlaytnContracts />
+          </div>
           <div className="add-locker-content">
             <span className="item-state" onClick={(e) => this.handleShowTypeSummary(e)}>summary</span>&nbsp;&nbsp;&nbsp;
             <span className="item-state" onClick={(e) => this.handleShowTypeTxhash(e)}>txhash</span>&nbsp;&nbsp;&nbsp;
             <span className="item-state" onClick={(e) => this.handleShowTypeSummaryTxhash(e)}>summary + txhash</span>
           </div>
-
           <div className="list-locker">
             <ul>
               {showType === 'summary' && 
