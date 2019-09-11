@@ -44,20 +44,15 @@ class LoginComponent extends Component{
         })        
     }
 
-    doSignIn = async (item) =>{
+    doSignIn = async (item) => {
         const resUserLogin = await BwlUtil.doBwlPostData('/user/login', item);
+        const token = resUserLogin.results;
         if (resUserLogin.success === true) {
-            // evanlimdev : 개발우선순위 2, /user/login 에서 id를 받아오는 부분이 없음, 일단 개발시 임의값 하드코딩
-            const id = '1';
-            const resUser = await BwlUtil.doBwlGetData('/user/' + id, {});
-            if (resUser.success === true) {
-                if (resUser.results.length === 1) {
-                    return {
-                        success: true,
-                        auth: resUserLogin.results,
-                        ...resUser.results[0],
-                    }
-                }
+            const resUserLogin = await BwlUtil.doBwlGetData('/user/authcheck?token=' + token);
+            return {
+                success: true,
+                token: token,
+                ...resUserLogin,
             }
         }
 
