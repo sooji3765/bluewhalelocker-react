@@ -21,7 +21,7 @@ const handleSignIn = (state, action) => {
     isSignIn: true,
     header: {
       count: "1",
-      title: "haha",
+      title: "Locker",
     },
     userInfo: {
       user_id: item.id,

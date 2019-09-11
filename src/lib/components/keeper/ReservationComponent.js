@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Card, CardHeader,IconButton,CardMedia,Button,CardActions, CardContent,Typography} from "@material-ui/core";
-import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import axios from "axios";
 import Moment from 'react-moment';
 import ReservationDetailComponent from './ReservationDetailComponent';
@@ -33,7 +30,7 @@ class ReservationComponent extends Component {
   componentDidMount() {
     axios.get("http://localhost:8080/order/list").then(res =>{
       console.log(res.data.results);
-      this.setState({reservationItem : res.data.results});
+      this.setState({reservationItem : res.data.results[0]});
 
       console.log(this.state.reservationItem);
     });
@@ -48,80 +45,44 @@ class ReservationComponent extends Component {
       <>
     {!this.state.selected &&
       <div className="page-content header-clear-medium">
-         RESERVATION
-          <ul className="reservation-content">
+       
+          <div className="list-items">
           {this.state.reservationItem.map((item,id) => 
             
-             <Card key={id} style={{marginBottom : '10px'}}>
-               <CardHeader
-                 avatar={
-                   <Avatar aria-label="recipe">
-                     <img src="../img/user1.png" alt="img" style={{width:"40px"}}/>
-                   </Avatar>
-                 }
-                 action={
-                   <IconButton aria-label="settings">
-                     <MoreVertIcon 
-                        onClick={(e)=>this.handleClick(e,item)}
-                     />
-                   </IconButton>
-                 }
-                 title={item.name}
-                 subheader={item.order_date}
-               />
-               <CardContent>
- 
-               <CardMedia
-                   style={{height :'200px', marginBottom:'10px'}}
-                   image={item.image1}
-                   title="Paella dish"
-                 />  
-                 <Typography variant="body2" color="textSecondary" component="p">
-                    <Grid container>
-                     <Grid item xs={4}>
-                     <i className="far fa-calendar-alt"></i> Use Date      
-                     </Grid>
-                     <Grid item xs={8}>
-                     <Moment format="YYYY-MM-DD">{item.use_date}</Moment>
-                     </Grid>
-                   </Grid>
-               
-                   <Grid container>
-                     <Grid item xs={4}>
-                     <i className="fas fa-suitcase-rolling"></i> Locker Size
-                     </Grid>
-                     <Grid item xs={8}>
-                     {item.size}
-                     </Grid>
-                   </Grid>
- 
-                   <Grid container>
-                     <Grid item xs={4}>
-                     <i className="fas fa-check-circle"></i> State 
-                     </Grid>
-                     <Grid item xs={8}>
-                     {item.state} 
-                     </Grid>
-                   </Grid> 
-                 </Typography>
-                 
-               </CardContent>
-               {item.state==='inuse'?(
-                  <CardActions>
-                    <a
-                      onClick={(e) => this.handleWrite(e, item)}
-                      className="btn-write-review" 
-                      onClick={(e)=>this.handleWrite(e,item)}
-                      href= {`/review/regist/${item.id}`}>
-                      <i className="fas fa-pencil-alt"></i>review
-                      </a>
-                  </CardActions>)
-                  :(<></>)
-                }
-             </Card>
-        
+            <Card key={item.id} className="list-item" onClick={(e)=>this.handleClick(e,item)}>
+              <div className="item-contents">
+             
+                <CardContent className="item-content">
+                  <Typography variant="subtitle1">
+                    {item.name}
+                  </Typography>
+                  <Typography variant="subtitle2" color="textSecondary">
+                    {item.order_date}
+                  </Typography>
+                  <Typography variant="subtitle2" color="textSecondary">
+                    <span class="span-size">{item.size}</span>|<span class="span-state">{item.state}</span>
+                  </Typography>
+                </CardContent>
+                {item.state==='used'?(
+                <CardActions>
+                <Button 
+                 onClick={(e)=>this.handleWrite(e,item)}
+                size="small" 
+                color="primary">
+                  Write
+                </Button>
+              </CardActions>)
+               :(<></>)}
+              </div>
+              <CardMedia
+                className="img_thumb"
+                image={item.image1}
+                title="Live from space album cover"
+              />
+          </Card>
+         
           )}
-          </ul>
+          </div>
         </div>}
         {this.state.selected &&
           <ReservationDetailComponent {...this.state.selected} ></ReservationDetailComponent>
