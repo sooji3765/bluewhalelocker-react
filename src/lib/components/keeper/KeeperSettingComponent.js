@@ -44,10 +44,8 @@ class KeeperSettingComponent extends Component {
   render() {
 
     const userInfo = {
-      user_id: "USER1",
-      user_name: "HAYONG"
+      ...this.props.userInfo
     };
-
     return (
       <>
         <div className="page-content header-clear-medium">
@@ -56,7 +54,7 @@ class KeeperSettingComponent extends Component {
               <img className="profile-img" src="img/user2.png" alt="user2" />
              
             <div className="profile-body">
-              <h2 className="userid">{userInfo.user_id}</h2>
+              <h2 className="userid">{userInfo.email}</h2>
               <span className="user-name">{userInfo.user_name}</span>
             </div>
           </div>
@@ -104,7 +102,7 @@ class KeeperSettingComponent extends Component {
                 <a href="/login" onClick={this.handleRouterSignIn} >
                 
                   <i className="fa fa-power-off color-red"></i>
-                  <span>Login</span>
+                  <span>Logout</span>
                   <i className="fa fa-angle-right"></i>
               
                 </a>

@@ -1,38 +1,48 @@
 import React, { Component } from "react";
 export default class KeeperItem extends Component {
+
+  constructor(props){
+    super(props);
+    this.handleRouterKeeperInfo = this.handleRouterKeeperInfo.bind(this);
+  }
+
+
+  handleRouterKeeperInfo = (e) =>{
+      e.preventDefault();
+      this.props.handleRouterKeeperInfo({props: this.props, e,selectComponent:'KeeperInfoComponent'});
+  }
+
   render() {
     const {
       businessName,
       phoneNumber,
-      currentLocker,
-      maxLocker,
-      keeperImg,
-      id
+      id,
+      open_time,
+      close_time
     } = this.props;
 
     return (
       <div>
-        <li className="menu-item">
-          <a href={`/keeper_info/${id}`}>
-            <div className="menu- keeper-item">
+        <li className="menu-item" onClick={ (e) => this.handleRouterKeeperInfo(e)}>
+          {/* <a href={`/keeper_info/${id}`}> */}
+            <div className="menu-keeper-item">
               <div className="menu-keeper-img">
-                <img className="keeper-img" src="img/user2.png" alt="user2" />
+                <img className="keeper-img" src="../img/hollys.jpg" alt="user2" />
               </div>
               <div className="menu-keeper-content">
-                <span className="keeper-name">{businessName}</span>
-                <span className="keeper-phone">
-                  {phoneNumber} <i className="fas fa-phone-alt" />
-                </span>
-              </div>
-
-              <div className="menu-keeper-count">
-                <button className="menu-keeper-btn">상세페이지</button>
-                <span className="locker-count">
-                {maxLocker}
-                </span>
+                <p className="keeper-name">{businessName}</p>
+                <p>{open_time} - {close_time} | {phoneNumber}</p>
+               
+                <p className="keeper-rate">
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="far fa-star"></i>
+                </p>
               </div>
             </div>
-          </a>
+          {/* </a> */}
         </li>
       </div>
     );

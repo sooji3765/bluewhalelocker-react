@@ -5,7 +5,11 @@ import Button from '@material-ui/core/Button';
 class ProfileEditComponent extends Component {
   state = {};
 
+  
   render() {
+    const userInfo = {
+      ...this.props.userInfo
+    };
     return (
       <>
         <div className="page-content header-clear-medium">
@@ -27,7 +31,7 @@ class ProfileEditComponent extends Component {
                   <TextField
                     id="standard-helperText"
                     label="Email"
-                    defaultValue="test@text.com"
+                    defaultValue={userInfo.email}
                     fullWidth
                     InputProps={{
                       readOnly: true,
@@ -40,7 +44,7 @@ class ProfileEditComponent extends Component {
                   <TextField
                     id="standard-helperText"
                     label="Name"
-                    defaultValue="HWANG "
+                    defaultValue={userInfo.user_name}
                     fullWidth
                     InputProps={{
                       readOnly: true,

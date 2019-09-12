@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card , Grid} from "@material-ui/core";
+import { Card , Grid,Button} from "@material-ui/core";
 import Moment from 'react-moment';
 class ReservationDetailComponent extends Component {
 
@@ -35,24 +35,27 @@ class ReservationDetailComponent extends Component {
 
                                 <Grid container className="ticket-detail">
                                     <Grid item xs={6}>
-                                        <p className="detail_p">Date</p>
+                                        <p className="detail_p">Reservation Date</p>
                                         <p className="detail_p_in">
                                         <Moment format="YYYY-MM-DD">{this.props.use_date}</Moment>
                                         </p>
                                     </Grid>
                                     <Grid item xs={6}>
-                                        <p className="detail_p">Locker Type</p>
-                                        <p className="detail_p_in">{this.props.size}</p>
+                                        <p className="detail_p">Order Date</p>
+                                        <p className="detail_p_in">
+                                        <Moment format="YYYY-MM-DD">{this.props.order_date}</Moment>
+                                        </p>
                                     </Grid>
                                     <Grid item xs={6}>
-                                        <p className="detail_p">Locker State</p>
-                                        <p className="detail_p_in">{this.props.state}</p>
+                                        <p className="detail_p">Locker Size</p>
+                                        <p className="detail_p_in">{this.props.size}</p>
                                     </Grid>
 
                                     <Grid item xs={6}>
                                         <p className="detail_p">Locker State</p>
                                         <p className="detail_p_in">{this.props.state}</p>
-                                    </Grid>   
+                                    </Grid>
+
                                 </Grid>    
                             </div>
                         </div>

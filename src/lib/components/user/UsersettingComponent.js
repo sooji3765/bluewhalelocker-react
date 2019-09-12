@@ -49,7 +49,7 @@ class UsersettingComponent extends Component {
               <img className="profile-img" src="img/user2.png" alt="user2" />
 
               <div className="profile-body">
-                <h2 className="userid">{userInfo.user_id}</h2>
+                <h2 className="userid">{userInfo.email}</h2>
                 <span className="user-name">{userInfo.user_name}</span>
                
               </div>
@@ -90,7 +90,7 @@ class UsersettingComponent extends Component {
                 <li>
                   <a href="/login" onClick={this.handleRouterSignIn}>
                     <i className="fa fa-power-off color-red" />
-                    <span>Login</span>
+                    <span>Logout</span>
                     <i className="fa fa-angle-right" />
                   </a>
                 </li>
