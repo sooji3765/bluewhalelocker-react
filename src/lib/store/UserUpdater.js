@@ -21,7 +21,7 @@ const handleSignIn = (state, action) => {
     isSignIn: true,
     header: {
       count: "1",
-      title: "Locker",
+      title: "BlueWhale Locker",
     },
     userInfo: {
       user_id: item.userId,

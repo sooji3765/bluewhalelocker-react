@@ -555,10 +555,13 @@ label a {
     color: gray;
 }
 
+.color-icon-white {
+    color: white;
+}
+
 .color-white {
     background: #fff;
 }
-
 
 /*profile img*/
 

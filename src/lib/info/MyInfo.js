@@ -10,7 +10,7 @@ class MyInfo {
   initialState = {
     header: {
       count: "0",
-      title: "Blue Wale Locker Service",
+      title: "BlueWhale Locker",
     },
     userInfo: {
       user_id: "",

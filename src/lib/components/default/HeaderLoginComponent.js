@@ -13,14 +13,14 @@ class HeaderLoginComponent extends Component {
     return (
       <>
 			<div className="header header-fix header-logo-left">
-				<span className="message-notification">
+{/* 				<span className="message-notification">
 					<i className="far fa-bell"></i>
 					<span className="count">{header.count}</span>
-				</span>
+				</span> */}
 				<span className="title">{header.title}</span>
-				<span className="create-new">
+{/* 				<span className="create-new">
 					<i className="fa fa-pen-square"></i>
-				</span>
+				</span> */}
 			</div>
 			</>
     );
