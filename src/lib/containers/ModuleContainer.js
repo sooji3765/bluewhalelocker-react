@@ -92,7 +92,7 @@ class ModuleContainer extends Component {
       <>
         {!isSignIn && <>
         <HeaderLoginComponent {...this.state} {...this.props}></HeaderLoginComponent>
-        <FooterLoginComponent {...this.state} {...this.props}></FooterLoginComponent>
+        {/* <FooterLoginComponent {...this.state} {...this.props}></FooterLoginComponent> */}
         </>}
 
         {isSignIn && <>

@@ -57,13 +57,16 @@ class FooterComponent extends Component {
     return (
       <>
       <div id="footer-menu">
-        <a href="/" className={this.path["/"]} onClick={(e) => this.handleRouterHome(e)}><i className="fa fa-search"></i><span>Search</span>
+        <a href="/" className={this.path["/"]} onClick={(e) => this.handleRouterHome(e)}>
+          {/* <i className="fa fa-search"></i> */}
+          <i className="far fa-compass"></i>
+          <span>Search</span>
         </a>
         <a href="/reservationList" className={this.path["/reservationList"]} onClick={(e) => this.handleRouterReservation(e)}><i className="fa fa-list-alt"></i><span>List</span>
         </a>
         <a href="/chat" className={this.path["/chat"]} onClick={(e) => this.handleRouterChat(e)}><i className="fa fa-comments"></i><span>Chat</span>
         </a>
-        <a href="/usersetting" className={this.path["/usersetting"]} onClick={(e) => this.handleRouterUsersetting(e)}><i className="fa fa-user"></i><span>Setting</span>
+        <a href="/usersetting" className={this.path["/usersetting"]} onClick={(e) => this.handleRouterUsersetting(e)}><i className="fa fa-user"></i><span>My Profile</span>
         </a>
         <div className="clear"></div>
 	  	</div>

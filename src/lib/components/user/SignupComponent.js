@@ -1,4 +1,5 @@
 import React ,{ Component } from 'react';
+import BwlUtil from '../../utils/BwlUtil';
 import MyInfo from '../../info/MyInfo';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -16,14 +17,39 @@ class SignupComponent extends Component{
 
     constructor(props) {
         super(props);
-        this.handleSignIn = this.handleSignUp.bind(this);
+        this.handleSignIn = this.handleSignIn.bind(this);
+        this.handleSignUp = this.handleSignUp.bind(this);
       }
 
-    handleSignUp = (e) => {
+    handleSignIn = async (e) => {
         e.preventDefault();
-        MyInfo.setSignUp();
-        window.location.href = "/";
+        this.props.handleUpdateState({props: this.props, e, selectComponent: 'LoginComponent'});
+    }
+
+    handleSignUp = async (e) => {
+        e.preventDefault();
+
+        const form = BwlUtil.findParentForm(e.target);
+
+        if (form) {
+            const item = BwlUtil.getFormData(e, form);
+            const res = await BwlUtil.doBwlPostData('/user/join', item);
+            if (res.success === true) {
+                alert('회원가입이 완료되었습니다.')
+                this.props.handleSignUp({props: this.props, e, item: res});
+            } else {
+                alert('회원가입 실패!');// evanlimdev : 개발우선순위 3, 모달박스로 표시 필요
+            }
+        } else {
+            console.log('not found form tag');
+        }
     };
+
+    componentDidMount() {
+        this.setState({
+          ...this.props
+        })
+      }
 
     render(){
         return (
@@ -43,7 +69,7 @@ class SignupComponent extends Component{
                     <Grid item xs={12}>
                     <TextField
                         autoComplete="fname"
-                        name="Name"
+                        name="name"
                         variant="outlined"
                         required
                         fullWidth
@@ -80,7 +106,7 @@ class SignupComponent extends Component{
                         variant="outlined"
                         required
                         fullWidth
-                        name="password check"
+                        name="password-check"
                         label="Password check"
                         type="password"
                         id="password-check"
@@ -103,7 +129,7 @@ class SignupComponent extends Component{
                 </Grid>
                 <Grid container justify="center">
                     <Grid item>
-                    <Link href="/login" variant="body2">
+                    <Link href="/login" variant="body2" onClick={this.handleSignIn}>
                         Already have an account? Sign in
                     </Link>
                     </Grid>

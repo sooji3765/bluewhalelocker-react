@@ -24,8 +24,8 @@ class FooterLoginComponent extends Component {
     return (
       <>
       <div id="footer-menu">
-        <a href=""><i className="fa fa-search"></i><span>Info</span>
-        </a>
+        {/* <a href=""><i className="fa fa-search"></i><span>Info</span>
+        </a> */}
 	  	</div>
       </>
     );

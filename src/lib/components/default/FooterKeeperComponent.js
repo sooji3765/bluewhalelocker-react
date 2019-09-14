@@ -53,7 +53,7 @@ class FooterKeeperComponent extends Component {
 
   handleRouterKeeperSetting = (e) => {
     e.preventDefault();
-    this.props.handleUpdateState({props: this.props, e, selectComponent: 'UsersettingComponent'});
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperSettingComponent'});
   }
 
   componentDidMount() {
@@ -75,13 +75,16 @@ class FooterKeeperComponent extends Component {
     return (
       <>
       <div id="footer-keeper-menu">
-        <a href="/add_locker" className={this.path["/add_locker"]} onClick={(e) => this.handleRouterAddRocker(e)}><i className="fas fa-plus"></i><span>ADD</span>
+        <a href="/likeList" className={this.path["/likeList"]} onClick={(e) => this.handleRouterLikeList(e)}>
+        <i class="fas fa-luggage-cart"></i>
+        {/* <i class="fas fa-suitcase-rolling"></i> */}
+        <span>My Locker</span>
         </a>
-        <a href="/likeList" className={this.path["/likeList"]} onClick={(e) => this.handleRouterLikeList(e)}><i className="fa fa-heart"></i><span>My Locker</span>
+        <a href="/add_locker" className={this.path["/add_locker"]} onClick={(e) => this.handleRouterAddRocker(e)}><i className="fas fa-plus"></i><span>ADD</span>
         </a>
         <a href="/chat" className={this.path["/reservationList"]} onClick={(e) => this.handleRouterChat(e)}><i className="fa fa-comments"></i><span>Chat</span>
         </a>
-        <a href="/keeper_setting" className={this.path["/keeper/setting"]} onClick={(e) => this.handleRouterKeeperSetting(e)}><i className="fa fa-user"></i><span>Setting</span>
+        <a href="/keeper_setting" className={this.path["/keeper/setting"]} onClick={(e) => this.handleRouterKeeperSetting(e)}><i className="fa fa-user"></i><span>My Profile</span>
         </a>
         <div className="clear"></div>
 	  	</div>

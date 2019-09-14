@@ -93,7 +93,8 @@ class KeeperSettingComponent extends Component {
               </li>
               <li>
                 <a href="/register_keeper" onClick={(e) => this.handleRouterRegisterKeeper(e)}>
-                  <i className="fa fa-cog color-gray"></i>
+                  {/* <i className="fa fa-cog color-gray"></i> */}
+                  <i class="fas fa-suitcase-rolling color-gray"></i>
                   <span>Register Keeper</span>
                   <i className="fa fa-angle-right"></i>
                 </a>

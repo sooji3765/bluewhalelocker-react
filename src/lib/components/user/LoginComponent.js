@@ -29,6 +29,7 @@ class LoginComponent extends Component{
         this.handleForgotPassword = this.handleForgotPassword.bind(this);
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangeCheck = this.handleChangeCheck.bind(this);
+        this.handleSignUp = this.handleSignUp.bind(this);
     }
 
     componentWillMount() {
@@ -79,8 +80,7 @@ class LoginComponent extends Component{
 
     handleSignUp = async (e) => {
         e.preventDefault();
-
-        // evanlimdev : 개발우선순위 4, 회원가입
+        this.props.handleUpdateState({props: this.props, e, selectComponent: 'SignupComponent'});
     }
 
     handleForgotPassword = async (e) => {
@@ -187,9 +187,9 @@ class LoginComponent extends Component{
 
                     <Grid container>
                         <Grid item xs>
-                        <Link href="#" variant="body2" onClick={(e) => this.handleForgotPassword(e)}>
+                        {/* <Link href="#" variant="body2" onClick={(e) => this.handleForgotPassword(e)}>
                             Forgot password?
-                        </Link>
+                        </Link> */}
                         </Grid>
                         <Grid item>
                         <Link href="/signup" variant="body2" onClick={(e) => this.handleSignUp(e)}>
