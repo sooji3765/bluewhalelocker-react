@@ -11,7 +11,7 @@ import UserFunc from './UserFunc';
 import DefaultFunc from './DefaultFunc';
 import LockerFunc from './LockerFunc';
 import ReviewFunc from './ReviewFunc';
-import KeeperFunc from './KeeperFunc';
+
 
 // common : login
 import HeaderLoginComponent from '../components/default/HeaderLoginComponent';
@@ -50,10 +50,13 @@ import LockerReservationComponent from '../components/locker/LockerReservationCo
 // keeper
 import KeeperSettingComponent from '../components/keeper/KeeperSettingComponent';
 import RegisterKeeperComponent from '../components/keeper/RegisterKeeperComponent';
-import KeeperInfoComponent from '../components/keeper/KeeperInfoComponent';
+
 
 // review
 import ReviewRegistComponent from '../components/review/ReviewRegistComponent';
+
+// store
+import KeeperInfoComponent from '../components/keeper/KeeperInfoComponent';
 
 class ModuleContainer extends Component {
  
@@ -64,6 +67,7 @@ class ModuleContainer extends Component {
       ...DefaultFunc,
       ...LockerFunc,
       ...ReviewFunc,
+
     })
   }
 
@@ -120,8 +124,7 @@ class ModuleContainer extends Component {
           <PageMainComponent {...this.state} {...this.props}/>
           <MenuSettingComponent {...this.state} {...this.props}/>
         </>}
-        {/* keeperinfo */}
-        {selectComponent == 'KeeperInfoComponent'&&<KeeperInfoComponent{...this.state} {...this.props}/>}
+    
         {selectComponent === 'ReservationComponent' && <ReservationComponent {...this.state} {...this.props} />}
         {selectComponent === 'ChatComponent' && <ChatComponent {...this.state} {...this.props} />}
         {/* locker */}
@@ -134,6 +137,8 @@ class ModuleContainer extends Component {
         {selectComponent === 'RegisterKeeperComponent' && <RegisterKeeperComponent {...this.state} {...this.props} />}
         {/* reviews */}
         {selectComponent === 'ReviewRegistComponent' && <ReviewRegistComponent {...this.state} {...this.props} />}
+        {/* keeper info */}
+        {selectComponent === 'KeeperInfoComponent' && <KeeperInfoComponent {...this.state} {...this.props}/>}
       </>
     )
   }

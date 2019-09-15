@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Calendar from "react-calendar";
-import {Button, ButtonGroup} from '@material-ui/core';
+import {Button,InputAdornment, TextField,ButtonGroup} from '@material-ui/core';
 import Select from 'react-select'
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 
 class LockerReservationComponent extends Component {
@@ -21,6 +27,14 @@ class LockerReservationComponent extends Component {
     console.log(date);
   };
 
+  state ={
+    selectedDate : new Date()
+  }
+
+  handleDateChange= (e)=> {
+    this.setState({selectedDate:e.target.value});
+  }
+
   handleReservationLocker = (e) => {
     e.preventDefault();
   }
@@ -32,9 +46,10 @@ class LockerReservationComponent extends Component {
   render() {
 
     const options = [
-      { value: 'Large', label: 'Large' },
-      { value: 'Medium', label: 'Medium' },
-      { value: 'Small', label: 'Small' }
+      { value: '0', label: '0' },
+      { value: '1', label: '1' },
+      { value: '2', label: '2' },
+      { value: '3', label: '3' }
     ]
    
     return (
@@ -44,39 +59,73 @@ class LockerReservationComponent extends Component {
             <div className="page-title">LOCKER RESERVATION</div>
             
             <div className="locker-info-div">
-              <div className="locker-info-text"> 
-                <p className="text-title">young's cafe</p>
-                <p className="text-ctx"> 공덕 어쩌구 저쩌구</p>
-                <p>Keeper : hayoung</p>
+              <div className="store-img-div">
+                <img className="store-img" alt="store" src="../img/hollys.jpg"/>
               </div>
-              <div className="locker-info-img">
-                <img src="../img/store1.jpg" alt="store_img" className="locker-info-img-in" />
+
+              <div className="store-detail">
+                <p className="store-name">Store Name</p>
+                <p>Store Address</p>
               </div>
             </div>
 
             
             <div className="reservation-input-content">
-              <div>
-                {this.state.date.getFullYear()}년{" "}
-                {this.state.date.getMonth() + 1}월 {this.state.date.getDate()}일
-                <div>남은 라커수 : 3</div>
+            <div className="select-content">
+              <div className="select-date">
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <KeyboardDatePicker
+                  disableToolbar
+                  variant="inline"
+                  format="MM/dd/yyyy"
+                  margin="normal"
+                  style={{color:"#fff"}}
+                  id="date-picker-inline"
+                  label="Select Use Date"
+                  fullWidth
+                  value={this.state.selectedDate}
+                  onChange={(e) =>this.handleDateChange(e)}
+                  KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                  }}
+                />
+                </MuiPickersUtilsProvider>
               </div>
-             
-              
 
-              <Calendar
-                className="calender-div"
-                minDate={this.state.today}
-                onChange={this.onChange}
-                value={this.state.date}
-              />
-           
+              <div className="select-locker-area">
+                <div className="select-locker-item">
+                  <div className="locker-size-con">
+                    LARGE
+                  </div>
+                
+                  <Select 
+                   className="locker-size-op"
+                    options={options} />
+                  
+                </div>
+                <div className="select-locker-item">
+                  <div className="locker-size-con">
+                    medium
+                  </div>
+                
+                  <Select 
+                   className="locker-size-op"
+                    options={options} />
+                  
+                </div>
+                <div className="select-locker-item">
+                  <div className="locker-size-con">
+                    SMALL
+                  </div>
+                
+                  <Select 
+                   className="locker-size-op"
+                    options={options} />
+                  
+                </div>
+              </div>
 
-           <Select 
-           className="btn-group-con"
-           options={options} />
-            
-              
+            </div>
             <ButtonGroup 
               className="btn-group-con"
               fullWidth 
