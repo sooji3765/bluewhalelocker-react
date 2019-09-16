@@ -27,11 +27,6 @@ class FooterKeeperComponent extends Component {
     e.preventDefault();
   }
 
-  handleRouterChat = (e) => {
-    e.preventDefault();
-    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ChatComponent'});
-  }
-
   handleRouterKeeperSetting = (e) => {
     e.preventDefault();
     this.props.handleUpdateState({props: this.props, e, selectComponent: 'UsersettingComponent'});
@@ -48,7 +43,16 @@ class FooterKeeperComponent extends Component {
 
   handleRouterChat = (e) => {
     e.preventDefault();
-    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ChatComponent'});
+    //this.props.handleUpdateState({props: this.props, e, selectComponent: 'ChatComponent'});
+
+    var jwtToken = this.props.userInfo.token;
+    var user_type = this.props.routerInfo.selectChanger;
+    var form = document.getElementById('frmChat');
+
+    //form.action = url;
+    form.user_type.value = user_type;
+    form.token.value = jwtToken;
+    form.submit();
   }
 
   handleRouterKeeperSetting = (e) => {
@@ -75,6 +79,10 @@ class FooterKeeperComponent extends Component {
     return (
       <>
       <div id="footer-keeper-menu">
+        <form name="frmChat" id="frmChat" action="http://localhost:3001/" onSubmit={this.handleSubmit} method="get">
+          <input type="hidden" name="token" id="token" value="" />
+          <input type="hidden" name="user_type" id="user_type" value="" />
+        </form>
         <a href="/likeList" className={this.path["/likeList"]} onClick={(e) => this.handleRouterLikeList(e)}>
         <i class="fas fa-luggage-cart"></i>
         {/* <i class="fas fa-suitcase-rolling"></i> */}
@@ -82,7 +90,8 @@ class FooterKeeperComponent extends Component {
         </a>
         <a href="/add_locker" className={this.path["/add_locker"]} onClick={(e) => this.handleRouterAddRocker(e)}><i className="fas fa-plus"></i><span>ADD</span>
         </a>
-        <a href="/chat" className={this.path["/reservationList"]} onClick={(e) => this.handleRouterChat(e)}><i className="fa fa-comments"></i><span>Chat</span>
+        <a href="/chat" className={this.path["/chat"]} onClick={(e) => this.handleRouterChat(e)}><i className="fa fa-comments"></i><span>Chat</span>
+        {/* <a href="/chat" className={this.path["/reservationList"]} onClick={(e) => this.handleRouterChat(e)}><i className="fa fa-comments"></i><span>Chat</span> */}
         </a>
         <a href="/keeper_setting" className={this.path["/keeper/setting"]} onClick={(e) => this.handleRouterKeeperSetting(e)}><i className="fa fa-user"></i><span>My Profile</span>
         </a>
