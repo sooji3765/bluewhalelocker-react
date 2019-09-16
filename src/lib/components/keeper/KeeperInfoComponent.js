@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 import ReviewList from "../review/ReviewList";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import axios from "axios";
@@ -22,6 +22,11 @@ class KeeperInfoComponent extends Component {
     });
   }
 
+  handleReservation= (e)=>{
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'LockerReservationComponent'});
+  }
+
   render() {
     const { reviewItems, id } = this.state;
 
@@ -32,7 +37,7 @@ class KeeperInfoComponent extends Component {
             <div className="keeper-photo-content">
               <img
                 className="keeper-photo"
-                src={this.state.keeperinfoItem.photo}
+                src="../img/hollys.jpg"
                 alt="store_img"
               />
             </div>
@@ -59,20 +64,17 @@ class KeeperInfoComponent extends Component {
                 />
               </div>
 
-              <div className="use-locker-now">사용 가능한 락커 수 : 4</div>
-
-              <div className="btn-group">
-                <Link to="/reservation">
-                  <button className="keeper-btn-reservation">예약하기</button>
-                </Link>
-              </div>
+             
 
               <div className="keeper-info-detail">
+              <div className="keeper-info-div">
+                  <div className="info-detail-txt">공덕역 카페 프릳츠의 맛있는 베이커리 디저트 커피</div>
+                </div>
                 <div className="keeper-info-div">
                   <div className="info-icon">
                     <i className="fas fa-phone"></i>
                   </div>
-                  <div className="info-detail">010-0000-0000</div>
+                  <div className="info-detail">010-9090-1234</div>
                 </div>
                 <div className="keeper-info-div">
                   <div className="info-icon">
@@ -80,12 +82,10 @@ class KeeperInfoComponent extends Component {
                   </div>
                   <div className="info-detail">서울시 어쩌구 ~~~~</div>
                 </div>
-                <div className="keeper-info-div">
-                  <div className="info-icon">
-                    <i className="fas fa-phone"></i>
-                  </div>
-                  <div className="info-detail">010-0000-0000</div>
-                </div>
+               
+              </div>
+              <div className="btn-group"> 
+                  <button onClick={(e)=>this.handleReservation(e)} className="keeper-btn-reservation">RESERVATION</button>
               </div>
 
               <div className="keeper-location">

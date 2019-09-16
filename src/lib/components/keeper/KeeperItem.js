@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-export default class KeeperItem extends Component {
+class KeeperItem extends Component {
 
   constructor(props){
     super(props);
@@ -9,8 +9,8 @@ export default class KeeperItem extends Component {
 
   handleRouterKeeperInfo = (e) =>{
       e.preventDefault();
-      this.props.handleRouterKeeperInfo({props: this.props, e,selectComponent:'KeeperInfoComponent'});
-  }
+      this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperInfoComponent'});
+    }
 
   render() {
     const {
@@ -23,8 +23,8 @@ export default class KeeperItem extends Component {
 
     return (
       <div>
-        <li className="menu-item" onClick={ (e) => this.handleRouterKeeperInfo(e)}>
-          {/* <a href={`/keeper_info/${id}`}> */}
+        <li className="menu-item" >
+        <a href={`/keeper_info/${id}`} onClick={ (e)=>this.handleRouterKeeperInfo(e)}>
             <div className="menu-keeper-item">
               <div className="menu-keeper-img">
                 <img className="keeper-img" src="../img/hollys.jpg" alt="user2" />
@@ -42,9 +42,11 @@ export default class KeeperItem extends Component {
                 </p>
               </div>
             </div>
-          {/* </a> */}
+         </a>
         </li>
       </div>
     );
   }
 }
+
+export default KeeperItem;

@@ -1154,13 +1154,14 @@ label a {
 
 .keeper-btn-reservation {
     width: 100%;
-    background-color: #fff;
-    color: hsl(0, 0%, 80%);
+    background-color:#91c4e5;
+    color: #fff;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: 700;
     text-align: center;
     padding: 10px;
-    border: 1px solid hsl(0, 0%, 80%);
+    border: 1px solid #fff;
 }
 
 .keeper-btn-reservation:hover {
@@ -1171,7 +1172,7 @@ label a {
 .keeper-info-detail {
     margin: 10px auto;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgb(228, 228, 228);
+   
 }
 
 .keeper-info-div {
@@ -1185,14 +1186,83 @@ label a {
 }
 
 .info-icon {
+    color: #91c4e5;
     float: left;
 }
 
 .info-detail {
+    font-weight: 600;
+    color: #9d9d9d;
     margin-left: 20px;
     float: left;
 }
+.info-detail-txt{
+    font-weight: 600;
+    color: #9d9d9d;
+    float: left;
+}
 
+
+.store-img{
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.store-detail{
+    margin-top: 15px;
+    border-radius: 4px;
+    padding: 10px;
+    background: #91c4e5;
+    color: #fff;
+    box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.store-name{
+    font-size: 1.3em;
+    font-weight: 800;
+}
+
+.select-content{
+    border-radius: 4px;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.select-date{
+    padding: 10px;
+}
+.select-locker-area{
+    margin-top : 10px;
+    padding: 10px;
+
+}
+.select-locker-item{
+    margin-bottom: 5px;
+}
+.locker-size-con{
+    text-transform: uppercase;
+    width: 15%;
+    color : hsl(0, 0%, 60%);
+    margin-top: 5px;
+    float: left;
+    align-items: center;
+    margin-right: 10px;
+}
+.locker-size-op{
+    float: left;
+    width: 80%;
+}
+.select-locker-item:after{
+    display: block;
+    content: '';
+    clear: both;
+}
 /* .keeper-review{
     border-top: 1px solid rgb(228, 228, 228);
 } */
@@ -1217,6 +1287,7 @@ label a {
 .btn-group {
     margin-right: 5px;
     margin-left: 5px;
+    margin-bottom: 15px;
 }
 
 .review-writer::after {

@@ -3,7 +3,7 @@ import DefaultUpdater from '../DefaultUpdater';
 import UserUpdater from '../UserUpdater';
 import LockerUpdater from '../LockerUpdater';
 import ReviewUpdater from '../ReviewUpdater';
-import KeeperUpdater from '../KeeperUpdater';
+
 import MyInfo from '../../info/MyInfo';
 
 export const {
@@ -30,9 +30,7 @@ export const {
   action_handleReviewWrite,
 } = ReviewUpdater.funcActions;
 
-export const {
-  action_handleRouterKeeperInfo
-} = KeeperUpdater.funcActions;
+
 
 export default handleActions(
   {
@@ -40,7 +38,7 @@ export default handleActions(
     ...UserUpdater.caseActions,
     ...LockerUpdater.caseActions,
     ...ReviewUpdater.caseActions,
-    ...LockerUpdater.caseActions,
+  
   },
   MyInfo.initialState
 );
