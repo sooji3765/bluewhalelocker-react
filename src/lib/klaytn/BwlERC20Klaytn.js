@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ContractJson from '../../contracts/BwlERC20.json';
 import BwlKlaytn from './BwlKlaytn';
 
 class BwlERC20Klaytn extends Component {
@@ -8,11 +7,12 @@ class BwlERC20Klaytn extends Component {
   componentDidMount = async () => {
     try {
  
-      const networkUrl = process.env.REACT_APP_BAOBAB_API_URL;
-      const contract = await BwlKlaytn.BwlKlaytnInstance(networkUrl, ContractJson);
+      const instance = await BwlKlaytn.getWallet();
       
       this.setState({
-        ...contract,
+        cav: instance.cav,
+        active_address: instance.active_address,
+        contract: instance.instanceBwlERC20,
        }, this.runExample);
     } catch (error) {
       console.error(error);
@@ -28,13 +28,29 @@ class BwlERC20Klaytn extends Component {
   };
 
   getSummary = async () => {
-    const { contract } = this.state;
+    const { contract, active_address } = this.state;
     if (!this.state.cav) {
       return;
     }
 
+    const contractAddress = await contract._address;
+    const name = await contract.methods.name().call();
+    const symbol = await contract.methods.symbol().call();
+    const decimals = await contract.methods.decimals().call();
     const totalSupply = await contract.methods.totalSupply().call();
-    this.setState({ totalSupply: totalSupply })
+
+    const constructerAddress = await contract.methods.constructer().call();
+    const constructerBalance = await contract.methods.balanceOf(constructerAddress).call();
+
+    this.setState({
+      contractAddress: contractAddress,
+      name: name,
+      symbol: symbol,
+      decimals: decimals,
+      totalSupply: totalSupply,
+      constructerAddress: constructerAddress,
+      constructerBalance: constructerBalance,
+    })
   }
 
   render() {
@@ -44,7 +60,12 @@ class BwlERC20Klaytn extends Component {
 
     return (
       <div className=''>
-        <div>The totalSupply value is: {this.state.totalSupply}</div>
+        <div>contractAddress : {this.state.contractAddress}</div>
+        <div>name : {this.state.name}</div>
+        <div>symbol : {this.state.symbol}</div>
+        <div>decimals : {this.state.decimals}</div>
+        <div>constructer address : {this.state.constructerAddress}</div>
+        <div>constructer balance : {this.state.constructerBalance}</div>
       </div>
     );
   }

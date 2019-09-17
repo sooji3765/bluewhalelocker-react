@@ -3,6 +3,7 @@ import DefaultUpdater from '../DefaultUpdater';
 import UserUpdater from '../UserUpdater';
 import LockerUpdater from '../LockerUpdater';
 import ReviewUpdater from '../ReviewUpdater';
+import OrderUpdater from '../OrderUpdater';
 
 import MyInfo from '../../info/MyInfo';
 
@@ -30,7 +31,10 @@ export const {
   action_handleReviewWrite,
 } = ReviewUpdater.funcActions;
 
-
+export const {
+  action_handleOrderRegist,
+  action_handleOrderUpdate,
+} = OrderUpdater.funcActions;
 
 export default handleActions(
   {
@@ -38,7 +42,7 @@ export default handleActions(
     ...UserUpdater.caseActions,
     ...LockerUpdater.caseActions,
     ...ReviewUpdater.caseActions,
-  
+    ...OrderUpdater.caseActions,
   },
   MyInfo.initialState
 );

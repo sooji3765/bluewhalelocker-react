@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import BwlKlaytn from '../../klaytn/BwlKlaytn';
 
 class LoginComponent extends Component{
 
@@ -70,6 +71,8 @@ class LoginComponent extends Component{
             const res = await this.doSignIn(item);
             if (res.success === true) {
                 this.props.handleSignIn({props: this.props, e, item: res});
+
+                BwlKlaytn.setWallet(process.env.REACT_APP_BAOBAB_EOA_PRIVATE_KEY_2);
             } else {
                 alert('로그인 실패!');// evanlimdev : 개발우선순위 3, 모달박스로 표시 필요
             }

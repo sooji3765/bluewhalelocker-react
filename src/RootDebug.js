@@ -7,6 +7,7 @@ import App from './App';
 import './App.css';
 import BwlKlaytnContracts from "./lib/klaytn/BwlKlaytnContracts"
 // import AddLockerComponent from "./lib/components/locker/AddLockerComponent"
+import OrderTestComponent from "./lib/components/wallet/OrderTestComponent"
 
 const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
@@ -21,11 +22,11 @@ const Root = () => {
           <App />
         </Provider>
       </div>
-      <div className='sub_b'>
+      {/* <div className='sub_b'>
         <BwlKlaytnContracts/>
-      </div>
+      </div> */}
       <div className='sub_b'>
-        {/* <AddLockerComponent></AddLockerComponent> */}
+        <OrderTestComponent></OrderTestComponent>
       </div>
     </div>
     </>

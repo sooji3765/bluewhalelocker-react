@@ -87,10 +87,26 @@ const doBwlPost = async (path, data) => {
   });
 }
 
+const JsonData2Params = (jsonData) => {
+  if (!jsonData || jsonData.length === 0) {
+    return "";
+  }
+
+  const aryData = [];
+  for(const key in jsonData) {
+    const item = key + "=" + jsonData[key];
+    aryData.push(item)
+  }
+
+  return "?" + aryData.join("&");
+}
+
 const doBwlGet = async (path, data) => {
-  const url = process.env.REACT_APP_BACKEND_SERVER_URL + path;
+  const params = JsonData2Params(data);
+  const url = process.env.REACT_APP_BACKEND_SERVER_URL + path + params;
   return new Promise((relsolve, reject) => {
     try {
+      console.log("url", url);
       axios.get(url, {
         headers: {
           "Content-Type": "application/json",
@@ -112,15 +128,23 @@ const doBwlPostData = async (path, item) => {
   try {
     const res = await doBwlPost(path, item);
     if (res.status === 200) {
-      return res.data;
+      return {
+        ...res.data,
+        message: (res.data.message) ? res.data.message : 'succ',
+      }
     }
   
   } catch (e) {
-
+    if (e.response && e.response.data) {
+      return {
+        ...e.response.data
+      }
+    }
   }
   return {
     success: false,
     results: 'error',
+    message: 'fail',
   }
 }
 
@@ -128,15 +152,24 @@ const doBwlGetData = async (path, item) => {
   try {
     const res = await doBwlGet(path, item);
     if (res.status === 200) {
-      return res.data;
+      return {
+        ...res.data,
+        message: 'succ',
+      }
     }
   
   } catch (e) {
-
+    if (e.response && e.response.data) {
+      return {
+        ...e.response.data
+      }
+    }
   }
+
   return {
     success: false,
     results: 'error',
+    message: 'fail',
   }
 
 }

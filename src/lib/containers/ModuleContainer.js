@@ -11,6 +11,7 @@ import UserFunc from './UserFunc';
 import DefaultFunc from './DefaultFunc';
 import LockerFunc from './LockerFunc';
 import ReviewFunc from './ReviewFunc';
+import OrderFunc from './OrderFunc';
 
 
 // common : login
@@ -67,6 +68,7 @@ class ModuleContainer extends Component {
       ...DefaultFunc,
       ...LockerFunc,
       ...ReviewFunc,
+      ...OrderFunc,
 
     })
   }

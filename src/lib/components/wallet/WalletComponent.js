@@ -1,11 +1,12 @@
 import React ,{Component} from 'react';
-import BwlKlaytnContracts from '../../klaytn/BwlKlaytnContracts';
+import BwlKlaytn from '../../klaytn/BwlKlaytn';
+import OrderTestComponent from './OrderTestComponent';
 
 class WalletComponent extends Component{
 
   state = {
     wallet: {
-      address: process.env.REACT_APP_BAOBAB_EOA_0,
+      address: '',
       ballance: 500,
       symbol: "BWL",
       contractAddress: "0x1111",
@@ -63,6 +64,11 @@ class WalletComponent extends Component{
       <>
       <div className="page-content header-clear-medium color-white">
         <div className="locker-page">
+          <div className="add-locker-content">
+            {/* <BwlKlaytnContracts /> */}
+            <OrderTestComponent {...this.props} />
+          </div>
+
           <div className = "add-locker-title">
               Wallet Info
           </div>
@@ -71,9 +77,6 @@ class WalletComponent extends Component{
             <p>Ballance : {wallet.ballance}</p>
             <p>Symbol : {wallet.symbol}</p>
             <p>Contract Address : {wallet.contractAddress}</p>
-          </div>
-          <div className="add-locker-content">
-            <BwlKlaytnContracts />
           </div>
           <div className="add-locker-content">
             <span className="item-state" onClick={(e) => this.handleShowTypeSummary(e)}>summary</span>&nbsp;&nbsp;&nbsp;

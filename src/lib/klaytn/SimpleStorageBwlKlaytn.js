@@ -8,11 +8,12 @@ class SimpleStorageBwlKlaytn extends Component {
   componentDidMount = async () => {
     try {
  
-      const networkUrl = process.env.REACT_APP_BAOBAB_API_URL;
-      const contract = await BwlKlaytn.BwlKlaytnInstance(networkUrl, ContractJson);
+      const instance = await BwlKlaytn.getWallet();
       
       this.setState({
-        ...contract,
+        cav: instance.cav,
+        active_address: instance.active_address,
+        contract: instance.instanceSimpleStorage,
        }, this.runExample);
     } catch (error) {
       console.error(error);
@@ -29,7 +30,7 @@ class SimpleStorageBwlKlaytn extends Component {
   };
 
   getSummary = async () => {
-    const { cav, contract } = this.state;
+    const { cav, contract, active_address } = this.state;
     if (!this.state.cav) {
       return;
     }
@@ -43,11 +44,13 @@ class SimpleStorageBwlKlaytn extends Component {
   }
 
   set = async (value) => {
-    const { contract } = this.state;
+    const { contract, active_address } = this.state;
+    if (!this.state.cav)
+      return;
 
     const func = 'set';
-    const resEstimateGas = await contract.methods.set(value).estimateGas({ from: process.env.REACT_APP_BAOBAB_EOA_0 })
-    await contract.methods.set(value).send({ from: process.env.REACT_APP_BAOBAB_EOA_0, gas: resEstimateGas * 2 })
+    const resEstimateGas = await contract.methods.set(value).estimateGas({ from: active_address })
+    await contract.methods.set(value).send({ from: active_address, gas: resEstimateGas * 2 })
       .once('transactionHash', (txHash) => {
         console.log(func, 'txHash', txHash)
       })

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ContractJson from '../../contracts/Locker.json';
 import BwlKlaytn from './BwlKlaytn';
 
 class LockerBwlKlaytn extends Component {
@@ -8,11 +7,12 @@ class LockerBwlKlaytn extends Component {
   componentDidMount = async () => {
     try {
  
-      const networkUrl = process.env.REACT_APP_BAOBAB_API_URL;
-      const contract = await BwlKlaytn.BwlKlaytnInstance(networkUrl, ContractJson);
+      const instance = await BwlKlaytn.getWallet();
       
       this.setState({
-        ...contract,
+        cav: instance.cav,
+        active_address: instance.active_address,
+        contract: instance.instanceLocker,
        }, this.runExample);
     } catch (error) {
       console.error(error);
@@ -29,7 +29,7 @@ class LockerBwlKlaytn extends Component {
   };
 
   getSummary = async () => {
-    const { contract } = this.state;
+    const { contract, active_address } = this.state;
 
     if (!this.state.cav) {
       return;
@@ -40,11 +40,14 @@ class LockerBwlKlaytn extends Component {
   }
 
   setMessage = async (_id, _name, _message) => {
-    const { cav, contract } = this.state;
+    const { cav, contract, active_address } = this.state;
+
+    if (!this.state.cav)
+      return;
 
     const func = 'setMessage';
-    const resEstimateGas = await contract.methods.setHello(_id, cav.utf8ToHex(_name), _message).estimateGas({ from: process.env.REACT_APP_BAOBAB_EOA_0 })
-    await contract.methods.setHello(_id, cav.utf8ToHex(_name), _message).send({ from: process.env.REACT_APP_BAOBAB_EOA_0, gas: resEstimateGas * 2 })
+    const resEstimateGas = await contract.methods.setHello(_id, cav.utf8ToHex(_name), _message).estimateGas({ from: active_address })
+    await contract.methods.setHello(_id, cav.utf8ToHex(_name), _message).send({ from: active_address, gas: resEstimateGas * 2 })
       .once('transactionHash', (txHash) => {
         console.log(func, 'txHash', txHash)
       })
@@ -57,11 +60,14 @@ class LockerBwlKlaytn extends Component {
   };
 
   setHello = async (hello) => {
-    const { contract } = this.state;
+    const { contract, active_address } = this.state;
 
+    if (!this.state.cav)
+      return;
+      
     const func = 'setMessage';
-    const resEstimateGas = await contract.methods.setHello(hello).estimateGas({ from: process.env.REACT_APP_BAOBAB_EOA_0 })
-    await contract.methods.setHello(hello).send({ from: process.env.REACT_APP_BAOBAB_EOA_0, gas: resEstimateGas * 2 })
+    const resEstimateGas = await contract.methods.setHello(hello).estimateGas({ from: active_address })
+    await contract.methods.setHello(hello).send({ from: active_address, gas: resEstimateGas * 2 })
       .once('transactionHash', (txHash) => {
         console.log(func, 'txHash', txHash)
       })

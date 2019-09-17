@@ -149,6 +149,7 @@ contract BwlERC20 is IERC20 {
     string private _name;
     string private _symbol;
     uint8 private _decimals;
+    address private _constructer;
 
     constructor (string memory name, string memory symbol, uint8 decimals) public {
         _name = name;
@@ -156,6 +157,8 @@ contract BwlERC20 is IERC20 {
         _decimals = decimals;
 
         _mint(msg.sender, 100000 * 10 ** uint256(decimals)); // CAUTION!
+
+        _constructer = msg.sender;
     }
 
     /**
@@ -265,7 +268,8 @@ contract BwlERC20 is IERC20 {
      * Emits an `Approval` event indicating the updated allowance.
      *
      * Requirements:
-     *
+     *        
+
      * - `spender` cannot be the zero address.
      */
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
@@ -395,4 +399,61 @@ contract BwlERC20 is IERC20 {
         count--;
         lastParticipant = msg.sender;
     }
+
+    function constructer() public view returns (address) {
+        return _constructer;
+    }
+
+    // 라커 예약
+    function orderReserved(address user, address keeper, uint256 amount, bool charge)
+    public returns (bool) {
+        return true;
+    }
+
+    // 결제 및 사용
+    function orderInuse(address user, address keeper, uint256 amount, bool charge, string orderTxhash)
+    public returns (bool) {
+
+        // 사용자에게는 사용료를 받는 경우 결제 금액의 10%를 토큰으로 돌려준다.
+        // transferFrom(user, keeper, amount);
+
+        uint256 rewardForUser = 0;
+        rewardForUser = SafeMath.div(amount, 10);
+        // transferFrom(_constructer, user, rewardForUser);
+
+        return true;
+    }
+
+    // 예약없이 바로 결제
+    function orderDirectInuse(address user, address keeper, uint256 amount, bool charge)
+    public returns (bool) {
+
+        return true;
+    }
+
+    // 사용됨, 사용가능 상태
+    function orderUsed(address user, address keeper, uint256 amount, bool charge, string orderTxhash)
+    public returns (bool) {
+        return true;
+    }
+
+    // 라커 상태
+    function orderStatus(string orderTxhash)
+    public returns (bool) {
+        return true;
+    }
+
+    function orderRewardChargeType(address keeper, uint256 amount, bool charge, string orderTxhash)
+    public returns (bool) {
+
+        if (charge == false) {
+            // 보관료를 받지 않는 키퍼에게는 일 단위 결제 금액의 10%를 토큰으로 보상한다.
+            uint256 rewardForKeeper = 0;
+            rewardForKeeper = SafeMath.div(amount, 10);
+            // transferFrom(_constructer, keeper, rewardForUser);
+        }
+
+        return true;
+    }
+
 }
