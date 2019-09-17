@@ -7,6 +7,7 @@ class MenuSettingComponent extends Component {
   constructor(props) {
     super(props);
     this.handleMenuClose = this.handleMenuClose.bind(this);
+    this.handleRouterKeeperInfo = this.handleRouterKeeperInfo.bind(this);
   }
 
   id = 3;
@@ -48,6 +49,11 @@ class MenuSettingComponent extends Component {
     console.log("clicked");
   }
 
+  handleRouterKeeperInfo = (e) =>{
+    e.preventDefault();
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperInfoComponent'});
+  }
+
   render() {
     const menuSettingsClassName = this.menu_status[this.state.menu.status];
     const { items } = this.state;
@@ -69,7 +75,9 @@ class MenuSettingComponent extends Component {
             </div>
             <div className="menu-list">
               <ul>
-                <KeeperItemList items={items}></KeeperItemList>
+                <KeeperItemList items={items} 
+                  handleRouterKeeperInfo={this.handleRouterKeeperInfo}
+                ></KeeperItemList>
               </ul>
             </div>
           </div>

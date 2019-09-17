@@ -16,6 +16,7 @@ class KeeperItemList extends Component {
           currentLocker={"사용가능라커수"}
           maxLocker={"전체라커수"}
           key={id}
+          handleRouterKeeperInfo={this.props.handleRouterKeeperInfo}
         />
       )
     );

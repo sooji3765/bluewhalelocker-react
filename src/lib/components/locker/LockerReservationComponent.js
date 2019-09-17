@@ -66,12 +66,14 @@ class LockerReservationComponent extends Component {
               <div className="store-detail">
                 <p className="store-name">Store Name</p>
                 <p>Store Address</p>
+                <p>Charge : Not Free</p>
               </div>
             </div>
 
             
             <div className="reservation-input-content">
             <div className="select-content">
+            <p className="price-title">SELECT LOCKER</p>
               <div className="select-date">
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
@@ -124,8 +126,48 @@ class LockerReservationComponent extends Component {
                   
                 </div>
               </div>
-
             </div>
+
+            <div className="select-content">
+               <div className="price-content">
+                 <p className="price-title">Total Price</p>
+                 <div className="select-locker-area">
+                 <div className="select-locker-item">
+                  <div className="price-size">
+                    LARGE
+                  </div>
+                 
+                  <div className="price-cnt-total">
+                    9,000
+                  </div>
+                </div>
+                <div className="select-locker-item">
+                  <div className="price-size">
+                    medium
+                  </div>
+                 
+                  <div className="price-cnt-total">
+                    2,000
+                  </div>
+                </div>
+                <div className="select-locker-item">
+                  <div className="price-size">
+                  SMALL
+                  </div>
+                 
+                  <div className="price-cnt-total">
+                    0
+                  </div>
+                </div>
+                
+                <div className="price-content-totals">
+                  <div className="cnt-total">total </div>
+                  <div className="total-price">11,000</div>  
+                </div>  
+               </div>  
+               </div> 
+            </div>
+            
             <ButtonGroup 
               className="btn-group-con"
               fullWidth 

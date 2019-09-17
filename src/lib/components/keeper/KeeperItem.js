@@ -9,7 +9,7 @@ class KeeperItem extends Component {
 
   handleRouterKeeperInfo = (e) =>{
       e.preventDefault();
-      this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperInfoComponent'});
+      this.props.handleRouterKeeperInfo(e);
     }
 
   render() {

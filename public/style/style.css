@@ -1233,12 +1233,13 @@ label a {
     box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.08);
     padding: 10px;
     margin-bottom: 10px;
+   
 }
 .select-date{
     padding: 10px;
 }
 .select-locker-area{
-    margin-top : 10px;
+   
     padding: 10px;
 
 }
@@ -1255,7 +1256,7 @@ label a {
     margin-right: 10px;
 }
 .locker-size-op{
-    float: left;
+    float: right;
     width: 80%;
 }
 .select-locker-item:after{
@@ -1263,6 +1264,50 @@ label a {
     content: '';
     clear: both;
 }
+
+.price-title{
+    margin-left: 10px;
+    color: hsl(0, 0%, 60%);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.price-size{
+    text-transform: uppercase;
+    color: hsl(0, 0%, 60%);
+    float: left;
+}
+
+.price-cnt-total{
+    float: right;
+    color: hsl(0, 0%, 60%);
+}
+
+.price-content-totals::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.price-content-totals{
+    margin-top: 5px;
+    border-top: 2px solid hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 60%);
+}
+
+.cnt-total{
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    float: left;
+}
+.total-price{
+    margin-top: 5px;
+    float: right;
+}
+
 /* .keeper-review{
     border-top: 1px solid rgb(228, 228, 228);
 } */
