@@ -31,6 +31,7 @@ import LoginComponent from '../components/user/LoginComponent';
 import SignupComponent from '../components/user/SignupComponent';
 import ProfileEditComponent from '../components/user/ProfileEditComponent';
 import UsersettingComponent from '../components/user/UsersettingComponent';
+import UserReviewComponent from '../components/user/UserReviewComponent';
 
 // wallet
 import WalletComponent from '../components/wallet/WalletComponent';
@@ -51,10 +52,11 @@ import LockerReservationComponent from '../components/locker/LockerReservationCo
 // keeper
 import KeeperSettingComponent from '../components/keeper/KeeperSettingComponent';
 import RegisterKeeperComponent from '../components/keeper/RegisterKeeperComponent';
-
+import KeeperReviewComponent from '../components/keeper/KeeperReviewComponent';
 
 // review
 import ReviewRegistComponent from '../components/review/ReviewRegistComponent';
+
 
 // store
 import KeeperInfoComponent from '../components/keeper/KeeperInfoComponent';
@@ -137,8 +139,11 @@ class ModuleContainer extends Component {
         {/* keeper */}
         {selectComponent === 'KeeperSettingComponent' && <KeeperSettingComponent {...this.state} {...this.props} />}
         {selectComponent === 'RegisterKeeperComponent' && <RegisterKeeperComponent {...this.state} {...this.props} />}
+        {selectComponent === 'KeeperReviewComponent' && <KeeperReviewComponent {...this.state} {...this.props} />}
+
         {/* reviews */}
         {selectComponent === 'ReviewRegistComponent' && <ReviewRegistComponent {...this.state} {...this.props} />}
+        {selectComponent === 'UserReviewComponent' && <UserReviewComponent {...this.state} {...this.props}/>}
         {/* keeper info */}
         {selectComponent === 'KeeperInfoComponent' && <KeeperInfoComponent {...this.state} {...this.props}/>}
       </>

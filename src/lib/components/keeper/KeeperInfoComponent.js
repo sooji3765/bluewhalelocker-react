@@ -16,9 +16,9 @@ class KeeperInfoComponent extends Component {
       console.log(res);
       this.setState({keeperinfoItem : res.data});
     })
-    axios.get("http://localhost:8080/reviews").then(res => {
+    axios.get("http://localhost:8080/review/list").then(res => {
       console.log(res);
-      this.setState({ reviewItems: res.data });
+      this.setState({ reviewItems: res.data.results });
     });
   }
 

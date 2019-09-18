@@ -18,7 +18,7 @@ class UsersettingComponent extends Component {
 
   handleRouterReview = (e) => {
     e.preventDefault();
-    this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperInfoComponent'});
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'UserReviewComponent'});
   }
 
   handleRouterWallet = (e) => {

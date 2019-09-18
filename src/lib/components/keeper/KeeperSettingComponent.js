@@ -18,7 +18,7 @@ class KeeperSettingComponent extends Component {
 
   handleRouterReview = (e) => {
     e.preventDefault();
-    this.props.handleUpdateState({props: this.props, e, selectComponent: 'ReviewRegistComponent'});
+    this.props.handleUpdateState({props: this.props, e, selectComponent: 'KeeperReviewComponent'});
   }
 
   handleRouterWallet = (e) => {
